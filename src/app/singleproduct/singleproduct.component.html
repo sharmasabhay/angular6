@@ -1,0 +1,120 @@
+<div class="container-fluid">
+   <div class="row">
+      <app-sidebar></app-sidebar>
+      <app-header></app-header>
+      <div class="main-content">
+         <div class="head-section">
+            <div class="col-sm-12 product-banner">
+                 <div class="row">
+                 	<div class="col-sm-8 heading">
+                 		<h1 class="singlep-head">PRODUCT DETAILS</h1>
+                 		<ul class="breadcrumb">
+			              <li><a routerLink="/">Home</a></li>
+			              <li><a>{{details['name']}}</a></li>
+			            </ul>
+                 	</div>
+                 	<div class="col-sm-4"></div>
+                 </div>
+            </div>
+         </div>
+         <div class="loader" *ngIf="loader">
+               <div class="loader-spinner">
+                  <mat-spinner [diameter]="40"></mat-spinner>
+               </div>
+         </div>
+         <div class="product-detail" *ngIf="detailSection">
+         	<div class="col-sm-4 product-image">
+         		<img [src]="details['imageFiles']" *ngIf="details['imageFiles'] != '' && details['imageFiles'] != null">
+         	</div>
+         	<div class="col-sm-8 product-discribtion">
+         		<h4 class="ptitle">{{details['name']}}</h4>
+            <h3 class="pprice">${{customPrice}}</h3>
+         		<p class="stock">Availability <span class="yes" *ngIf="details['outOfStockType'] == 1">In Stock</span> <span class="no" *ngIf="details['outOfStockType'] != 1">Out of Stock</span></p>
+         		<div class="action-btn single-page-action">
+         			<mat-form-field appearance="outline" class="nopadtext quantity">
+                  <button class="dec" (click)="onDecrement();"><i class="fa fa-minus"></i></button>
+                  <input type="text" matInput [(ngModel)]="quantity" readonly> 
+                  <button class="inc" (click)="onIncrement();"><i class="fa fa-plus"></i></button>
+              </mat-form-field>
+                <span class="actionbtn">
+         			<button class="addtocart" mat-button (click)="addToCart(details['id'], 'single');" [disabled]="true" *ngIf="details['outOfStockType'] != 1"> <mat-icon>shopping_cart</mat-icon>Add to cart</button>
+              <button class="addtocart" mat-button (click)="addToCart(details['id'], 'single');" *ngIf="details['outOfStockType'] == 1"> <mat-icon>shopping_cart</mat-icon>Add to cart</button>
+         			<button class="wishlist" mat-button (click)="addWishlist(details['id']);"><mat-icon>favorite_border </mat-icon></button>
+               </span>
+         		</div>
+         		<div class="product-tbl" *ngIf="bulkPrice == 0">
+         			<table>
+         				<tr>
+         					<th>QTY</th>
+         					<th>PRICE</th>
+         				</tr>
+                <tr>
+                   <td>Buy 1</td>
+                   <td>${{orignalPrice}} each</td>
+                </tr>
+         				<tr *ngFor="let tiers of tier">
+         					<td>Buy from {{tiers['from_qty']}} to <span *ngIf="tiers['to_qty'] >= 99999">above</span><span *ngIf="tiers['to_qty'] != 99999 && tiers['to_qty'] < 99999">{{tiers['to_qty']}}</span></td>
+         					<td>${{tiers['smartPrice']}} each</td>
+         				</tr>
+         			</table>
+         		</div>
+         	</div>
+         </div>
+        <!-- tabs -->
+        <div class="tab-content">
+            <mat-tab-group mat-align-tabs="center">
+              <mat-tab label="Product Description">
+                <ng-template matTabContent>
+                    <div [innerHTML]="details['description']"></div>
+                </ng-template>
+              </mat-tab>
+              <mat-tab label="Reviews(0)">
+                <ng-template matTabContent>
+                  There are no reviews yet .
+                </ng-template>
+              </mat-tab>
+            </mat-tab-group>
+        </div>
+        <!-- end tabs -->
+
+        <!-- RELATED PRODUCT -->
+        <div class="product-section">
+            <div class="page-title">
+                <h4>RELATED PRODUCTS</h4>
+            </div>
+            <div class="product-slider">
+               <ngx-slick class="alcohaul-slider carousel" #slickModal="slick-modal" [config]="relatedProductConfig">
+               <div ngxSlickItem class="slide" *ngFor="let related of relatedProducts">
+                  <div class="image">
+                     <div class="card ">
+                        <div class="card-content">
+                            <div class="product-label" *ngIf="related['outOfStockType'] == 2">
+                                <label class="out-stock">sold out</label>
+                            </div>
+                           <div class="hovereffect">
+                             <a routerLink="/products/{{related['slug']}}">
+                              <img class="card-img-top" [src]="related['product_image']" *ngIf="related['product_image'] != '' && related['product_image'] != null">
+                              </a>
+                               <div class="overlay">
+                                 <button class="wishlist" (click)="addWishlist(related['product_id']);"><mat-icon>favorite_border </mat-icon> </button>
+                                 <button class="addtocart" *ngIf="related['outOfStockType'] == 1" (click)="addToCart(related['product_id'], 'single');"><mat-icon>shopping_cart</mat-icon> Add to cart</button>
+                                 <button class="addtocart disabledCart" [disabled]="true" *ngIf="related['outOfStockType'] == 2" (click)="addToCart(related['product_id'], 'single');"><mat-icon>shopping_cart</mat-icon> Unavailable</button>
+                              </div>
+                           </div>
+                           <div class="card-body">
+                              <a routerLink="/products/{{related['slug']}}"><h5 class="card-title">{{related['product_name']}}</h5></a>
+                              <p class="price">${{related['product_price']}}</p>
+                               <small>As a low <span class="lowprice" *ngIf="related['bult_price']">${{related['bult_price'][1]['smartPrice']}}</span><span class="lowprice" *ngIf="!related['bult_price']">${{related['product_price']}}</span></small>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               </ngx-slick>
+            </div>
+        </div>
+        <!-- END RELATED PRODUCT -->
+        <app-footer></app-footer>
+    </div>
+    </div>
+    </div>

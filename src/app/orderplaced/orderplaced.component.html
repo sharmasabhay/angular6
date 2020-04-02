@@ -1,0 +1,58 @@
+<div class="container-fluid">
+</div>
+<div class="container">
+	<div class="col-sm-12">
+		<div class="chckoutstep6main-cover1">
+			<div class="chckoutstep6main-cover" *ngIf="history">
+				<div class="checkout-step6-innercover">
+					<div class="smile-signcover">
+						<img src="/assets/img/cheers.png">
+					</div>
+					<div class="uralsetcover">								
+						<div class="uralset-textdiv">
+							Ready to Drink?<span>We are getting your order ready to be delivered <br> at your choosen delivery date and time slot.</span>
+						</div>	
+					</div>
+					<div class="ordrnumber-cover">
+						<div class="ordernno-divcenterset">
+							<div class="order-numberinnercover ng-binding">Order No. {{history['order_number']}}</div>
+						</div>
+					</div>
+					<div class="payment-descriptioncover">
+						<div class="paymentdetail-fixwidth">
+							<div class="paymentamnt-coverdiv">
+								<div class="lefttext-paymnt">Payment Amount</div>
+								<div class="right-resultamounttxt ng-binding" *ngIf="historyPayment > 0">  {{historyPayment  | currency:"$"}}</div>	
+								<div class="right-resultamounttxt ng-binding" *ngIf="historyPayment < 0"> $0.00</div>	
+							</div>
+							<div class="paymentamnt-coverdiv" *ngIf="orderDate != '' && orderDate != null">
+								<div class="lefttext-paymnt">Date of Delivery</div>
+								<div class="right-resultamounttxt ng-binding">{{orderDate | date : 'EEEE'}}, {{orderDate | date : 'dd'}} {{orderDate | date : 'MMMM'}}, {{orderDate | date : 'y'}}</div>		
+							</div>
+							<div class="paymentamnt-coverdiv">
+								<div class="lefttext-paymnt">Payment Method</div>
+								<div class="right-resultamounttxt ng-binding">{{history['payment_method']}}</div>		
+							</div>
+							<div class="paymentamnt-coverdiv" *ngIf="history['delivery_time_range']">			
+								<div class="lefttext-paymnt">Delivery Time</div>
+								<div class="right-resultamounttxt ng-binding">{{history['delivery_time_range']}}</div>
+						    </div>
+						    <div class="paymentamnt-coverdiv">			
+								<div class="lefttext-paymnt">Delivery Type</div>
+								<div class="right-resultamounttxt ng-binding">
+								<span *ngIf="history['delivery_type'] == '2'">2 hour delivery</span>
+								<span *ngIf="history['delivery_type'] == 0">SAME day delivery</span>
+								<span *ngIf="history['delivery_type'] == '1'">NEXT day delivery</span>
+								<span *ngIf="history['delivery_type'] == null">Store pickup</span></div>
+						    </div>
+						</div>
+					</div>
+					<div class="kepshopingcoverdiv">
+						<div class="keepshoping-textcover">If you have any additional questions or would like to change your delivery timeslot/order, please call us at our hotline <a href="tel: +65 6240 6822">+65 6240 6822</a></div>
+						<a type="submit" class="btn btn-default" routerLink="/">Back to shopping</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

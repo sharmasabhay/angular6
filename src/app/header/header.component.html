@@ -1,0 +1,140 @@
+<div class="main-header"> 
+<div class="col-sm-offset-5 col-sm-5" *ngIf="deviceInfo != 'phone'">
+	<div class="search-form">
+	<form>
+  <div class="input-group">
+  <mat-form-field appearance="outline" class="search">
+    <input matInput placeholder="Search"  [formControl]="myControl" [matAutocomplete]="auto" [(ngModel)]="searchingField" (input)="limitSearching();" (keyup.enter)="searching();">
+    <mat-autocomplete #auto="matAutocomplete" maxSearchResults={5}>
+      <mat-option *ngIf="notFound" class="not-found">{{notFound}}</mat-option>
+      <mat-option *ngFor="let data of searchedLimitData" [value]="data['name']">
+        <a routerLink="/products/{{data['slug']}}">
+            <div class="product-row">
+               <div class="product-left">
+                  <img [src]="data['imageFiles']" *ngIf="data['imageFiles'] != '' && data['imageFiles'] != null">
+               </div>
+               <div class="product-right">
+                  <strong>{{data['name']}}</strong>
+                  <span>${{data['price']}} SGD</span>
+               </div>
+            </div>
+        </a>
+      </mat-option>
+      <a class="all-result" (click)="findAllResults();" *ngIf="!notFound">See all results</a>
+    </mat-autocomplete>
+  </mat-form-field>
+    <div class="input-group-btn">
+      <button class="btn btn-default" type="submit" (click)="findAllResults();">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+</div>
+</div>
+<!-- Mobile serach -->
+<div class="search-section" *ngIf="deviceInfo == 'phone'">
+    <div class="search-icon" (click)="openMobileSearch();">
+       <i class="fa fa-search"></i>
+    </div>
+    <div class="mobile-search" *ngIf="mobileSearch">
+        <mat-form-field appearance="outline" class="search">
+            <input matInput placeholder="Search"  [formControl]="myControl" [matAutocomplete]="auto" [(ngModel)]="searchingField" (input)="limitSearching();" (keyup.enter)="searching();">
+            <mat-autocomplete #auto="matAutocomplete" maxSearchResults={5}>
+              <mat-option *ngFor="let data of searchedLimitData" [value]="data['name']">
+                <a routerLink="/products/{{data['slug']}}">
+                    <div class="product-row">
+                       <div class="product-left">
+                          <img [src]="data['imageFiles']" *ngIf="data['imageFiles'] != '' && data['imageFiles'] != null">
+                       </div>
+                       <div class="product-right">
+                          <strong>{{data['name']}}</strong>
+                          <span>${{data['price']}} SGD</span>
+                       </div>
+                    </div>
+                </a>
+              </mat-option>
+              <a class="all-result" (click)="findAllResults();">See all results</a>
+            </mat-autocomplete>
+          </mat-form-field>
+          <div class="close-search" (click)="closeSearch();">
+            <mat-icon>close</mat-icon>
+          </div>
+    </div>
+    <!-- <div class="menu-categories" [ngClass]="status ? 'active-sidenav' : 'inactive-sidenav'">
+        <mat-icon (click)="sideMenu();"><span *ngIf="!status">menu</span><span *ngIf="status">close</span></mat-icon>
+        <div class="mobile-sidenav-menu" *ngIf="opened">
+           <ul class="sidnav-ul">
+              <li *ngFor="let category of categories">
+                  <a routerLink="/collection/{{category['slug']}}">{{category['category_name']}}</a>
+
+                  <span><i *ngIf="category['subcategory'] != ''" [ngClass]="category['catMenu'] ? 'fa fa-minus' : 'fa fa-plus'" (click)="categoryMenu(category);"></i></span>
+
+                  <ul class="dropdown-content" *ngIf="category['subcategoryMenu']">
+                    <li *ngFor="let subcat of category.subcategory"><a routerLink="/collection/{{category['slug']}}/{{subcat['slug']}}">{{ subcat['subcategory_name'] }}</a></li>
+                  </ul>
+              </li>
+          </ul>
+        </div>
+    </div> -->
+</div>
+<!-- Menu Desktop -->
+<div class="col-sm-2 header-right-menu" *ngIf="deviceInfo != 'phone'" [ngClass]="{'profile-setting': profileSetting}">
+<div class="right-menu" [ngClass]="openSidemenu ? 'active-profile' : 'inactive-profile'">
+  <ul>
+  	<li class="menu"><img src="/assets/img/settings.png">
+  		<ul class="menu-dropdown">
+  			<li *ngIf="!userId"><a routerLink="/account/login"><i class="fa fa-user"></i>&nbsp; Sign In</a></li>
+  			<li *ngIf="!userId"><a routerLink="/account/register"><i class="fa fa-unlock-alt"></i>&nbsp; Create an Account</a></li>
+        <li *ngIf="userId"><a routerLink="/account"><i class="fa fa-user-circle-o"></i>&nbsp; My Account</a></li>
+        <li *ngIf="userId"><a routerLink="/account/login" (click)="logOut();"><i class="fa fa-sign-out"></i>&nbsp; Logout</a></li>
+  		</ul>
+  	</li>
+  	<li class="cart-link"> 
+        <a routerLink="/checkout" *ngIf="cartTotal != 0"><img src="/assets/img/handbag.png"><span class="badge">{{cartTotal}}</span></a>
+        <a *ngIf="cartTotal == 0" (click)="emptyCart();"><img src="/assets/img/handbag.png"><span class="badge">{{cartTotal}}</span></a>
+    </li>
+    <div *ngIf="cartTotal == 0 && empty" class="empty-account">
+       <mat-icon (click)="closeCart();">close</mat-icon>
+       <span>Your cart is empty!</span>
+    </div>
+  </ul>
+</div>
+</div>
+<app-sidebar *ngIf="deviceInfo != 'phone' && openSidemenu"></app-sidebar>
+<!-- Menu Phone -->
+<div class="col-sm-2 header-right-menu" *ngIf="deviceInfo == 'phone'">
+<div class="right-menu">
+  <ul>
+    <li class="test"><mat-icon (click)="openMenu();"><span *ngIf="deviceInfo != 'phone'">menu</span><span *ngIf="deviceInfo == 'phone'">settings</span></mat-icon>
+      <ul class="menu-dropdown" *ngIf="menuDropdown">
+        <li *ngIf="!userId"><a routerLink="/account/login"><i class="fa fa-user"></i>&nbsp; Sign In</a></li>
+        <li *ngIf="!userId"><a routerLink="/account/register"><i class="fa fa-unlock-alt"></i>&nbsp; Create an Account</a></li>
+        <li *ngIf="userId"><a routerLink="/account"><i class="fa fa-user-circle-o"></i>&nbsp; My Account</a></li>
+        <li *ngIf="userId"><a routerLink="/account/login" (click)="logOut();"><i class="fa fa-sign-out"></i>&nbsp; Logout</a></li>
+      </ul>
+    </li>
+    <li class="cart-link"> 
+        <a routerLink="/checkout" *ngIf="cartTotal != 0"><img src="/assets/img/handbag.png"><span class="badge">{{cartTotal}}</span></a>
+        <a *ngIf="cartTotal == 0" (click)="emptyCart();"><img src="/assets/img/handbag.png"><span class="badge">{{cartTotal}}</span></a>
+    </li>
+    <div *ngIf="cartTotal == 0 && empty" class="empty-account">
+       <mat-icon (click)="closeCart();">close</mat-icon>
+       <span>Your cart is empty!</span>
+    </div>
+  </ul>
+</div>
+</div>
+</div>
+<!-- Mobile Logo section -->
+<div class="mobile-logo-section" *ngIf="deviceInfo == 'phone'">
+    <div class="site-logo">
+        <a routerLink="/"><img src="/assets/img/logo.png"></a>
+    </div>
+    <div class="phone">
+        <a href="tel: +65 6240 6822">
+          <img src="/assets/img/hotline_number_icon.png">
+          <strong>+65 6240 6822</strong>
+        </a>
+     </div>
+</div>

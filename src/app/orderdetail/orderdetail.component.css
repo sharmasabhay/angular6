@@ -1,0 +1,219 @@
+.checkoutmiddletable {
+    width: 100%;
+    float: left;
+    margin-top: 20px;
+    margin-bottom: 0px!important;
+}
+.orhistry2_td2procdtcvr {
+    float: left;
+    width: 100%;
+}
+.checkouter-td-right-text {
+    width: 74%;
+    float: left;
+}
+.checkoutstep5-mid-top {
+    width: 100%;
+    float: left;
+    margin-bottom: 33px;
+    margin-top: 35px;
+}
+.checkoutstep5-mid-left {
+    width: 65%;
+    float: left;
+}
+.checkoutstep5-left-first {
+    width: 100%;
+    float: left;
+    border-top: 1px solid #d9d9d9;
+    padding: 14px 10px 13px;
+}
+.checkoutstep5-left-first-left {
+    display: inline-block;
+    vertical-align: middle;
+    width: 92%;
+}
+.checkoutstep5-left-first-lefttext {
+    width: 100%;
+    float: left;
+    color: #888;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.checkoutstep5-left-first-lefttitle {
+    width: 100%;
+    float: left;
+    color: #222;
+    font-size: 16px;
+}
+.checkoutmiddleouter img {
+    width: auto;
+}
+.checkboxtotaldiv {
+    width: 100%;
+    float: left;
+}
+.checkoutstep5-mid-button {
+    background: #000 none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 18px;
+    min-width: 220px;
+    padding: 6px 10px;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    float: right;
+}
+.checkoutstep5right-middle, .checkoutstep5righttop {
+    float: left;
+    padding: 15px 0;
+    width: 100%;
+}
+.checkoutstep5right-middle-first {
+    float: left;
+    margin: 7px 0;
+    width: 100%;
+}
+.checkoutstep5right-middle-title {
+    color: #222;
+    float: left;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: right;
+    width: 72%;
+}
+.checkoutstep5right-middle-title span {
+    width: 12px;
+    display: inline-block;
+    height: 12px;
+    margin-left: 5px;
+}
+.checkoutstep5right-middle-first .checkboxtotaldiv-text-font-size {
+    text-transform: uppercase;
+}
+.checkboxtotaldiv-text-font-size {
+    color: #222;
+    font-size: 12px;
+    font-weight: 500;
+    position: relative;
+    text-align: right;
+}
+.checkoutstep5-mid-right {
+    width: 35%;
+    float: left;
+}
+.checkoutstep5right-buttom {
+    border-top: 1px solid #e2e2e2;
+    float: left;
+    padding: 15px 0;
+    width: 100%;
+    border-bottom: 1px solid #e2e2e2;
+}
+.checkoutstep5right-bottom-text, .checkoutstep5right-bottom-title {
+    color: #222;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: right;
+}
+.checkboxtotaldiv-title, .checkboxtotaldiv-text {
+    text-align: right;
+    font-size: 16px;
+    font-weight: 500;
+    color: #222;
+}
+.checkboxtotaldiv-middle {
+    width: 100%;
+    float: left;
+    padding: 15px 25px 15px 0;
+}
+.checkboxtotaldiv-middle-first {
+    width: 100%;
+    float: left;
+    margin: 5px 0;
+}
+.checkboxtotaldiv-middle-first .checkboxtotaldiv-text, .checkboxtotaldiv-middle-first .checkboxtotaldiv-title {
+    font-size: 12px;
+}
+.checkboxtotaldiv-middle-first .checkboxtotaldiv-title,.checkboxtotaldiv-buttom .checkboxtotaldiv-title {
+    width: 79%;
+    float: left;
+}
+.checkboxtotaldiv-middle-first .checkboxtotaldiv-text {
+    float: right;
+}
+.checkoutstep5right-buttom {
+    border-top: 1px solid #e2e2e2;
+    float: left;
+    padding: 15px 0;
+    width: 100%;
+    border-bottom: 1px solid #e2e2e2;
+}
+.checkoutstep5right-bottom-text, .checkoutstep5right-bottom-title {
+    color: #222;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: right;
+}
+.checkboxtotaldiv-text-botm-text {
+    color: #222;
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    text-align: right;
+}
+.checkoutstep5right-bottom-title {
+    float: left;
+    width: 60%;
+}
+.chekoutstep5-table-title {
+    width: 100%;
+    float: left;
+    font-size: 20px;
+    color: #222;
+    font-weight: 400;
+    padding: 0 9px 9px;
+}
+.checkoutstep5-left-first-lefttitle {
+    width: 100%;
+    float: left;
+    color: #222;
+    font-size: 16px;
+}
+.delivery-add{
+    float: left;
+    width: 100%;
+}
+.order-item{
+    width: 52%;
+}
+
+@media screen and (max-width: 479px){
+    .titlecreidt{
+        word-break: break-all;
+        font-size: 16px;
+    }
+    .checkoutstep5-mid-left, .checkoutstep5-mid-right{
+        width: 100%;
+    }
+    .order-item {
+        width: 75%;
+    }
+    .checkoutmiddletable .orhistry2_td2procdtcvr>span{
+        width: 34px;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px){
+  
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1024px) {
+
+}

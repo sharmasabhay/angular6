@@ -1,0 +1,102 @@
+<div class="model-dialog">
+	<form>
+	  	<div class="alcohal_addadress_header">
+	     	<div class="alcohal_addadress_headercurmain">
+	        	<div class="alcohal_addadress_headertitle">Edit your Delivery Address</div>
+	        	<button mat-dialog-close class="close-btn"><mat-icon>close</mat-icon></button>
+	     	</div>
+	  	</div>
+	  	<div class="alcohaladdadrebody">
+		  	<div class="row">
+		  		<div class="col-sm-6">
+	      			<p>First name</p>
+	           		<mat-form-field appearance="outline" class="nopadtext">
+	           			<input type="text" name="first_name" class="alcohalpopuptext" matInput [(ngModel)]="addressEdit.first_name" [ngModelOptions]="{standalone: true}">
+	           		</mat-form-field>
+	      		</div>
+	      		<div class="col-sm-6">
+	      			<p>Last name</p>
+	            	<mat-form-field appearance="outline" class="nopadtext">
+	            		<input type="text" name="last_name" class="alcohalpopuptext" matInput [(ngModel)]="addressEdit.last_name" [ngModelOptions]="{standalone: true}">
+	            	</mat-form-field>
+	      		</div>
+		  	</div>
+		  	<div class="row">
+		  		<div class="col-sm-6">
+	      			<p>Company Name (optional)</p>
+	           		<mat-form-field appearance="outline" class="nopadtext">
+	           			<input type="text" name="company_name"  matInput [(ngModel)]="addressEdit.company_name" [ngModelOptions]="{standalone: true}">
+	           		</mat-form-field>
+	      		</div>
+	      		<div class="col-sm-6">
+	      			<p>Building Name (optional)</p>
+	            	<mat-form-field appearance="outline" class="nopadtext">
+	            		<input type="text" name="building_name" matInput [(ngModel)]="addressEdit.building_name" [ngModelOptions]="{standalone: true}">
+	            	</mat-form-field>
+	      		</div>
+		  	</div>
+		  	<div class="row">
+		  		<div class="col-sm-6">
+	      			<p>Street</p>
+	           		<mat-form-field appearance="outline" class="nopadtext">
+	           			<input type="text" name="street" matInput [(ngModel)]="addressEdit.street" [ngModelOptions]="{standalone: true}">
+	           		</mat-form-field>
+	      		</div>
+	      		<div class="col-sm-6">
+	      			<p>Postal Code</p>
+	            	<mat-form-field appearance="outline" class="nopadtext">
+	            		<input type="text" name="postal_code" matInput [(ngModel)]="addressEdit.postal_code" [ngModelOptions]="{standalone: true}">
+	            	</mat-form-field>
+	      		</div>
+		  	</div>
+
+		  	<div class="row">
+		  		<div class="col-sm-6">
+	      			<p>Block/House No</p>
+	           		<mat-form-field appearance="outline" class="nopadtext">
+	           			<input type="text" name="house_no" matInput [(ngModel)]="addressEdit.house_no" [ngModelOptions]="{standalone: true}">
+	           		</mat-form-field>
+	      		</div>
+	      		<div class="col-sm-6">
+	      			<div class="row">
+	      				<div class="col-sm-6">
+	      					<p>Floor (optional)</p>
+	           				<mat-form-field appearance="outline" class="nopadtext">
+	           					<input type="text" name="floor"matInput [(ngModel)]="addressEdit.floor" [ngModelOptions]="{standalone: true}">
+	           				</mat-form-field>
+	      				</div>
+	      				<div class="col-sm-6">
+	      					<p>Unit (optional)</p>
+	           				<mat-form-field appearance="outline" class="nopadtext">
+	           					<input type="text" name="unit" matInput [(ngModel)]="addressEdit.unit" [ngModelOptions]="{standalone: true}">
+	           				</mat-form-field>
+	      				</div>
+	      			</div>
+	      		</div>
+		  	</div>
+		  	<div class="row">
+		  		<div class="col-sm-12">
+	      		<p>Address Specific Instructions (optional)</p>
+	            <mat-form-field appearance="outline" class="nopadtext">
+	            	<textarea class="alcohlinputextareaa" placeholder="E.g. Please call my contact number instead of pressing the doorbell when you have arrived at my address." matInput [(ngModel)]="addressEdit.instructions" [ngModelOptions]="{standalone: true}"></textarea>
+	            </mat-form-field>
+	      	</div>
+		  	</div>
+		  	<div class="row">
+	      	<div class="col-sm-12 test"> 
+	      		<mat-checkbox [(ngModel)]="addressEdit.check" [ngModelOptions]="{standalone: true}">Make this my default address</mat-checkbox>
+	      	</div>
+	      </div>
+	      <div class="alcohal_addadressfooter">
+        <div class="alcohal_adress2fotter" (click)="deleteAddress();">
+        	DELETE THIS ADDRESS
+        </div>
+         <div class="alcohalosavebntcvr">
+            <button class="adresssvaebtn" (click)="editAddress();">
+               SAVE <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+         </div>
+         </div>
+	  	</div>
+	</form>
+</div>

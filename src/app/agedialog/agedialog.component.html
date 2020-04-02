@@ -1,0 +1,18 @@
+<mat-dialog-content class="dialogdata">
+<!-- <button mat-dialog-close style="float: right;color: #929191;font-weight: 800;background: #fff!important;border: none;padding: 4px 8px;font-size: 15px;outline: none;">Exit</button> -->
+<div class="logosec">
+<img src="/assets/img/logo.png">
+</div>
+<div class="confirminfo">
+	<p>TO EXPERIENCE THIS SITE YOU MUST BE OF LEGAL DRINKING AGE IN SINGAPORE</p>
+    <h3>ARE YOU 18 YEARS OF AGE OR OLDER ?</h3>
+	<div class="radio-age">
+		<mat-radio-group [(ngModel)]="age">
+		    <mat-radio-button style="padding-right: 10px;border-right: 2px solid #444;" value="yes">Yes</mat-radio-button>
+		    <mat-radio-button value="no" style="padding-left: 10px;">No</mat-radio-button>
+		</mat-radio-group>
+	</div>
+	<button id="decision" mat-button (click)="submitAge();"></button>
+</div>
+</mat-dialog-content>
+<p class="outer-text">By entering this website you agree to Alcohaul's <a routerLink="/term-conditions" (click)="closeModal();">Terms & Conditions</a> and <a routerLink="/privacy-policy" (click)="closeModal();">Privacy</a> & Cookies Notice. Alcohaul endorses responsible drinking. Find out more at Health Promotion Board Singapore</p>

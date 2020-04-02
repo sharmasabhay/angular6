@@ -1,0 +1,13 @@
+<mat-dialog-content class="giftdialog">
+<button mat-dialog-close style="float:right;outline:none;"><mat-icon>close</mat-icon></button>
+<div class="giftsec">
+	<a routerLink="/{{list['slug']}}/{{list['category_id']}}" *ngFor="let list of gift" (click)="closeModal();">
+		<div class="col-sm-3 gift-item-cover {{list['slug']}}">
+		<div class="innervcover">
+			<img [src]="list['image']">
+		</div>
+			<p>{{list['title']}}</p>
+		</div>
+	</a>
+</div>
+</mat-dialog-content>

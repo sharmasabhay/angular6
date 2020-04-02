@@ -1,0 +1,25 @@
+.search-content{
+	float: left;
+	width: 100%;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.search-content h4{
+    font-weight: bold;
+}
+.search-text-field{
+    float: left;
+    width: 250px;
+}
+.search-button{
+	float: left;
+	background-color: #000;
+    color: #fff;
+    margin-left: 60px;
+    margin-top: 7px;
+    padding: 0 20px;
+}
+.search-results{
+    float: left;
+    width: 100%;
+}

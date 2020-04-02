@@ -1,0 +1,79 @@
+<div class="container-fluid">
+   <div class="row">
+      <app-sidebar></app-sidebar>
+      <app-header></app-header>
+      <div class="main-content">
+         <!-- HEAD SECTION -->
+         <div class="head-section">
+            <div class="col-sm-12 product-banner">
+               <div class="row">
+                  <div class="col-sm-8 heading">
+                     <h1 class="singlep-head">CREATE ACCOUNT</h1>
+                     <ul class="breadcrumb">
+                        <li><a routerLink="/">Home</a></li>
+                        <li><a>create account</a></li>
+                     </ul>
+                  </div>
+                  <div class="col-sm-4"></div>
+               </div>
+            </div>		
+         </div>
+         <!-- End HEAD SECTION -->
+         <!-- login From Section -->
+         <div class="login-form">
+            <div class="col-sm-6 social-left">
+               <a class="btn btn-block btn-social btn-facebook" (click)="facebookLogin();">
+               <i class="fa fa-facebook"></i> Facebook Login
+               </a>
+               <a class="btn btn-block btn-social btn-google-plus" (click)="googleLogin();">
+               <i class="fa fa-google"></i> Google Login
+               </a>
+            </div>
+            <div class="col-sm-6 social-right">
+               <a class="btn btn-block btn-social btn-twitter" (click)="twitterLogin();">
+               <i class="fa fa-twitter"></i> Twitter Login
+               </a>
+               <a class="btn btn-block btn-social btn-instagram" (click)="instagramLogin();">
+               <i class="fa fa-instagram"></i> Instagram Login
+               </a>
+            </div>
+            <div class="col-sm-12 or-text">
+               <h4 class="border-heading"><span>or</span></h4>
+            </div>
+            <form class="col-sm-12 login-form-wrapper">
+               <mat-form-field appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="First Name" name="first_name" [(ngModel)]="register.first_name">
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Last Name" name="last_name" [(ngModel)]="register.last_name">
+              </mat-form-field>
+
+
+              <mat-form-field appearance="outline">
+                <mat-label>Email address</mat-label>
+                <input matInput placeholder="Email Address" name="email" [(ngModel)]="register.email">
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Password" name="password" type="password" [(ngModel)]="register.password">
+              </mat-form-field>
+
+               <mat-form-field appearance="outline">
+                <mat-label>Repeat Password</mat-label>
+                  <input  matInput name="repeat_password" type="password" [(ngModel)]="register.repeat_password">
+               </mat-form-field>
+               
+               <div class="row1">
+               <button type="submit" class="btn btn-default" (click)="userRegistration();">Create an account</button>
+               </div>
+            </form>
+         </div>
+         <!--  -->
+         <app-footer></app-footer>
+      </div>
+   </div>
+</div>

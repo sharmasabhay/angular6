@@ -1,0 +1,30 @@
+<div *ngIf="announcement.enable == 1" class="header-top">
+  <h4>{{announcement.text}}</h4>
+</div>
+ <mat-sidenav-container fxFlexFill *ngIf="deviceInfo == 'phone'">
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+      <mat-nav-list>
+       <div class="mobile-sidenav-menu">
+           <ul class="sidnav-ul">
+              <li *ngFor="let category of categories">
+                  <a routerLink="/collection/{{category['slug']}}" (click)="sidenav.close();">{{category['category_name']}}</a>
+
+                  <span><i *ngIf="category['subcategory'] != ''" [ngClass]="category['catMenu'] ? 'fa fa-minus' : 'fa fa-plus'" (click)="categoryMenu(category);"></i></span>
+
+                  <ul class="dropdown-content" *ngIf="category['subcategoryMenu']">
+                    <li *ngFor="let subcat of category.subcategory"><a (click)="sidenav.close();" routerLink="/collection/{{category['slug']}}/{{subcat['slug']}}">{{ subcat['subcategory_name'] }}</a></li>
+                  </ul>
+              </li>
+          </ul>
+        </div>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+	    <div (click)="sidenav.toggle()" class="sidemenuicon"><mat-icon>menu</mat-icon></div>
+	    <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+<div *ngIf="deviceInfo != 'phone'">
+	<router-outlet></router-outlet>
+</div>

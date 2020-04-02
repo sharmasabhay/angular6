@@ -1,0 +1,104 @@
+<div class="container-fluid">
+<div class="row">
+<app-sidebar></app-sidebar>
+<app-header></app-header>
+<div class="main-content">
+<div class="head-section">
+<div class="col-sm-9 home-slider">
+	<ngx-slick class="alcohaul-slider carousel" #slickModal="slick-modal" [config]="slideConfig">
+        <div ngxSlickItem class="slide">
+        <div class="image">
+       	    <img src="/assets/img/slideshow_1.jpg">
+       	</div>
+        </div>
+        <div ngxSlickItem class="slide">
+        <div class="image">
+       	    <img src="/assets/img/slideshow_2.jpg">
+       	</div>
+        </div>
+        <div ngxSlickItem class="slide">
+        <div class="image">
+       	    <img src="/assets/img/slideshow_3.jpg">
+       	</div>
+        </div>
+	</ngx-slick>
+</div>
+<div class="col-sm-3 more-pages">
+	<a  routerLink="/about-us" class="about">
+		<img src="/assets/img/slider_banner1.jpg">
+	</a>
+	<a routerLink="/corporate-account" class="corporate">
+		<img src="/assets/img/slider_banner2.jpg">
+	</a>
+	<a routerLink="/event" class="event">
+		<img src="/assets/img/slider_banner3.jpg">
+	</a>
+</div>
+</div>
+<div class="product-section">
+    <div [ngClass]="{'col-sm-12': 1 === 1, 'col-sm-10': result == true}">
+        <div class="page-title">
+          <h4>LET’S GET POPPIN</h4>
+        </div>
+        <div class="tabesection">
+        <!-- <div class="tabheader">
+          <button class="btn">NEW ARRIVALS</button>
+          <button class="btn1">BEST SELLERS</button>
+        </div> -->
+        <div class="col-sm-3 card" *ngFor="let product of products">
+        <div class="card-content">
+          <div class="product-label" *ngIf="product['outOfStockType'] == 2">
+            <label class="out-stock">sold out</label>
+          </div>
+          <div class="hovereffect">
+          <a routerLink="products/{{product['slug']}}"><img class="card-img-top" [src]="product['imageFiles']" *ngIf="product['imageFiles'] != '' && product['imageFiles'] != null"></a>
+          <div class="overlay">
+           <img class="card-img-top" *ngIf="product['imageFiles'] == '' || product['imageFiles'] == null" src="/assets/img/Suntory-Japan-Premium-Koshu_25212487-6f96-468a-827e-74e5aebbbf2d_grande.jpg">
+             <button class="wishlist" (click)="addWishlist(product['product_id']);" *ngIf="deviceInfo != 'phone'"><mat-icon>favorite_border </mat-icon> </button>
+             <button class="addtocart" (click)="addToCartHome(product['product_id'], 'single');" *ngIf="deviceInfo != 'phone' && product['outOfStockType'] == 1"><mat-icon>shopping_cart</mat-icon> Add to cart</button>
+             <button class="addtocart disabledCart" (click)="addToCartHome(product['product_id'], 'single');" *ngIf="deviceInfo != 'phone' && product['outOfStockType'] == 2" [disabled]="true"><mat-icon>shopping_cart</mat-icon> Unavailable</button>
+          </div>
+          </div>
+          <div class="card-body">
+            <a class="addtocart mobile-add out-of-stock" *ngIf="deviceInfo == 'phone' && product['outOfStockType'] == 2"></a>
+            <a class="addtocart mobile-add" (click)="addToCartHome(product['product_id'], 'single');" *ngIf="deviceInfo == 'phone' && product['outOfStockType'] == 1"></a>
+            <a routerLink="products/{{product['slug']}}"><h5 class="card-title">{{product['name']}}</h5></a>
+            <p class="price">${{product['price']}}</p>
+            <small>As a low <span class="lowprice" *ngIf="product['bult_price']">${{product['bult_price'][1]['smartPrice']}}</span><span class="lowprice" *ngIf="!product['bult_price']">${{product['price']}}</span></small>
+          </div>
+          </div>
+        </div>
+        </div>
+    </div>
+   <div class="col-sm-2 pl0" *ngIf="result">
+     <div class="recentorder">
+       <div class="recentorder_title">Recent Order test</div>
+       <div class="modifyscroll fullwidth">
+         <div class="mCustomScrollBox">
+           <mat-checkbox [(ngModel)]="selectAllProducts" (click)="selectAllRecentOrders()" class="checkall full">Select all</mat-checkbox>
+           <div class="ro_items" *ngFor="let recent of recentProducts">
+             <div class="chk_unchk"> <mat-checkbox [checked]="recent['checked']" (click)="selectedProduct(recent['product_id'], recent['quantity'])"></mat-checkbox></div>
+             <div class="ro_pic"><img [src]="recent['product_image']" class="img-responsive-h"></div>
+             <div class="ro_desc">{{recent['product_name']}}</div>
+           </div>
+         </div>
+       </div>
+       <div class="recentorder_buttons">
+         <div class="addbtn full-width">
+          <button type="button" class="alcohalfooter_repeatorderbtn-add full-width" (click)="addToCart('single');">Add</button>
+        </div>
+       </div>
+       <div class="recentorder_title">Order History</div>
+       <div class="orderhistorytext">Shopping from a past order provides a convenient way to quickly shop for the same products again.</div>
+       <div class="recentorder_buttons">
+         <div class="addbtn full-width">
+          <button type="button" class="alcohalfooter_repeatorderbtn-add full-width" (click)="showRecentOrderPopup();">VIEW</button>
+        </div>
+       </div>
+     </div>
+   </div>
+</div>
+<app-footer></app-footer>
+</div>
+</div>	
+</div>

@@ -1,0 +1,86 @@
+.contact-form {
+    float: left;
+    width: 70%;
+    padding: 20px;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    }
+.p-0{
+    padding: 0;
+}
+.p-l-0{
+    padding-left: 0;
+}
+.p-r-0{
+    padding-right: 0;
+}
+.hour-dash{
+    position: absolute;
+    top: 18px;
+    right: 6px;
+}
+.contact-form .form-control {
+    height: 45px!important;
+    font-size: 14px;
+    border-radius: 0px!important;
+}
+.contact-form .form-group {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.contact-form h4{
+    font-weight: 700;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+.btn-danger {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    padding: 10px 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.return-link{
+    padding: 21px 0px;
+    font-size: 17px;
+    width: 100%;
+    float: left;
+    color: #464545;
+    font-weight: 500;
+}
+.events{
+    margin-top: 30px;
+    padding: 0px 30px;
+}
+.events p {
+    line-height: 22px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+}
+.commentbox {
+    width: 100%;
+    resize: none;
+}
+.btn{
+    border: 1px solid transparent;
+    margin-top: 20px;
+    display: block;
+    background: #000000;
+    color: #fff;
+    font-weight: 700;
+    margin: auto;
+    transition: all 0.5s;
+    font-size: 16px!important;
+    padding: 15px 20px!important;
+    text-transform: uppercase;
+}
+.event-section .col-md-3{
+    width: 21.5%;
+}
+.from-to-label{
+    float: left;
+    margin-right: 15px;
+    margin-top: 15px;
+}

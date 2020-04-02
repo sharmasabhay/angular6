@@ -1,0 +1,108 @@
+.enter-gift-detail {
+    color: #666;
+    float: left;
+    font-size: 15px;
+    width: 100%;
+    padding-bottom: 20px;
+}
+.amt-title{
+width: 100%;
+float: left;
+font-size: 14px;
+padding-bottom: 0;
+color: #666;
+}
+.gift-card-innerform {
+    float: left;
+    width: 270px;
+}
+.amtbtn{
+	float: left;
+	width:100%;
+	position: relative;
+}
+.amtbtn button{
+	margin-right:5px;
+}
+.giftcontent {
+    float: left;
+    width: 100%;
+    position: relative;
+    padding: 40px 0px;
+}
+.message{
+	width:100%;
+	float: left;
+	height:90px;
+}
+.smalltitle {
+    float: left;
+    width: 100%;
+    font-weight: 400;
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+.amntrupee-clsdetail {
+    width: 100%;
+    float: left;
+    color: #585858;
+    font-size: 28px;
+    font-weight: 500;
+    margin-top: 0;
+}
+.checkoutmiddlevlauediv .input-group-addon {
+    padding: 0;
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 1;
+    color: #555;
+    width: 25px!important;
+}
+.checkoutmiddlevlauediv .input-group-addon button {
+    text-align: center;
+    border-right: 0px;
+    display: block;
+    float: none;
+    margin-left: -1px;
+    max-width: 100%;
+    padding: 2.8px 10px;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+.checkoutmiddlevlauediv {
+    float: left;
+    width: 15%;
+    position: relative;
+    margin-top: 7px;
+}
+.note{
+	float: left;
+    width: 100%;
+    position: relative;
+    margin-top: 15px;
+    color: #666666;
+}
+.addaction{
+	float: left;
+	width:100%;
+	position: relative;
+	margin: 20px 0px;
+}
+.addtocart {
+    background: #000!important;
+    color: #fff!important;
+    font-weight: 600;
+    padding: 3px 30px;
+}
+.touser{
+	float: left;
+    width: 100%;
+    position: relative;
+    padding: 10px;
+}
+.active-gift{
+    background-color: #B000F9;
+}

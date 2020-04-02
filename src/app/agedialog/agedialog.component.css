@@ -1,0 +1,104 @@
+.logosec img {
+    width: 200px;
+    height: 80px;
+}
+ .logosec{
+ 	float: left;
+    width: 103%;
+    text-align: center;
+}   
+.confirminfo p {
+    font-family: 'Oswald', sans-serif;
+    font-size: 17px!important;
+    font-weight: 300!important;
+    color: #666;
+    text-align: center;
+    margin-bottom: 3px;
+}
+.confirminfo h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 19px!important;
+    margin-top: 0px;
+    text-align: center;
+    color: #444;
+}
+.confirminfo{
+	text-align: center;
+    float: left;
+    width: 100%;
+    padding-top: 47px;
+}
+.submit-age{
+    float: left;
+    width: 103%;
+}
+.radio-age{
+    float: left;
+    width: 103%;
+    padding-left: 6px;
+}
+#decision{
+    background: url('/assets/img/enter-btn.png')no-repeat scroll 0 0;
+    border: medium none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 0;
+    height: 58px;
+    left: 39%;
+    position: absolute;
+    text-transform: uppercase;
+    margin-top: 26px;
+    width: 150px;
+}
+.outer-text{
+    float: left;
+    width: 600px;
+    color: #fff;
+    position: fixed;
+    bottom: 17%;
+    text-align: center;
+    line-height: 17px;
+    font-size: 12px;
+}
+.outer-text a {
+    color: #fff;
+    text-decoration: underline;
+}
+@media screen and (max-width: 479px){
+    .outer-text{
+        width: 95%;
+        bottom: 15%;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px){
+    .outer-text{
+        width: 90%;
+        bottom: -2%;
+        font-size: 11px;
+        left: 38px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    .outer-text{
+        bottom: 30%;
+    }
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1024px) {
+    .outer-text{
+        bottom: 22%;
+    }
+}
+@media only screen and (min-width: 1400px) and (max-width: 1600px){
+   .outer-text{
+       bottom: 20%;
+   }
+}
+
+@media only screen and (min-width: 1601px) and (max-width: 1800px){
+   .outer-text{
+       bottom: 23%;
+   }
+}

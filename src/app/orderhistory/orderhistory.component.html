@@ -1,0 +1,36 @@
+<!-- Desktop View -->
+<div class="fullwidth">
+   <div class="container">
+      <div class="row">
+         <div class="col-sm-12 rgrhtdiv">
+			<div class="titlecreidt">Order History</div>
+			<p *ngIf="errorMessage" class="order-error">You haven't placed any orders yet.</p>
+			<div class="order-section" *ngIf="history">
+				<div class="order-history col-sm-12" *ngFor="let order of history | slice:0:show">
+				  <div class="row order">
+				  	<div class="col-sm-6">
+				  		<a class="order-key" routerLink="/order/{{order['order_id']}}">Order: {{order['order_number']}}</a>
+				  		<div class="order-timeslot" *ngIf="order['delivery_date']">Delivered on: {{order['delivery_date'] | date : 'EEEE'}}, {{order['delivery_date'] | date : 'dd'}} {{order['delivery_date'] | date : 'MMMM'}}, {{order['delivery_date'] | date : 'y'}}</div>
+				  		<div class="order-items">{{order['item']}} Items</div>
+				  	</div>
+				  	<div class="col-sm-3">
+				  		<div class="order-status">status
+				  			<p>{{order['status']}}</p>
+				  		</div>
+				  	</div>
+				  	<div class="col-sm-3">
+				  		<div class="order-rating">
+				  			<div class="rating-status">RATE IT</div>
+				  			<!-- <p *ngIf="thankyou" class="thankyou-message">Thankyou for rating us!</p> -->
+				  			<bar-rating [(rate)]="order['rating']" [max]="5" [(ngModel)]="order['rate']" (rateChange)="getRating(order);"></bar-rating>
+				  		</div>
+				  	</div>
+				  </div>
+				</div>
+				<button *ngIf="show < history.length" (click)="showMore();" mat-button class="view-more">View More</button>
+				<button *ngIf="history.length <= show && !errorMessage && showLessButton" (click)="showLess();" mat-button class="view-more">View Less</button>
+			</div>
+         </div>
+      </div>
+   </div>
+    

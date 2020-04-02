@@ -1,0 +1,2314 @@
+.close-btn{
+    margin-top: 7px;
+}
+.your-address{
+	width:50%;
+	float: left;
+	padding:10px;
+} 
+.greater-2 .single-slot.disabletime{
+    background-color: #fff;
+}
+.close-snack{
+    float: left;
+    width: 5%;
+    color: #000;
+    cursor: pointer;
+}
+.product-slider img{
+    margin: 0 auto;
+}
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+    position: relative;
+    top: -39px;
+    left: 47%;
+}
+.box{
+    cursor: pointer;
+}
+.single-slot.weekend{
+    background-color: #fff;
+}
+.card-type span{
+    text-transform: capitalize;
+}
+.card-image.jcb{
+    background-position: -450px -364px;
+}
+.card-image.maestro {
+    background-position: -15px -450px;
+}
+.card-image.dinersclub {
+    background-position: -537px -192px;
+}
+.card-image.laser {
+    background-position: -537px -364px;
+}
+.card-image.jcb {
+    background-position: -450px -364px;
+}
+.card-image.unionpay {
+    background-position: -189px -192px;
+}
+.card-image.discover {
+    background-position: -15px -277px;
+}
+.card-image.mastercard {
+    background-position: -102px -450px;
+}
+.card-image.amex {
+    background-position: -276px -20px;
+}
+.invalid-error{
+    color: #f00;
+}
+.card-image{
+    background-image: url("/assets/img/credit_64px.jpg");
+    width: 53px;
+    height: 36px;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+.card-image.master{
+    background-position: -102px -449px;
+}
+.card-image.visa{
+    background-position: -102px -622px;
+}
+.snack-right{
+    float: right;
+    width: 95%;
+}
+.snakbar-section{
+    float: left;
+    width: 100%;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+.red .snakbar-section{
+    background-color: #ab0e0ef7;
+}
+.green .snakbar-section{
+    background-color: green;
+    padding: 14px 10px;
+}
+.snack-right a{
+    color: #fff;
+    text-decoration: underline;
+}
+.snack-right span{
+    float: left;
+    width: 100%;
+}
+.card-image{
+    float: left;
+    width: 20%;
+}
+.card-type{
+    float: left;
+    width: 75%;
+}
+.card-type strong{
+    font-size: 18px;
+    margin-left: 8px;
+    float: left;
+    width: 100%;
+}
+.card-type span{
+    float: left;
+    width: 100%;
+    font-weight: normal;
+    margin-left: 8px;
+}
+.saved-card-section, .new-card-section{
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 17px;
+    padding-top: 19px;
+}
+.cvv-group{
+    margin-top: 10px;
+    float: left;
+    width: 27%;
+}
+.security{
+    float: left;
+    width: 50px;
+    margin-top: 16px;
+}
+.saved-left{
+    float: left;
+    width: 90%;
+}
+.gift-item-cover.gift-wrapper{
+    display: none !important;
+}
+.p-l-0{
+    padding-left: 0 !important;
+}
+.p-r-0{
+    padding-right: 0 !important;
+}
+.pad-0{
+    padding: 0 !important;
+}
+.delivery-text p {
+    line-height: 20px;
+    font-size: 13px;
+}
+.p-text{
+    margin-bottom: 7px;
+    margin-top: 10px;
+}
+.delivery-option {
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #eee;
+    cursor: pointer;
+    float: left;
+    width: 100%;
+    min-height: 210px;
+    border-radius: 6px;
+}
+.selected-delivery .delivery-option{
+    border-color: rgba(255,216,1, 0.5);
+    background-color: rgba(255,216,1, 0.2);
+    color: #000;
+}
+.delivery-icon{
+    text-align: center;
+}
+.choose-delivery-option{
+    float: left;
+    width: 100%;
+}
+.arrow-icon {
+    float: left;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+.selected-delivery .arrow-icon{
+    display: block;
+}
+.arrow-icon .mat-icon{
+    color: #0c5460;
+    font-size: 35px;
+}
+.choose-delivery-option h2 {
+    text-align: center;
+    color: #333;
+    font-size: 21px;
+    margin-bottom: 30px;
+}
+.collection-detail{
+    float: left;
+    width: 100%;
+}
+.find-store{
+    margin: 0 auto;
+    width: 65%;
+    text-align: left;
+    padding-top: 17px;
+    padding-bottom: 40px;
+}
+.find-store p{
+    line-height: 22px;
+    font-weight: bold;
+}
+.store-btn{
+    background-color: #000;
+    color: #fff;
+}
+.addressbook-btmpannelcover h2, .collection-detail h2{
+    text-align: center;
+    font-size: 25px;
+}
+.checkout-cart{
+    border-bottom: 1px solid #ddd;
+    padding-top: 15px;
+}
+.cant-find{
+    cursor: pointer;
+    position: relative;
+    top: -15px;
+}
+.checkout-prod-name{
+    width: 600px;
+}
+td.check-quantity {
+    width: 120px;
+}
+.addressbokk-trvaichacovr{
+    cursor: pointer;
+}
+.error-contact{
+    color: #f00;
+    font-size: 12px;
+}
+td.check-price {
+    width: 140px;
+}
+.checkoutstep5-left-edit{
+    cursor: pointer;
+    padding: 3px;
+}
+.check-price > div{
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+.to-name {
+    color: #888;
+    font-size: 12px;
+}
+.addressbokk-trvaichacovr {
+    width: 45%!important;
+    border: 1px solid #d7d7d7;
+    float: left;
+    padding: 15px 25px;
+    width: 32%;
+    margin: 10px 20px 10px 0;
+    min-height: 120px;
+    max-height: 165px;
+    border-radius: 5px;
+}
+.gift-wrapper img{
+    width: 50px;
+    border: 1px solid #ddd;
+    margin-left: 10px;
+    padding: 5px;
+    margin-right: 10px;
+}
+.gift-wrapper {
+    float: left;
+    padding-bottom: 10px;
+}
+.delivery-add{
+    float: left;
+    width: 100%;
+}
+.active-slot.single-slot{
+    border-color: rgba(255,216,1, 0.5);
+    background-color: #FFF7CC;
+}
+.model-dialog .loader-image{
+    left: 49%;
+}
+.couponcode .btn.btn-remove {
+    border-radius: 10px;
+}
+.ship-address {
+    background-color: #eee;
+    width: 200px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+}
+.active .ship-address{
+    background-color: #FFD53C;
+}
+.loader-spinner{
+    margin: 0 auto;
+    width: 40px;
+}
+.loader-image{
+    position: absolute;
+    height: 100%;
+    top: 50%;
+    left: 60%;
+}
+.discount .checkboxtotaldiv-text {
+    text-decoration: line-through;
+}
+.remove-chilled span {
+    display: none;
+}
+.remove-dis-price, .discount .hide-free{
+    display: block;
+}
+.discount .remove-dis-price, .hide-free{
+    display: none;
+}
+.address-inner p {
+    margin: 0px;
+    font-size: 12px;
+    text-align: left;
+    color: #757373;
+    line-height: 20px;
+}
+.left{
+	width:6%;
+	float: left;
+	margin-right:5px;
+}
+.right{
+	width:90%;
+	float: left;
+}
+.checkoutmiddlevlauediv .input-group-addon {
+    padding: 0;
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 1;
+    color: #555;
+    width: 25px!important;
+}
+.checkoutmiddlevlauediv .input-group-addon button {
+    text-align: center;
+    border-right: 0px;
+    display: block;
+    float: none;
+    margin-left: -1px;
+    max-width: 100%;
+    padding: 2.8px 10px;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+.checkboxtotaldiv-top {
+    width: 100%;
+    float: left;
+    border-top: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+    padding: 15px 20px 15px 0;
+}
+.checkboxtotaldiv-title, .checkboxtotaldiv-text {
+    text-align: right;
+    font-size: 16px;
+    font-weight: 500;
+    color: #222;
+}
+.checkboxtotaldiv-middle {
+    width: 100%;
+    float: left;
+    padding: 15px 25px 15px 0;
+}
+.checkboxtotaldiv-middle-first {
+    width: 100%;
+    float: left;
+    margin: 5px 0;
+}
+.checkboxtotaldiv-middle-first .checkboxtotaldiv-text, .checkboxtotaldiv-middle-first .checkboxtotaldiv-title {
+    font-size: 12px;
+}
+.checkboxtotaldiv-middle-first .checkboxtotaldiv-title,.checkboxtotaldiv-buttom .checkboxtotaldiv-title {
+    width: 79%;
+    float: left;
+}
+.checkboxtotaldiv-middle-first .checkboxtotaldiv-text {
+    float: right;
+}
+.checkboxtotaldiv-middle-first img {
+    width: auto!important;
+}
+.checkboxtotaldiv-buttom {
+    width: 100%;
+    float: left;
+    border-top: 1px solid #e2e2e2;
+    padding: 15px 40px 15px 0;
+}
+.checkoutcongratulationouter {
+    width: 100%;
+    float: left;
+    padding: 15px 0;
+    text-align: center;
+    border-bottom: 1px solid #e2e2e2;
+}
+.checkout-congratulation-title {
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    font-weight: 500;
+    color: #222;
+    text-transform: uppercase;
+}
+
+.product-slider{
+    float: left;
+    padding-left: 0px;
+    width: 100%;
+    padding: 0 0 20px;
+    border-bottom: 1px solid #e2e2e2;
+}
+.product-slider img{
+    width: auto;
+    height: auto;
+}
+.relproduct-slider{
+    float: left;
+    width: 100%;
+    padding: 0px 25px;
+    border-bottom: 1px solid #e2e2e2;
+}
+.relproduct-slider img{
+    width:100%;
+    height:auto;
+}
+.image {
+    float: left;
+    margin: 20px 0px;
+    width: 100%;
+    padding: 3px;
+}
+.card {
+    float: left;
+    width: 100%;
+    border: 1px solid #ccc;
+    position: relative;
+}
+.checkoutproductbutton {
+    background: #000;
+    padding: 10px 0px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    border: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: 5px;
+    line-height: 20px!important;
+}
+.checkouterwantbuttonouter{
+    width: 100%;
+    float: left;
+    margin-top: 50px;
+}
+.checkouterwantfirst {
+    width: 100%;
+    float: left;
+}
+.checkouterwantbutton {
+    width: 280px;
+    display: inline-block;
+    padding: 10px;
+    font-size: 14px;
+    color: #000;
+    font-weight: 500;
+    border: 1px solid #d7d7d7;
+    border-radius: 5px;
+    background: #fefefe;
+    background: linear-gradient(180deg,#fefefe 0,#f3f3f3 50%,#f3f3f3 55%,#e7e7e7);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fefefe",endColorstr="#e7e7e7",GradientType=0);
+}
+.checkouterwantbutton.selected {
+    border: 1px solid #e3c103;
+    color: #e3c103;
+}
+.m-bottom-50 {
+    margin-bottom: 50px;
+}
+.m-top-20 {
+    margin-top: 20px;
+}
+.checkouterwantfirst span {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 15px;
+    font-size: 12px;
+    color: #666;
+}
+.checkouterlastdiv {
+    float: left;
+    width: 100%;
+    padding: 30px 0 20px;
+}
+.checkouterbackouter {
+    float: left;
+    width: 100%;
+    text-align: right;
+    color: #666;
+    font-size: 14px;
+    vertical-align: middle;
+    text-transform: uppercase;
+}
+.checkouterback {
+    display: inline-block;
+    vertical-align: middle;
+    color: #666;
+    margin-right: 15px;
+}
+.checkoutcheckoutnowbutton {
+    background: #000 none repeat scroll 0 0;
+    border: medium none;
+    color: #fff;
+    font-size: 18px;
+    padding: 8px 10px;
+    text-align: center;
+    text-transform: uppercase;
+    min-width: 220px;
+    vertical-align: middle;
+}
+.adresssvaebtn {
+    background: #000 none repeat scroll 0 0;
+    border: medium none;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    min-width: 120px;
+    text-align: left;
+    padding: 3px 15px 3px 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 10px;
+    border-radius: 0;
+}
+.alcohal_addadress_header {
+    background: #ffc412 none repeat scroll 0 0;
+    float: left;
+    padding: 12px 15px;
+    width: 100%;
+}
+.alcohal_addadress_headertitle {
+    color: #564111;
+    display: inline-block;
+    font-size: 28px;
+    text-align: center;
+    vertical-align: middle;
+}
+.alcohalosavebntcvr{
+    float: right;
+    padding:0px 8px;
+}
+.addressbokk-addnewadresscovr img{
+    width: auto;
+}
+.addressbokk-addnewadresscovr {
+    padding: 25px 26px;
+    border: 2px dashed #d7d7d7;
+    float: left;
+    margin: 10px 0;
+    text-align: center;
+    cursor: pointer;
+    width: 45.2% !important;
+}
+.addressbokk-addnewadresscovr .mat-icon{
+    height: 50px;
+    width: 50px;
+    font-size: 50px;
+}
+.address-inner .mat-icon{
+    font-size: 20px;
+    margin-top: 6px;
+    height: 20px;
+    width: 20px;
+}
+.addressbokk-addnewadresscovr, .addressbokk-trvaichacovr {
+    width: 48.2%;
+}
+.addnewadresstext {
+    color: #646567;
+    float: left;
+    font-size: 14px;
+    font-weight: 600;
+    min-height: 39px;
+    padding-top: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+}
+.addressbokk-trvaichacovr.active, .addressbokk-trvaichacovr:hover, .adressmiddlepartcvr2:hover {
+    border: 1px solid #ffc412;
+    box-shadow: -1px 1px 7px 6px #fff7cf;
+}
+.yelo_btn {
+    margin: 0 auto;
+    padding: 6px 20px;
+    font-size: 12px;
+    font-family: Work Sans;
+    font-weight: 400;
+    color: #564111;
+    background-color: #ffc412;
+    border: none;
+    text-transform: uppercase;
+    text-align: center;
+}
+.addressbook-btmpannelcover {
+    float: left;
+    width: 100%;
+    margin-bottom: 75px;
+}
+.selectAddress {
+    position: relative;
+    width: 100%;
+    float: left;
+    margin: 5px 0 0;
+}
+#address-default-tag {
+    position: absolute;
+    right: -15px;
+    bottom: 7px;
+    color: #ada6a6;
+    font-style: italic;
+}
+.addrestravis-text {
+    color: #222;
+    float: left;
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 0px;
+    width: 75%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.addressbok-travis {
+    float: left;
+    width: 100%;
+    position: relative;
+    padding: 5px 0px;
+}
+.addresseditdltpic {
+    float: right;
+    display: none;
+    cursor: pointer;
+}
+.addressbokk-trvaichacovr:hover .addresseditdltpic, .adressmiddlepartcvr2:hover .addresseditdltpic {
+    display: block;
+}
+.addressbok-travis .mat-icon {
+    height: 10px!important;
+    width: 10px!important;
+    font-size: 18px!important;
+    padding: 0px 13px!important;
+    color: #c0c0c1!important;
+}
+.specil_intertion_div {
+    width: 100%;
+    float: left;
+}
+.div_specil_intertion_title {
+    width: 100%;
+    float: left;
+    font-size: 20px;
+    font-family: Work Sans;
+    color: #222;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+.cover_secilinform {
+    width: 100%;
+    float: left;
+}
+.alcohlinputext2 {
+    float: left;
+    width: 47.5%;
+    margin-bottom: 18px;
+}
+.alcohlchekboxdiv12 {
+    float: left;
+    width: 82%;
+}
+.alcohlinputextarea12 {
+    float: left;
+    width: 82%;
+    margin-bottom: 18px;
+}
+.alcohlinputextareaa2 {
+    float: left;
+    font-size: 13px;
+    height: 81px;
+    resize: none;
+    width: 100%;
+}
+.gry_itlic_text {
+    width: 93%;
+    float: left;
+    font-family: Work Sans;
+    font-size: 12px;
+    color: #666;
+    padding-left: 30px;
+    font-style: italic;
+}
+.checkouterbackouter2 {
+    margin-top: 46px;
+    text-align: right;
+    vertical-align: middle;
+    float: right;
+    position: relative;
+}
+.checkoutcheckoutnowbutton2 {
+    background: #000 none repeat scroll 0 0;
+    border: medium none;
+    color: #fff;
+    font-size: 18px;
+    min-width: 220px;
+    padding: 8px 12px 8px 16px;
+    text-align: left;
+    text-transform: uppercase;
+    vertical-align: middle;
+    font-weight: 500;
+    border-radius: 0;
+}
+.checkouterback2 {
+    color: #666;
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: middle;
+    text-transform: uppercase;
+}
+.div_pleas_chose_time_text {
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin-top: 36px;
+    font-family: Work Sans;
+    font-weight: 400;
+    font-size: 14px;
+    color: #666;
+}
+.cover_creadetcard_cashdiv {
+    width: 100%;
+    float: left;
+    margin-top: 69px;
+}
+.paymenttype.active {
+    box-shadow: -1px 1px 7px 6px #fff7cf;
+    border: 1px solid #ffea76;
+    border-radius: 3px;
+}
+.cover_cashdiv_left {
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+.paymenttype {
+    padding: 10px;
+    border: 1px solid transparent;
+    position: relative;
+}
+.pic_creadetcard, .pic_divcash {
+    width: 100%;
+    height: 149px;
+    display: table;
+    text-align: center;
+}
+.verticetnter, .verticetnter2 {
+    display: table-cell;
+    vertical-align: middle;
+}
+.paymenttype.active img.hidethumb {
+    display: block;
+}
+.paymenttype img.hidethumb {
+    display: none;
+    position: absolute;
+    top: 47%;
+    left: 40%;
+}
+.checkouterbackouter2, .creadetcard_text, .divcash_text {
+    width: 100%;
+    float: left;
+    font-size: 14px;
+    color: #666;
+    text-transform: uppercase;
+}
+.cover_cashdiv_left img{
+    width: auto;
+}
+.checkoutmiddletable {
+    width: 100%;
+    float: left;
+    margin-top: 20px;
+    padding: 20px 0px;
+}
+.orhistry2_td2procdtcvr {
+    float: left;
+    width: 100%;
+}
+.again-gift-wrapper{
+    font-size: 12px;
+    color: #888;
+}
+.promo-price.orderhistry2price {
+    color: #888;
+    font-size: 12px;
+    text-decoration: line-through;
+}
+.checkouter-td-right-text {
+    width: 74%;
+    float: left;
+    padding-top: 7px;
+    padding-bottom: 15px;
+}
+.check-sub-gift {
+    border-bottom: none !important;
+}
+.alcohalpopuptext {
+    border: 1px solid #d7d7d7;
+    border-radius: 5px;
+    float: left;
+    padding: 9px 10px;
+    font-size: 13px;
+    color: #424242;
+    width: 100%;
+}
+.alcohaladdadrebody .no-pad {
+    padding: 0 1px 0 0!important;
+}
+.alcohalosavebntcvr{
+    float: right;
+}
+.alcohal_addadressfooter {
+    background: #fff none repeat scroll 0 0;
+    float: left;
+    padding-top:15px;
+    width: 100%;
+    border-top: 1px solid #e5e5e5;
+}
+.alcohal_addadress_headercurcle {
+    background: #564111 none repeat scroll 0 0;
+    border-radius: 50%;
+    color: #ffc412;
+    float: left;
+    font-size: 14px;
+    font-weight: 500;
+    height: 27px;
+    line-height: 26px;
+    margin-top: 0;
+    position: relative;
+    text-align: center;
+    top: 0;
+    vertical-align: middle;
+    width: 27px;
+}
+.alcohaladdadrebody {
+    float: left;
+    width: 100%;
+    padding: 11px 22px 5px;
+}
+.alcohlinputextareaa {
+    float: left;
+    width: 100%;
+    height: 90px;
+    resize: none;
+    font-size: 13px;
+}
+.alcohal_adress2fotter {
+    color: #666;
+    float: left;
+    font-size: 14px;
+    line-height: 23px;
+    margin-top: 9px;
+    margin-right: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+}
+.alcohlinputextcvr {
+    margin: 10px 0px;
+}
+.addcardform {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    float: left;
+    margin-top: 10px;
+    width: 100%;
+    position: relative;
+}
+.paycard{
+    padding: 0px!important;
+    border: 0px;}
+.paycard img{
+    width: 70px!important;
+    margin-top: 30px;
+}
+.right_discount {
+    width: 100%;
+    float: left;
+    background: #000;
+    padding: 20px 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+.huge, .hugediscou {
+    width: 100%;
+    float: left;
+    color: #ffc412;
+    text-align: center;
+}
+.huge {
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.hugediscou {
+    font-size: 40px;
+    font-family: 'Sugarbush 10v';
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+.checkoutrighttext {
+    color: #fff;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+}
+.checkoutrightpleasediv {
+    width: 100%;
+    float: left;
+    background: #fff;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 11px;
+    color: #7f7f7f;
+    font-weight: 500;
+    text-align: center;
+    margin: 15px 0 10px;
+}
+.checkoutrighbuttonouter {
+    margin-bottom: 20px;
+    width: 100%;
+    float: left;
+}
+.checkoutrighbuttonadd {
+    width: 100%;
+    float: none;
+    background: #ffc412;
+    color: #564111;
+    margin-bottom: 20px;
+}
+.checkoutrighbuttonadd, .checkoutrighbuttoncancel {
+    padding: 7px 0;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    border: none;
+}
+.checkouter-rightsmalltext {
+    color: hsla(0,0%,100%,.6);
+    font-size: 9px;
+    text-align: center;
+}
+.checkoutmiddleouter {
+    /*padding: 0 10px;*/
+    width: 100%;
+    float: left;
+    transition: all .5s ease 0s;
+}
+.checkoutstep5-mid-top {
+    width: 100%;
+    float: left;
+    margin-bottom: 33px;
+    margin-top: 35px;
+}
+.checkoutstep5-mid-left {
+    width: 65%;
+    float: left;
+}
+.checkoutstep5-left-first {
+    width: 100%;
+    float: left;
+    border-top: 1px solid #d9d9d9;
+    padding: 14px 10px 13px;
+}
+.checkoutstep5-left-first-left {
+    display: inline-block;
+    vertical-align: middle;
+    width: 92%;
+}
+.checkoutstep5-left-first-lefttext {
+    width: 100%;
+    float: left;
+    color: #888;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.checkoutstep5-left-first-lefttitle {
+    width: 100%;
+    float: left;
+    color: #222;
+    font-size: 16px;
+}
+.checkoutmiddleouter img {
+    width: auto;
+}
+.checkboxtotaldiv {
+    width: 100%;
+    float: left;
+}
+.checkoutstep5-mid-button {
+    background: #000 none repeat scroll 0 0;
+    border: medium none;
+    color: #fff;
+    font-size: 16px;
+    min-width: 220px;
+    padding: 2px 5px;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    float: right;
+    margin-bottom: 5px;
+    border-radius: 0;
+}
+.checkoutstep5right-middle, .checkoutstep5righttop {
+    float: left;
+    padding: 15px 0;
+    width: 100%;
+}
+.checkoutstep5right-middle-first {
+    float: left;
+    margin: 7px 0;
+    width: 100%;
+}
+.checkoutstep5right-middle-title {
+    color: #222;
+    float: left;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: right;
+    width: 72%;
+}
+.checkoutstep5right-middle-title span {
+    width: 12px;
+    display: inline-block;
+    height: 12px;
+    margin-left: 5px;
+}
+.checkoutstep5right-middle-first .checkboxtotaldiv-text-font-size {
+    text-transform: uppercase;
+}
+.checkboxtotaldiv-text-font-size {
+    color: #222;
+    font-size: 12px;
+    font-weight: 500;
+    position: relative;
+    text-align: right;
+}
+.checkoutstep5-mid-right {
+    width: 35%;
+    float: left;
+}
+.checkoutstep5right-buttom {
+    border-top: 1px solid #e2e2e2;
+    float: left;
+    padding: 15px 0;
+    width: 100%;
+    border-bottom: 1px solid #e2e2e2;
+}
+.checkoutstep5right-bottom-text, .checkoutstep5right-bottom-title {
+    color: #222;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: right;
+}
+.checkboxtotaldiv-text-botm-text {
+    color: #222;
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    text-align: right;
+}
+.checkoutstep5right-bottom-title {
+    float: left;
+    width: 60%;
+}
+.chekoutstep5-table-title {
+    width: 100%;
+    float: left;
+    font-size: 20px;
+    color: #222;
+    font-weight: 400;
+    padding: 0 9px 9px;
+}
+.cart-pro-count {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    height: 38px;
+    width: 45px;
+    display: inline-block;
+    text-align: center;
+    font-size: 18px!important;
+    padding: 5px 10px;
+    color: #000;
+    font-weight: 500;
+}
+.orderhistry2price {
+    float: right;
+    color: #000;
+    font-weight: 500;
+    font-size: 18px;
+}
+.checkoutstepthree_dayfordelivery {
+    width: 100%;
+    float: left;
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+    text-align: center;
+}
+.checkout-date-cover {
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+#timeslots {
+    float: left;
+    width: 100%;
+    margin-top: 35px;
+    margin-left: 1px;
+}
+.pos-realtive {
+    position: relative;
+}
+.slots-bunch {
+    display: inline-block;
+    width: 14.25%;
+    float: left;
+}
+.slots-bunch-title {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+.slots-bunch-title .week-stamp {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.6em;
+}
+.slots-bunch-title .date-stamp {
+    text-transform: none;
+    text-align: center;
+    font-size: .9em;
+}
+.single-slot.inactive {
+    background: transparent;
+    opacity: .8;
+    cursor: not-allowed;
+}
+.single-slot {
+    border: 1px solid #ccc;
+    padding: 4px 2px;
+    margin: 8px 3%;
+    background: hsla(0,0%,80%,.55);
+    font-size: .8em;
+    cursor: pointer;
+    color: #333;
+    text-align: center;
+    white-space: nowrap;
+}
+.slots-bunch.active {
+    color: #FFD801;
+}
+.slots-bunch.active .single-slot.selected {
+    border: 1px solid rgba(255,216,1,.5);
+    background-color: rgba(255,216,1,.2);
+}
+.slots-bunch.active .slots-bunch-title:after {
+    content: "";
+    border-bottom: 4px solid #FFD801;
+    position: absolute;
+    width: 100%;
+    bottom: -2px;
+}
+.align-set-calendar {
+    position: relative;
+    top: -3px;
+    left: -12px;
+}
+.checkoutstepthree_showdate {
+    width: auto;
+    display: inline-block;
+    float: none;
+    font-size: 22px;
+    font-weight: 400;
+    color: #222;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 55px;
+    padding: 16px 20px 6px 22px;
+    border: 1px solid #d7d7d7;
+    border-radius: 4px;
+    position: relative;
+}
+.checkoutstepthree_showdate md-datepicker {
+    padding: 0;
+    margin: 0;
+}
+.checkoutstep3full {
+    float: left;
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+}
+.checkoutstep3inner {
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #eee;
+    float: left;
+    width: 100%;
+    border-radius: 6px;
+}
+.checkoutstep3full .box{
+    padding: 0px 5px;
+}
+.checkoutstep3full img{
+    width:auto;
+}
+.checkoutstep5middle p {
+    font-size: 12px;
+    line-height: 18px;
+    padding: 10px;
+    margin: 0px;
+}
+.top-tilte {
+    font-weight: 900;
+    text-transform: uppercase;
+    padding-left: 5px;
+    font-size: 14px;
+}
+.checkoutstep5bottom{
+    float: right;
+    text-align: right;
+    width: 100%;
+    padding: 0px 10px;
+    font-weight: 800;
+    color: #850303;
+}
+.p0{
+    padding:0px!important;
+}
+.checkoutstep5middle {
+    min-height: 110px;
+    float: left;
+}
+.checkoutstepthreehead{
+    text-align: center;
+    font-weight: 800;
+    font-size: 16px;
+    margin: 20px 0px;
+    text-transform: capitalize;
+}
+.box.selected .checkoutstep3inner{
+    border: 1px solid rgba(255,216,1,.5);
+    background-color: rgba(255,216,1,.2);
+}
+.orderbtn .btn{
+    width: auto;
+    background: #FFD801;
+    border: 2px solid #FFD801;
+    border-radius: 0;
+    line-height: 15px;
+    display: inline-flex;
+    text-align: left;
+    font-size: 12px;
+    white-space: normal;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #000;
+}
+.manual-section{
+    margin: 0 auto;
+    width: 500px;
+}
+.manual-section p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+.manual-section .hours{
+    text-align: center;
+}
+.hours strong {
+    font-size: 30px;
+    margin-right: 10px;
+}
+.hours .time-to{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+span.time-to, .b-hours {
+    position: relative;
+    top: -4px;
+    font-size: 15px;
+}
+span.b-hours {
+    text-transform: uppercase;
+}
+.manual-time-section{
+    float: left;
+    width: 100%;
+    padding-bottom: 30px;
+}
+.btn .mat-icon {
+    margin-right: 7px;
+}
+.orderbtn {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+    text-align: right;
+}
+.center {
+    float: none!important;
+    margin: 0 auto;
+    display: inherit!important;
+}
+.selectdeliverytime {
+    float: left;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+}
+.headertext {
+    font-size: 14px;
+    font-weight: 800;
+    padding: 0px 10px;
+    margin-bottom: 30px;
+    line-height: 23px;
+}
+.selectdeliverytime p{
+    padding-left: 12px;
+    text-transform: capitalize;
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+.deliverytimeinput{
+    width: 100%;
+    margin-left: 10px;
+    height: 35px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+.selectdeliverytime label {
+    line-height: 52px;
+}
+.end-time label{
+    margin-left: 12px;
+}
+.timeform{
+    float: left;
+    width: 100%;
+    padding-top: 22px;
+}
+.select-time button {
+    width: 12.2%;
+    text-align: center;
+    padding: 2px 0;
+    float: left;
+    margin: 0 5px;
+    margin-bottom: 5px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    outline: none;
+}
+.active-time{
+    background-color: #FFD801 !important;
+    border-color: #FFD801 !important;
+    color: #fff;
+}
+.custom-timepicker{
+    background-color: #FFD801;
+    position: absolute;
+    padding: 10px;
+}
+.timepicker-input{
+    float: left;
+    width: 100%;
+    padding: 0 15px;
+}
+.timeform .timepicker-input .mat-form-field{
+    width: 100% !important;
+}
+.time-section{
+    float: left;
+    width: 100%;
+    background-color: #fff;
+    margin-top: 20px;
+}
+.select-time{
+    float: left;
+    width: 100%;
+    padding: 10px 0;
+}
+.timepicker-footer{
+    float: left;
+    width: 100%;
+    border-top: 1px solid #ddd;
+    padding: 10px 0;
+}
+.timepicker-footer .col-md-6{
+    text-align: center;
+}
+.toggle {
+    color: #fff!important;
+    float: left;
+    margin-bottom: 10px;
+}
+.checkoutpopup .card-title {
+    line-height: 20px;
+    width: 130px!important;
+}
+.step-1 .step-individual{
+    background-image: url("/assets/img/step-11.png");
+}
+.step-2 .step-individual{
+    background-image: url("/assets/img/step-22.png");
+}
+.step-3 .step-individual{
+    background-image: url("/assets/img/step-33.png");
+}
+.step-4 .step-individual{
+    background-image: url("/assets/img/step-44.png");
+}
+.step-5 .step-individual{
+    background-image: url("/assets/img/step-55.png");
+}
+.step-individual{
+    margin: 0 auto;
+    width: 60px;
+    height: 60px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-color: #ebeef0;
+    border-radius: 50%;
+    z-index: 3;
+    cursor: pointer;
+    border: 3px solid transparent;
+    position: relative;
+}
+.custom-stepper{
+    margin: 0 auto;
+    width: 763px;
+}
+.custom-step{
+    float: left;
+    width: 20%;
+    position: relative;
+}
+.custom-horizontal-stepper{
+    float: left;
+    width: 100%;
+    padding-top: 20px;
+}
+.custom-step span{
+    float: left;
+    width: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    color: #8c8c8c;
+    font-size: 11px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+.step-bar {
+    float: left;
+    background-color: #EAEDEF;
+    height: 5px;
+    width: 97px;
+    position: absolute;
+    left: 105px;
+    top: 30px;
+}
+.stepcount-1 .step-1 .step-individual{
+    background-color: #FFD53C;
+}
+.stepcount-1 .step-1 .step-individual, .stepcount-2 .step-1 .step-individual,
+ .stepcount-3 .step-1 .step-individual, .stepcount-4 .step-1 .step-individual, .stepcount-5 .step-1 .step-individual{
+    border: 3px solid #FFD53C;
+    transition: all 0s linear .5s;
+}
+.stepcount-2 .step-2 .step-individual,
+ .stepcount-3 .step-2 .step-individual, .stepcount-4 .step-2 .step-individual, .stepcount-5 .step-2 .step-individual{
+    border: 3px solid #FFD53C;
+    transition: all 0s linear .5s;
+}
+.stepcount-3 .step-3 .step-individual,
+ .stepcount-4 .step-3 .step-individual, .stepcount-5 .step-3 .step-individual, .stepcount-5 .step-4 .step-individual{
+    border: 3px solid #FFD53C;
+    transition: all 0s linear .5s;
+}
+.giftsec {
+    width: 100%;
+    float: left;
+    text-align: center;
+    position: relative;
+    padding: 24px
+}
+.gift-item-cover {
+    width: 151px;
+    height: 140px;
+    display: inline-block;
+    float: none;
+    text-align: center;
+    background: #ffc412;
+    border-radius: 4px;
+    margin-right: 30px;
+}
+.innercover {
+    display: table;
+    float: left;
+    height: 90px;
+    width: 100%;
+}
+.innervcover img {
+    max-width: 75%;
+    margin-top: 10px;
+}
+.gift-item-cover p {
+    font-size: 22px;
+    line-height: 25px;
+    margin-top: 10px;
+}
+.stepcount-2 .step-1 .step-bar, .stepcount-3 .step-1 .step-bar,
+ .stepcount-3 .step-2 .step-bar, .stepcount-4 .step-1 .step-bar, .stepcount-4 .step-2 .step-bar, 
+ .stepcount-4 .step-3 .step-bar, .stepcount-5 .step-1 .step-bar, .stepcount-5 .step-2 .step-bar, 
+ .stepcount-5 .step-3 .step-bar, .stepcount-5 .step-4 .step-bar{
+    background-color: #FFD53C;
+}
+.stepcount-2 .step-2 .step-individual{
+   background-color: #FFD53C;
+}
+.stepcount-3 .step-3 .step-individual{
+    background-color: #FFD53C;
+}
+.stepcount-4 .step-4 .step-individual{
+    background-color: #FFD53C;
+}
+.stepcount-5 .step-5 .step-individual{
+    background-color: #FFD53C;
+}
+.model-dialog p{
+    margin: 0px!important;
+}
+.checkout-product{
+    width: 500px;
+}
+.select-label{
+    line-height: 22px !important;
+}
+.select-hh{
+    margin-top: 10px;
+    margin-bottom: 0;
+    margin-left: -4px;
+}
+.select-mm{
+    padding-left: 15px;
+}
+.same-day-notice{
+    float: left;
+    width: 100%;
+}
+.notice-container{
+    color: #AD1515;
+    margin: 0 auto;
+    width: 314px;
+    padding-top: 20px;
+    line-height: 20px;
+}
+.notice-container .mat-icon{
+    height: 20px;
+    width: 20px;
+}
+.notice-container span{
+    padding-left: 10px;
+}
+.p-l-30{
+    padding-left: 30px !important;
+}
+.disabletime-twohour .single-slot, .single-slot.disabletime{
+    background-color: #fff;
+}
+.orderbtn img{
+    height: 32px;
+    padding-right: 5px;
+}
+.manual-section p{
+    margin-bottom: 20px;
+}
+.manual-section .hours{
+    background-color: #FFD801;
+    padding: 10px 0;
+}
+.cancel-selection{
+    background-color: #AD1515 !important;
+    border-color: #AD1515 !important;
+}
+.cancel-selection{
+    color: #fff !important;
+}
+.specific-header{
+    text-align: center;
+}
+.specific-header img{
+    width: auto;
+    max-width: 80px;
+}
+.specific-header strong{
+    width: 100%;
+    float: left;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.delivery-section{
+    float: left;
+    width: 100%;
+    background: #FFF7CC;
+    padding: 10px;
+    border-radius: 0;
+}
+.timeform label{
+    text-transform: uppercase;
+}
+.delivery-section strong{
+    padding-left: 10px;
+}
+.delivery-section{
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+.delivery-close-btn{
+    background: transparent;
+    border: none;
+    position: absolute;
+    right: 0;
+}
+.warning{
+    color: #AD1515;
+    text-align: center;
+    margin: 0 auto;
+    width: 46%;
+    font-size: 12px;
+    margin-top: 16px;
+}
+.warning .mat-icon, .warning .warning-message{
+    float: left;
+}
+.warning-message{
+    margin-top: 3px;
+}
+.checkboxtotaldiv-title {
+    text-transform: capitalize;
+}
+.loader-image.checkout-loader {
+    position: unset !important;
+    float: left;
+    width: 100%;
+    height: 300px !important;
+    margin-top: 22%;
+}
+.orderbtn button {
+    position: relative;
+}
+.orderbtn button i{
+    position: absolute;
+    right: 18px;
+    top: 21px;
+    font-size: 20px;
+}
+.orderbtn button.cancel-selection i {
+    top: 13px;
+}
+.orderbtn .btn {
+    width: 200px;
+}
+
+@media screen and (max-width: 479px){
+    .alcohal_addadress_header .alcohal_addadress_headertitle{
+        font-size: 17px;
+        margin-left: 10px;
+    }
+    .alcohal_addadress_header .close-btn{
+        margin-top: 0;
+    }
+    .step-individual{
+        width: 45px;
+        height: 45px;
+        background-size: 62%;
+        position: relative;
+    }
+    .step-bar {
+        width: 45px;
+        left: 48px;
+        bottom: auto;
+        top: 20px;
+    }
+    .content-section.Checkout .col-sm-10{
+        float: left;
+        width: 100%;
+        padding: 0;
+    }
+    .custom-step span{
+        font-size: 8px;
+    }
+    .checkoutmiddletable .orhistry2_td2procdtcvr>span{
+        height: 40px;
+        width: 40px;
+        margin-right: 4px;
+    }
+    .orhistry2_td2proctext1{
+        font-size: 11px;
+    }
+    a.checkoutmiddletabledeleteimg {
+        float: left;
+        height: 100%;
+        background-color: #ddd;
+        height: 156px;
+    }
+    a.checkoutmiddletabledeleteimg .mat-icon{
+        margin-top: 64px;
+    }
+    .orhistry2_td2procdtcvr {
+        float: left;
+        width: 78%;
+        margin-left: 10px;
+    }
+    .gift-wrapper img{
+        width: 45px;
+    }
+    .gift-wrapper{
+        padding-top: 15px;
+    }
+    td.check-quantity{
+        width: 75px;
+    }
+    .prod_chilled{
+        padding-left: 35px;
+    }
+    .checkoutergitpackage{
+        width: 100%;
+    }
+    .checkboxtotaldiv-middle{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .checkboxtotaldiv-buttom{
+        padding-right: 15px;
+    }
+    .service-prices{
+        padding-top: 20px;
+        float: left;
+        width: 100%;
+    }
+    .checkboxtotaldiv-text, .checkboxtotaldiv-title{
+        font-weight: bold;
+    }
+    .product-slider img{
+        width: 50%;
+    }
+    .card-body{
+        width: 100%;
+    }
+    .Checkout .product-slider .card-title{
+        text-align: center;
+    }
+    .card-content{
+        width: 100%;
+    }
+    .lowprice, .price-stripe{
+        text-align: center;
+        width: 100%;
+        float: left;
+    }
+    .card-title{
+        white-space: unset;
+    }
+    .checkouterwantbutton{
+        width: 100%;
+    }
+    .couponcode{
+        padding-right: 0;
+    }
+    .couponcode .mat-form-field {
+        width: 67%!important;
+    }
+    .subtotal{
+        padding: 0;
+    }
+    .toggle{
+        width: 100%;
+    }
+    .smoke-section{
+        padding: 0;
+    }
+    .relproduct-slider .card-content{
+        width: 144px;
+    }
+    .relproduct-slider img{
+        width: 92%;
+    }
+    .alcohalosavebntcvr {
+        padding-bottom: 20px;
+        padding-right: 24px;
+    }
+    .single-address{
+        float: left;
+        width: 100%;
+    }
+    .addressbokk-trvaichacovr{
+        width: 100% !important;
+        min-height: 200px;
+    }
+    .addressbokk-addnewadresscovr, .addressbokk-trvaichacovr, .alcohlinputext2, .alcohlinputextarea12{
+        width: 100% !important;
+    }
+    .checkouterbackouter2{
+        margin-bottom: 30px;
+    }
+    .checkoutstep3full .box {
+        float: left;
+        width: 100%;
+        padding-bottom: 15px !important;
+    }
+    .slots-bunch-title .week-stamp{
+        font-size: 15px;
+    }
+    .single-slot{
+        white-space: unset;
+        font-size: 10px;
+    }
+    .orderbtn .btn{
+        width: 100%;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+    .form-group{
+        margin-bottom: 0;
+    }
+    .checkoutstepthree_dayfordelivery .slots-bunch{
+        width: 50%;
+    }
+    .samedaydelivery .slots-bunch, .twohourdelivery .slots-bunch{
+        width: 50%;
+    }
+    .cover_cashdiv_left{
+        width: 100%;
+    }
+    .giftsec a {
+        float: left;
+        width: 50%;
+        padding: 0 10px;
+    }
+    .gift-item-cover p{
+        font-size: 17px;
+    }
+    .gift-item-cover{
+        width: 100%;
+        margin-right: 0;
+    }
+    .checkoutstep5-mid-left, .checkoutstep5-mid-right{
+        width: 100%;
+    }
+    .checkoutstep5-left-first-left{
+        width: 90%;
+    }
+    .checkout-product{
+        width: 26%;
+    }
+    .phone-prod-name{
+        width: 52%;
+    }
+    .loader-image {
+        position: relative; 
+        height: 100%; 
+        top: auto; 
+        left: auto; 
+        padding-bottom: 60px;
+    }
+    .checkoutproductbutton{
+        width: 85%;
+        margin-left: 11px;
+    }
+    .custom-stepper{
+        float: left;
+        width: 100%;
+    }
+    .find-store{
+        width: 100%;
+    }
+    .close-snack{
+        width: 10%;
+    }
+    .snack-right{
+        width: 90%;
+    }
+    .timeform .col-sm-6{
+        width: 100%;
+    }
+    .end-time label{
+        margin-left: 0;
+        float: left;
+        margin-top: 20px;
+    }
+    .manual-section{
+        width: 100%;
+    }
+    .card-type strong{
+        font-size: 16px;
+    }
+    .cvv-group{
+        width: 70%;
+    }
+    td.check-price{
+        width: 70px;
+    }
+    .custom-timepicker{
+        z-index: 9;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px){
+    .step-individual{
+        width: 45px;
+        height: 45px;
+        background-size: 62%;
+        position: relative;
+    }
+    .step-bar {
+        width: 111px;
+        left: 72px;
+        top: 22px;
+        bottom: auto;
+    }
+    .desk-show.cart-delete{
+        width: 64%;
+        text-align: left;
+    }
+    .content-section.Checkout .col-sm-10{
+        float: left;
+        width: 100%;
+        padding: 0;
+    }
+    .custom-step span{
+        font-size: 13px;
+    }
+    .checkoutmiddletable .orhistry2_td2procdtcvr>span{
+        height: 40px;
+        width: 40px;
+        margin-right: 4px;
+    }
+    .orhistry2_td2proctext1{
+        font-size: 11px;
+    }
+    td.check-quantity{
+        width: 75px;
+    }
+    .prod_chilled{
+        padding-left: 50px;
+    }
+    .checkoutergitpackage{
+        width: 100%;
+    }
+    .checkboxtotaldiv-middle{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .checkboxtotaldiv-buttom{
+        padding-right: 15px;
+    }
+    .service-prices{
+        padding-top: 20px;
+        float: left;
+        width: 100%;
+    }
+    .checkboxtotaldiv-text, .checkboxtotaldiv-title{
+        font-weight: bold;
+    }
+    .product-slider img{
+        width: 50%;
+    }
+    .card-body{
+        width: 100%;
+    }
+    .Checkout .product-slider .card-title{
+        text-align: center;
+    }
+    .card-content{
+        width: 173px;
+    }
+    .lowprice, .price-stripe{
+        text-align: center;
+        width: 100%;
+        float: left;
+    }
+    .card-title{
+        white-space: unset;
+    }
+    .checkouterwantbutton{
+        width: 100%;
+    }
+    .couponcode{
+        padding-right: 0;
+    }
+    .couponcode .mat-form-field {
+        width: 72%!important;
+    }
+    .subtotal{
+        padding: 0;
+    }
+    .toggle{
+        width: 100%;
+    }
+    .smoke-section{
+        padding: 0;
+    }
+    /*.relproduct-slider .card-content{
+        width: 144px;
+    }*/
+    .relproduct-slider img{
+        width: 92%;
+    }
+    .alcohalosavebntcvr {
+        padding-bottom: 20px;
+        padding-right: 24px;
+    }
+    .single-address{
+        float: left;
+        width: 100%;
+    }
+    .addressbokk-trvaichacovr{
+        width: 100% !important;
+    }
+    .addressbokk-addnewadresscovr, .addressbokk-trvaichacovr, .alcohlinputext2, .alcohlinputextarea12{
+        width: 100%;
+    }
+    .checkouterbackouter2{
+        margin-bottom: 30px;
+    }
+    .checkoutstep3full .box {
+        float: left;
+        width: 100%;
+        padding-bottom: 15px !important;
+    }
+    .slots-bunch-title .week-stamp{
+        font-size: 15px;
+    }
+    .single-slot{
+        white-space: unset;
+        font-size: 10px;
+    }
+    .orderbtn .btn{
+        width: 48%;
+        margin: 0;
+        margin-bottom: 10px;
+        margin-right: 10px; 
+    }
+    .form-group{
+        margin-bottom: 0;
+    }
+    .checkoutstepthree_dayfordelivery .slots-bunch{
+        width: 50%;
+    }
+    .samedaydelivery .slots-bunch, .twohourdelivery .slots-bunch{
+        width: 25%;
+    }
+    .cover_cashdiv_left{
+        width: 50%;
+    }
+    .giftsec a {
+        float: left;
+        width: 50%;
+        padding: 0 10px;
+    }
+    .gift-item-cover p{
+        font-size: 17px;
+    }
+    .gift-item-cover{
+        width: 100%;
+        margin-right: 0;
+    }
+    .checkoutstep5-mid-left, .checkoutstep5-mid-right{
+        width: 100%;
+    }
+    .checkoutstep5-left-first-left{
+        width: 90%;
+    }
+    .checkout-product{
+        width: 50%;
+    }
+    td.phone-prod-name {
+        width: 400px;
+    }
+    .card-content{
+        width: 100%;
+        box-shadow: none;
+    }
+    .checkouterwantfirst{
+        width: 52%;
+    }
+    .checkboxtotaldiv-middle .col-md-6{
+        width: 50%;
+    }
+    .innervcover img{
+        max-width: 52%;
+    }
+    .loader-image {
+        position: relative; 
+        height: 100%; 
+        top: auto; 
+        left: auto; 
+        padding-bottom: 60px;
+    }
+     a.checkoutmiddletabledeleteimg {
+        float: left;
+        height: 100%;
+        background-color: #ddd;
+        height: 156px;
+    }
+    a.checkoutmiddletabledeleteimg .mat-icon{
+        margin-top: 64px;
+    }
+    .orhistry2_td2procdtcvr {
+        float: left;
+        width: 78%;
+        margin-left: 10px;
+    }
+    .gift-wrapper img{
+        width: 45px;
+    }
+    .gift-wrapper{
+        padding-top: 15px;
+    }
+    .custom-stepper{
+        float: left;
+        width: 100%;
+    }
+    .close-snack{
+        width: 10%;
+    }
+    .snack-right{
+        width: 90%;
+    }
+    .timeform .col-sm-6{
+        width: 100%;
+    }
+    .end-time label{
+        margin-left: 0;
+        float: left;
+        margin-top: 20px;
+    }
+    .manual-section{
+        width: 100%;
+    }
+    .card-type strong{
+        font-size: 16px;
+    }
+    .paycard img{
+        margin-top: 0;
+    }
+    .cvv-group{
+        width: 45%;
+    }
+    .cvv-group .mat-form-field{
+        width: 48% !important;
+    }
+    .custom-timepicker{
+        z-index: 9;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    .content-section.Checkout > .col-sm-10{
+        width: 100%;
+    }
+    .phone span{
+        font-size: 10px;
+    }
+    .tabesection .card-content{
+        box-shadow: 1px 1px 15px #ccc;
+    }
+    .content-section.Checkout > .col-sm-2{
+        width: 100%;
+    }
+    .step-bar{
+        left: 74px;
+        width: 56px;
+        bottom: 69px;
+    }
+    .step-1 .step-bar{
+        bottom: 54px;
+    }
+    .toggle{
+        width: 100%;
+    }
+    .addressbokk-trvaichacovr{
+        width: 100% !important;
+    }
+    .checkouterbackouter2{
+        margin-bottom: 20px;
+    }
+    .single-slot{
+        white-space: unset;
+    }
+    .samedaydelivery .slots-bunch, .twohourdelivery .slots-bunch{
+        width: 30%;
+    }
+    .paycard{
+        width: 100%;
+    }
+    .checkoutstep5-mid-left, .checkoutstep5-mid-right{
+        width: 100%;
+    }
+    .custom-stepper{
+        float: left;
+        width: 100%;
+    }
+    .delivery-option{
+        min-height: 257px;
+    }
+    .cvv-group{
+        width: 40%;
+    }
+    .choose-delivery-option .col-md-6{
+        width: 50%;
+        float: left;
+    }
+    .delivery-icon{
+        float: left;
+    }
+    .paycard img{
+        width: 100% !important;
+    }
+}  
+
+@media only screen and (min-width: 960px) and (max-width: 1024px) {
+    .hugediscou{
+        font-size: 30px;
+    }
+    .couponcode .mat-form-field {
+        width: 65%!important;
+    }
+    .addressbokk-trvaichacovr{
+        width: 100% !important;
+    }
+    .single-slot{
+        white-space: unset;
+    }
+    .samedaydelivery .slots-bunch, .twohourdelivery .slots-bunch{
+        width: 30%;
+    }
+    .checkoutstep5-mid-left, .checkoutstep5-mid-right{
+        width: 100%;
+    }
+    .custom-stepper{
+        float: left;
+        width: 100%;
+    }
+    .step-bar{
+        left: 94px;
+    }
+    .delivery-option{
+        min-height: 260px;
+    }
+    .checkoutstep5middle p{
+        font-size: 10px;
+    }
+    .top-tilte{
+        font-size: 12px;
+    }
+}

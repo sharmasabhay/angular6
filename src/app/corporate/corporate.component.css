@@ -1,0 +1,64 @@
+.contact-form {
+    float: left;
+    width: 70%;
+    padding: 20px;
+    margin-left: 20%;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    }
+
+.contact-form .form-control {
+    height: 45px!important;
+    font-size: 14px;
+    border-radius: 0px!important;
+}
+.contact-form .form-group {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.contact-form h4{
+    font-weight: 700;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+.btn-danger {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    padding: 10px 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.return-link{
+    padding: 21px 0px;
+    font-size: 17px;
+    width: 100%;
+    float: left;
+    color: #464545;
+    font-weight: 500;
+}
+.corporateinfo{
+    margin-top: 30px;
+}
+.corporateinfo p {
+    font-style: italic;
+    font-size: 16px;
+    margin: 20px;
+}
+.commentbox {
+    width: 100%;
+    resize: none;
+}
+.btn{
+    border: 1px solid transparent;
+    margin-top: 20px;
+    display: block;
+    background: #000000;
+    color: #fff;
+    font-weight: 700;
+    margin: auto;
+    transition: all 0.5s;
+    font-size: 16px!important;
+    padding: 15px 20px!important;
+    text-transform: uppercase;
+}

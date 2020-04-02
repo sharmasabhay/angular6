@@ -1,0 +1,126 @@
+<div class="fullwidth">
+<app-sidebar></app-sidebar>
+<app-header></app-header>
+<div class="container">
+<div class="row">
+   <div class="col-sm-10 rgrhtdiv">
+      <div class="breadcrumdiv">
+         <ol class="breadcrumb">
+            <li><a routerLink="/">Home</a></li>
+            <li><a>My Account</a></li>
+            <li class="active">Order Detail</li>
+         </ol>
+      </div>
+      <div class="titlecreidt" *ngIf="orderDetail['order_number']">ORDER ID : {{orderDetail['order_number']}}</div>
+      <div class="checkoutmiddletable">
+         <table class="table cart-table">
+            <tbody>
+               <tr *ngFor="let item of orderItems">
+                  <td class="order-item">
+                     <div class="orhistry2_td2procdtcvr">
+                        <span class="cursor-pointer">
+                        <a><img [src]="item['product_image']"></a>
+                        </span>
+                        <div class="checkouter-td-right-text">
+                           <div class="orhistry2_td2proctext1 ng-binding">{{item['product_name']}}</div>
+                           <div class="orhistry2_td2proctext1 ng-binding">${{item['unit_price']}}</div>
+                           <div class="orhistry2_td2proctext2">unit Price</div>
+                        </div>
+                     </div>
+                  </td>
+                  <td width="120px" class="desk-show">
+                     <div class="prod_chilled" *ngIf="orderDetail['chilled'] == true">
+                        <span>Chilled</span>
+                        <div class="prod_chilled_icon"></div>
+                     </div>
+                     <div class="prod_chilled remove-chilled" *ngIf="orderDetail['chilled'] == false">
+                        <div class="prod_chilled_icon"></div>
+                     </div>
+                  </td>
+                  <td>{{item['quantity']}}</td>
+                  <td>
+                     <div class="orderhistry2price">${{item['price']}}</div>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      <div class="checkoutmiddleouter p0">
+         <div class="checkoutstep5-mid-top">
+            <div class="row">
+               <div class="col-sm-7 checkoutstep5-mid-left">
+                  <div class="checkoutstep5-left-first">
+                     <div class="checkoutstep5-left-first-left">
+                        <div class="checkoutstep5-left-first-lefttext">Delivery Address</div>
+                        <div class="checkoutstep5-left-first-lefttitle">
+                           <span class="delivery-add">{{deliveryAddress['BLDG_NAME']}}</span> 
+                           <span class="delivery-add">Unit - {{deliveryAddress['FLOOR']}}-{{deliveryAddress['UNIT']}}</span>
+                           <span class="delivery-add">Singapore - {{deliveryAddress['PostalCode']}}</span>                   
+                        </div>
+                     </div>
+                  </div>
+                  <div class="checkoutstep5-left-first">
+                     <div class="checkoutstep5-left-first-left">
+                        <div class="checkoutstep5-left-first-lefttext">PAYMENT METHOD</div>
+                        <div class="checkoutstep5-left-first-lefttitle"><span *ngIf="orderDetail['payment_method'] == 'COD'">Cash on delivery</span>
+                        <span *ngIf="orderDetail['payment_method'] == 'CARD'">Credit Card</span>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="checkoutstep5-left-first">
+                     <div class="checkoutstep5-left-first-left">
+                        <div class="checkoutstep5-left-first-lefttext">DELIVERY TIME</div>
+                        <div class="checkoutstep5-left-first-lefttitle">
+                           <span>{{orderDate | date : 'EEEE'}}, {{orderDate | date : 'dd'}} {{orderDate | date : 'MMMM'}}, {{orderDate | date : 'y'}}</span>                 
+                        </div>
+                     </div>
+                  </div>
+                  <div class="checkoutstep5-left-first">
+                     <div class="checkoutstep5-left-first-left">
+                        <div class="checkoutstep5-left-first-lefttext">DELIVERY MODE</div>
+                        <div class="checkoutstep5-left-first-lefttitle">
+                           <span *ngIf="orderDetail['delivery_type'] == '2'">2 hour delivery</span>
+                           <span *ngIf="orderDetail['delivery_type'] == '0'">SAME day delivery</span>
+                           <span *ngIf="orderDetail['delivery_type'] == '1'">NEXT day delivery</span>
+                           <span *ngIf="orderDetail['delivery_type'] == '3'">Store pickup</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-sm-5 checkoutstep5-mid-right">
+                  <div class="checkboxtotaldiv">
+                     <!-- Delivery charge -->
+                     <div class="checkboxtotaldiv-middle-first">
+                        <div class="checkboxtotaldiv-title">Delivery Charge 
+                           <span matTooltip="Order above $100.00 for free delivery!" matTooltipPosition="above"><img src="/assets/img/questionimg.png"></span>
+                        </div>
+                        <div class="checkboxtotaldiv-text"><span *ngIf="orderDetail['delivery_charge'] != 0">${{orderDetail['delivery_charge']}}</span><span *ngIf="orderDetail['delivery_charge'] == 0">Free</span></div>
+                     </div>
+                     <!-- Specific charge -->
+                     <div class="checkboxtotaldiv-middle-first">
+                        <div class="checkboxtotaldiv-title">Specific Charge 
+                           <span matTooltip="{{specificChargeText}}" matTooltipPosition="above"><img src="/assets/img/questionimg.png"></span>
+                        </div>
+                        <div class="checkboxtotaldiv-text"><span *ngIf="orderDetail['delivery_type_charge'] != 0">${{orderDetail['delivery_type_charge']}}</span><span *ngIf="orderDetail['delivery_type_charge'] == 0">Free</span></div>
+                     </div>
+                     <!-- Coupon discount -->
+                     <div class="checkboxtotaldiv-middle-first" *ngIf="orderDetail['discount'] != 0">
+                        <div class="checkboxtotaldiv-title">Coupon Discount
+                           <span matTooltip="Discount applied by using coupon" matTooltipPosition="above"><img src="/assets/img/questionimg.png"></span>
+                        </div>
+                        <div class="checkboxtotaldiv-text">${{orderDetail['discount']}}</div>
+                     </div>
+                  </div>
+                  <div class="checkoutstep5right-buttom">
+                     <div class="checkoutstep5right-bottom-title">Total</div>
+                     <div class="checkboxtotaldiv-text-botm-text">${{orderDetail['payment_total']}}</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   </div>
+   <app-footer></app-footer>
+</div>

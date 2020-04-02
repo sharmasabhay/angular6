@@ -1,0 +1,143 @@
+.product-banner{
+	background: url(/assets/img/images-bg-breadcrum.jpg);
+	height:200px;
+	background-size: 100% 100%;
+}
+.singlep-head{
+	font-family: 'Oswald', sans-serif;
+    font-weight: 900;
+    font-size: 42px;
+    letter-spacing: 2px;
+}
+.product-detail{
+	font-family: 'Montserrat', sans-serif;
+	float: left;
+    width: 100%;
+    margin-top: 20px;
+}
+.action-btn button.inc, .action-btn button.dec{
+    background: transparent;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+}
+.inc{
+    right: -9px;
+    top: -4px;
+}
+.dec{
+    right: -9px;
+    top: 15px;
+}
+.loader {
+    float: left;
+    width: 100%;
+    padding-top: 20px;
+}
+.loader-spinner{
+    margin: 0 auto;
+    width: 40px;
+}
+.product-tbl table{
+	width:100%;
+	border-collapse: collapse;
+}
+.product-tbl table tr th{
+	border:1px solid #ccc;
+	padding: 10px;
+    font-size: 17px;
+    background: #ffd801;
+}
+.product-tbl table tr td{
+	border:1px solid #ccc;
+	padding: 10px;
+    font-size: 17px;
+    font-weight: 500;
+}
+.product-detail .quantity {
+    width: 100px!important;
+    height: 46px;
+    margin-right: 10px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 22px;
+}
+.product-detail .addtocart {
+    background: #000;
+    color: #fff;
+    border: 0px;
+    padding: 11px 20px;
+    text-transform: uppercase;
+    margin-right: 10px;
+}
+.product-detail .wishlist {
+    background: #000;
+    color: #fff;
+    border: 0px;
+    padding: 11px 20px;
+    text-transform: uppercase;
+    margin-right: 10px;
+}
+.product-detail .action-btn{
+	margin:20px 0px;
+	display: inline-flex;
+}
+.tab-content {
+    float: left;
+    width: 100%;
+    padding: 30px;
+    font-family: 'Montserrat', sans-serif!important;
+    font-weight: 400;
+}
+.no{
+   color: #f00;
+}
+.product-slider{
+    float: left;
+    padding-left: 0px;
+    width: 100%;
+    padding: 0 0 20px;
+    border-bottom: 1px solid #e2e2e2;
+}
+.product-slider img{
+    width: auto;
+    height: auto;
+    max-height: 200px;
+}
+.image {
+    padding: 10px;
+}
+.card{
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+.card-body {
+    padding: 0px 10px;
+    float: left;
+    width: 100%;
+}
+.actionbtn{
+    margin-top: 9px;
+}
+.single-page-action .dec{
+    right: auto;
+    top: 8px;
+    left: -9px;
+    background-color: #ddd !important;
+    color: #fff;
+    padding: 4px 6px !important;
+    line-height: 15px;
+    border-radius: 4px;
+    font-size: 17px;
+}
+.single-page-action .inc{
+    top: 8px;
+    background-color: #F7D703 !important;
+    color: #fff;
+    padding: 4px 6px !important;
+    line-height: 15px;
+    border-radius: 4px;
+    font-size: 17px;
+}

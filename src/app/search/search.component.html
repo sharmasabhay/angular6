@@ -1,0 +1,52 @@
+<div class="search-container">
+	<app-sidebar></app-sidebar>
+    <app-header></app-header>
+    <div class="searching main-content">
+    	<div class="head-section">
+            <div class="col-sm-12 product-banner">
+                 <div class="row">
+                 	<div class="col-sm-8 heading">
+                 		<ul class="breadcrumb">
+			              <li><a routerLink="/">Home</a></li>
+			              <li><a>{{searchPage}}</a></li>
+			            </ul>
+                 	</div>
+                 	<div class="col-sm-4"></div>
+                 </div>
+            </div>
+         </div>
+         <div class="search-content">
+         	<h4>YOUR SEARCH FOR "{{searchPage}}" REVEALED THE FOLLOWING:</h4>
+         	<div class="search-text">
+               <div class="search-text-field">
+	               	<mat-form-field appearance="outline" placeholder="Search" class="nopadtext">
+	                	<input type="text" name="search" [(ngModel)]="searchPage" matInput (keyup.enter)="searching();">
+	                </mat-form-field>
+               </div>
+               <div class="search-button">
+               	    <button mat-button (click)="searching();">Search</button>
+               </div>	
+         	</div>
+         	<div class="search-results">
+		         <div class="col-sm-3 card" *ngFor="let product of searchedData">
+			        <div class="card-content">
+			          <div class="hovereffect">
+				          <a routerLink="products/{{product['slug']}}"><img class="card-img-top" [src]="product['imageFiles']" *ngIf="product['imageFiles'] != '' && product['imageFiles'] != null"></a>
+				          <div class="overlay">
+				           <img class="card-img-top" *ngIf="product['imageFiles'] == '' || product['imageFiles'] == null" src="/assets/img/Suntory-Japan-Premium-Koshu_25212487-6f96-468a-827e-74e5aebbbf2d_grande.jpg">
+				             <button class="wishlist" (click)="addWishlist(product['product_id']);" *ngIf="userId"><mat-icon>favorite_border </mat-icon> </button>
+				             <button class="addtocart" (click)="addToCart(product['product_id'], 'single');"><mat-icon>shopping_cart</mat-icon> Add to cart</button>
+				          </div>
+			          </div>
+			          <div class="card-body">
+				            <a routerLink="products/{{product['slug']}}"><h5 class="card-title">{{product['name']}}</h5></a>
+				            <p class="price">${{product['price']}}</p>
+				            <small>As a low <span class="lowprice" *ngIf="product['bult_price']">${{product['bult_price'][2]['price']}}</span><span class="lowprice" *ngIf="!product['bult_price']">${{product['price']}}</span></small>
+			          </div>
+			         </div>
+		        </div>
+         </div>
+         </div>
+    </div>
+    <app-footer></app-footer>
+</div>

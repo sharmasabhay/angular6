@@ -1,0 +1,168 @@
+.chckoutstep6main-cover1 {
+    margin-bottom: 22px;
+}
+.chckoutstep6main-cover {
+    width: 740px;
+    margin: 0 auto;
+    background: #fff;
+    padding-bottom: 10px;
+    padding-top: 30px;
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px -1px #babdbf;
+}
+.checkout-step6-innercover {
+    width: 475px;
+    margin: 0 auto;
+    display: inline-block;
+}
+.chckoutstep6main-cover1, .smile-signcover {
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+.uralset-textdiv span {
+    color: #222;
+    float: left;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 2;
+    padding-top: 7px;
+    text-align: center;
+    width: 100%;
+}
+.uralset-textdiv {
+    font-weight: 300;
+    font-size: 48px;
+    color: #666;
+}
+.uralset-textdiv, .uralsetcover {
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+.ordrnumber-cover {
+    width: 100%;
+    float: left;
+    text-align: center;
+    padding-bottom: 40px;
+    padding-top: 26px;
+}
+.ordernno-divcenterset {
+    display: table;
+    margin: 0 auto;
+}
+.order-numberinnercover {
+    width: 275px;
+    height: 53px;
+    display: table-cell;
+    background: #ebeef0;
+    font-size: 24px;
+    color: #666;
+    vertical-align: middle;
+    white-space: nowrap;
+    padding: 0 10px;
+}
+.payment-descriptioncover {
+    width: 100%;
+    float: left;
+    text-align: center;
+    padding-bottom: 0;
+}
+.paymentdetail-fixwidth {
+    width: 363px;
+    margin: 0 auto;
+}
+.paymentamnt-coverdiv {
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid #dfdfdf;
+    padding-bottom: 10px;
+    font-size: 14px;
+    color: #222;
+    padding-bottom: 12px;
+    padding-top: 10px;
+}
+.lefttext-paymnt {
+    float: left;
+    text-align: right;
+    width: 48%;
+}
+.right-resultamounttxt {
+    float: left;
+    padding-left: 20px;
+    text-align: left;
+    width: 52%;
+}
+.chckoutstep6main-cover1 img{
+	width:auto;
+    max-width: 100px;
+}
+.kepshopingcoverdiv {
+    width: 100%;
+    float: left;
+    padding-bottom: 50px;
+    padding-top: 40px;
+    border-top: 1px solid #dfdfdf;
+}
+.keepshoping-textcover {
+    color: #666;
+    float: left;
+    font-size: 18px;
+    padding-bottom: 25px;
+    text-align: center;
+    width: 100%;
+}
+.kepshopingcoverdiv .btn.btn-default {
+    width: 241px;
+    height: 53px;
+    background: none;
+    border: 2px solid #000;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 0;
+    text-transform: uppercase;
+    line-height: 40px;
+    background-color: #000;
+}
+.paymentamnt-coverdiv:last-child {
+    border-bottom: none;
+}
+
+@media screen and (max-width: 479px){
+    .container, .container-fluid{
+       width: 100%;
+       padding-bottom: 50px;
+    }
+    .ordrnumber-cover{
+       width: 100%;
+    }
+    .ordernno-divcenterset{
+        display: block;
+    }
+    .order-numberinnercover{
+        height: auto;
+        white-space: unset;
+        word-break: break-all;
+    }
+    .paymentdetail-fixwidth{
+        width: 100%;
+    }
+    .lefttext-paymnt, .right-resultamounttxt{
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px){
+    .container, .container-fluid{
+       width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1024px) {
+
+}

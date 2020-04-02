@@ -1,0 +1,60 @@
+<div class="container-fluid">
+   <div class="row">
+      <app-sidebar></app-sidebar>
+      <app-header></app-header>
+      <div class="main-content">
+         <div class="head-section">
+            <div class="col-sm-12 product-banner">
+               <div class="row">
+                  <div class="col-sm-8 heading">
+                     <h1 class="singlep-head">Packaging</h1>
+                     <ul class="breadcrumb">
+                        <li><a routerLink="/">home</a></li>
+                        <li><a>Gift Packaging </a></li>
+                        <li><a>Packaging</a></li>
+                     </ul>
+                  </div>
+                  <div class="col-sm-4"></div>
+               </div>
+            </div>
+         </div>
+         <div class="packagecontent">
+            <mat-tab-group>
+               <mat-tab>
+                  <ng-template mat-tab-label>All TYPE</ng-template>
+                  <div class="col-sm-3" *ngFor="let product of products">
+                     <div class="card">
+                        <div class="card-content">
+                           <a routerLink="/gift/product/{{product['category']}}"><img class="card-img-top" [src]="product['image']"></a>
+                           <div class="card-body">
+                              <a>{{product['title']}}</a>
+                              <div class="addaction">
+                                 <a mat-raised-button class="addtocart" routerLink="/gift/product/{{product['category']}}">Add To Cart</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </mat-tab>
+               <mat-tab>
+                  <ng-template mat-tab-label> GIFT WRAPPER</ng-template>
+                  <div class="col-sm-3" *ngFor="let product of products">
+                     <div class="card">
+                        <div class="card-content">
+                           <a routerLink="/gift/product/{{product['category']}}"><img class="card-img-top" [src]="product['image']"></a>
+                           <div class="card-body">
+                              <a>{{product['title']}}</a>
+                              <div class="addaction">
+                                 <a mat-raised-button class="addtocart" routerLink="/gift/product/{{product['category']}}">Add To Cart</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </mat-tab>
+            </mat-tab-group>
+         </div>
+         <app-footer></app-footer>
+      </div>
+   </div>
+</div>

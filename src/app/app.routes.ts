@@ -1,0 +1,60 @@
+import { RouterModule, Routes } from '@angular/router';
+import { HomepageComponent } from './homepage/homepage.component';
+import { CollectionComponent } from './collection/collection.component';
+import { SingleproductComponent } from './singleproduct/singleproduct.component';
+import { CartpageComponent } from './cartpage/cartpage.component';
+import { SigninComponent } from './signin/signin.component';
+import { RegisterComponent } from './register/register.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { TermsComponent } from './terms/terms.component';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { UseraddressComponent } from './useraddress/useraddress.component';
+import { MyaccountComponent } from './myaccount/myaccount.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
+import { CorporateComponent } from './corporate/corporate.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { OrderplacedComponent } from './orderplaced/orderplaced.component';
+import { EventsComponent } from './events/events.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { OrderhistoryComponent } from './orderhistory/orderhistory.component';
+import { OrderdetailComponent } from './orderdetail/orderdetail.component';
+import { SearchComponent } from './search/search.component';
+import { AgedialogComponent } from './agedialog/agedialog.component';
+import { AddgiftcardComponent } from './addgiftcard/addgiftcard.component';
+import { GiftpackagingComponent } from './giftpackaging/giftpackaging.component';
+import { GiftwrapperComponent } from './giftwrapper/giftwrapper.component';
+import { VerifyaccountComponent } from './verifyaccount/verifyaccount.component';
+
+const routes: Routes = [
+  { path: '', component: HomepageComponent },
+  { path: 'home', component: HomepageComponent },
+  { path: 'collection/:slug', component: CollectionComponent },
+  { path: 'collection/:slug/:catslug', component: CollectionComponent },
+  { path: 'products/:slug', component: SingleproductComponent },
+  { path: 'cart', component: CartpageComponent },
+  { path: 'account/login', component: SigninComponent },
+  { path: 'account/register', component: RegisterComponent },
+  { path: 'forgotpassword', component: ForgotpasswordComponent },
+  { path: 'about-us', component: AboutusComponent },
+  { path: 'contact-us', component: ContactusComponent },
+  { path: 'term-conditions', component: TermsComponent },
+  { path: 'privacy-policy', component: PrivacyComponent },
+  { path: 'account/wishlist', component: WishlistComponent },
+  { path: 'account', component: MyaccountComponent },
+  { path: 'corporate-account', component: CorporateComponent },
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'checkout/:id', component: CheckoutComponent },
+  { path: 'orderplaced/:id', component: OrderplacedComponent },
+  { path: 'event', component: EventsComponent },
+  { path: 'account/changepassword', component: ChangepasswordComponent },
+  { path: 'order/:id', component: OrderdetailComponent },
+  { path: 'search', component: SearchComponent },
+  { path: 'agedialog', component: AgedialogComponent },
+  { path: 'gift-certificates/:id', component: AddgiftcardComponent },
+  { path: 'packaging/:id', component: GiftpackagingComponent },
+  { path: 'gift/product/:id', component: GiftwrapperComponent },
+  { path: 'verifyaccount', component: VerifyaccountComponent },
+];
+export const appRouterModule = RouterModule.forRoot(routes);

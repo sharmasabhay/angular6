@@ -1,0 +1,196 @@
+.shipping-cart-msg h4{
+	color: #000000;
+    background-color: #FFD801;
+    border: 1px solid #FFD801;
+    margin: 0px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 15px;
+}
+.checkout-cart .qty, .checkout-cart .cart-price{
+    width: 150px;
+    max-width: 150px !important;
+}
+.checkout-cart tbody{
+    display: table;
+}
+.cart-section {
+    padding: 30px 0px;
+    float: left;
+    width: 100%;
+}
+.fb-wrapper td{
+    border-bottom: 0 !important;
+}
+.check-sub-gift .parent-wrapper{
+    padding-bottom: 10px;
+}
+.checkout-cart tbody{
+    width: 100%;
+}
+td.product-img {
+    width: 100px;
+}
+td.cart-price {
+    width: 180px;
+}
+.parent-wrapper {
+    float: left;
+    padding-top: 15px;
+}
+.gift-wrapper span {
+    font-size: 10px;
+}
+.cart-name{
+    width: 48%;
+}
+.qty{
+    width: 58px;
+}
+.gift-wrapper img{
+    width: 25px;
+    border: 1px solid #ddd;
+    margin-left: 4px;
+    padding: 2px;
+    margin-right: 4px;
+}
+.gift-wrapper {
+    float: left;
+}
+.loader{
+    float: left;
+    width: 100%;
+}
+.loader-spinner{
+    margin: 0 auto;
+    width: 40px;
+}
+p.empty {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-weight: normal;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    float: left;
+    width: 100%;
+    line-height: 200px;
+}
+.product-img img{
+	width: 100px;
+    vertical-align: top;
+}
+.mat-icon {
+    height: 35px!important;
+    width: 40px!important;
+}
+.material-icons {
+    font-family: 'Material Icons';
+    font-size: 30px!important;
+}
+.cart-tbl tr th, .cart-tbl tr td{
+	padding: 10px 20px;
+	border-bottom:1px solid #ccc;
+	vertical-align: middle;
+}
+.cart-tbl{
+	margin-top: 20px;
+}
+.cart-tbl tr th{
+	background-color: #FFD801;
+}
+.promo-price{
+    color: #888;
+    font-size: 12px !important;
+    text-decoration: line-through;
+    margin: 0;
+}
+.cart-tbl button {
+	background: transparent;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+    float: left;
+}
+.cart-tbl .qty{
+    width:104px;
+}
+.cart-tbl input{
+	width: 43px;
+    display: flex;
+    text-align: center;
+    border: none;
+    padding: 6px 0px;
+    font-size: 16px;
+    outline: 0;
+    margin-left: 5px;
+}
+.prize{
+	font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+}
+.total-prize{
+	font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 900;
+}
+.instraction h3{
+	 font-family: 'Oswald', sans-serif;
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-size: 27px;
+    line-height: 34px;
+}
+.cart-btn .btn {
+    background: #000;
+    border-radius: 0px;
+    color: #fff;
+    margin: 5px;
+    height: 45px;
+    padding: 0px 30px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 43px;
+}
+.cart-btn{
+    margin: 20px 0px;
+    float: left;
+}
+.delete{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 479px){
+    .product-img img{
+        width: 45px;
+    }
+    .cart-tbl tr th, .cart-tbl tr td{
+        padding: 5px;
+    }
+    .empty{
+       padding-left: 15px;
+       padding-right: 15px;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px){
+    .product-img img{
+        width: 45px;
+    }
+    .cart-tbl tr th, .cart-tbl tr td{
+        padding: 5px;
+    }
+    .empty{
+       padding-left: 15px;
+       padding-right: 15px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1024px) {
+
+}

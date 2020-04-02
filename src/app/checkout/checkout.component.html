@@ -1,0 +1,1129 @@
+<div class="container-fluid">
+   <div class="row">
+      <app-sidebar></app-sidebar>
+      <app-header></app-header>
+      <div class="main-content">
+         <div class="loader-image checkout-loader" *ngIf="loader">
+            <div class="loader-spinner">
+               <mat-spinner [diameter]="40"></mat-spinner>
+            </div>
+         </div>
+         <div class="content-section Checkout" *ngIf="checkoutForm">
+            <div class="col-sm-12">
+            <div class="custom-stepper stepcount-{{currentStep}}">
+               <div class="custom-step step-1" (click)="activeStep(1);" *ngIf="backStep1">
+                  <div class="step-individual"></div>
+                  <div class="step-bar"></div>
+                  <span>Shopping cart</span>
+               </div>
+               <div class="custom-step step-1" *ngIf="!backStep1">
+                  <div class="step-individual"></div>
+                  <div class="step-bar"></div>
+                  <span>Shopping cart</span>
+               </div>
+               <div class="custom-step step-2" (click)="activeStep(2);" *ngIf="backStep2">
+                  <div class="step-individual"></div>
+                  <div class="step-bar"></div>
+                  <span>Delivery Address</span>
+               </div>
+               <div class="custom-step step-2" *ngIf="!backStep2">
+                  <div class="step-individual"></div>
+                  <div class="step-bar"></div>
+                  <span>Delivery Address</span>
+               </div>
+               <div class="custom-step step-3" (click)="activeStep(3);" *ngIf="backStep3">
+                  <div class="step-individual"></div>
+                  <div class="step-bar"></div>
+                  <span>Select Delivery</span>
+               </div>
+               <div class="custom-step step-3" *ngIf="!backStep3">
+                  <div class="step-individual"></div>
+                  <div class="step-bar"></div>
+                  <span>Select Delivery</span>
+               </div>
+               <div class="custom-step step-4" (click)="activeStep(4);" *ngIf="backStep4">
+                  <div class="step-individual"></div>
+                  <div class="step-bar"></div>
+                  <span>Payment Method</span>
+               </div>
+               <div class="custom-step step-4" *ngIf="!backStep4">
+                  <div class="step-individual"></div>
+                  <div class="step-bar"></div>
+                  <span>Payment Method</span>
+               </div>
+               <div class="custom-step step-5" (click)="activeStep(5);" *ngIf="backStep5">
+                  <div class="step-individual"></div>
+                  <span>Review & confirm</span>
+               </div>
+               <div class="custom-step step-5" *ngIf="!backStep5">
+                  <div class="step-individual"></div>
+                  <span>Review & confirm</span>
+               </div>
+            </div>            
+            <div class="custom-horizontal-stepper {{currentStep}}">
+               <div>
+               <!-- STEP 1 START -->
+                  <div *ngIf="currentStep == 1">
+                     <div class="checkoutmiddletable">
+                        <table class="table cart-table">
+                           <tbody  *ngIf="deviceInfo != 'phone'">
+                              <div *ngFor="let list of cartList" class="checkout-cart">
+                                 <tr>
+                                 <td class="checkout-prod-name">
+                                    <div class="orhistry2_td2procdtcvr">
+                                       <span class="cursor-pointer">
+                                       <a routerLink="/products/{{list['slug']}}"><img [src]="list['image']" *ngIf="list['image'] != '' && list['image'] != null"></a>
+                                       </span>
+                                       <div class="checkouter-td-right-text">
+                                          <div class="orhistry2_td2proctext1 ng-binding to-name" *ngIf="list['recipient_email']"> To: {{list['recipient_name']}}</div>
+                                          <div class="orhistry2_td2proctext1 ng-binding to-name" *ngIf="list['recipient_email']"> Message: {{list['message']}}</div>
+                                          <div class="orhistry2_td2proctext1 ng-binding">{{list['products_name']}}</div>
+                                          <div class="orhistry2_td2proctext1 ng-binding" *ngIf="list['promotion'] != 2 && list['promotion'] != 3">${{list['single_price']}}</div>
+                                          <div class="orhistry2_td2proctext2" *ngIf="list['promotion'] != 2 && list['promotion'] != 3">unit Price</div>
+                                          <div class="orhistry2_td2proctext2" *ngIf="list['promotion'] == 2">(Your Great Deal)</div>
+                                          <div class="orhistry2_td2proctext2" *ngIf="list['promotion'] == 3">(Your Amazing Deal!)</div>
+                                       </div>
+                                    </div>
+                                 </td>
+                                 <td class="check-quantity">
+                                    <div class="checkoutmiddlevlauediv">
+                                       <div class="input-group">
+                                          <input type="text" class="form-control addmore" readonly [(ngModel)]="list['quantity']" [ngModelOptions]="{standalone: true}" *ngIf="!list['gift_wrapperid'] && list['promotion'] != 2 && list['promotion'] != 3">
+                                          <span class="input-group-addon" *ngIf="!list['gift_wrapperid'] && list['promotion'] != 2 && list['promotion'] != 3">
+                                          <button (click)="onIncrement(list)">+</button>
+                                          <button (click)="onDecrement(list);">-</button>
+                                          </span>
+                                       </div>
+                                    </div>
+                                 </td>
+                                 <td class="check-price">
+                                    <div class="orderhistry2price" *ngIf="list['promotion'] != 2 && list['promotion'] != 3">${{list['price']}}</div>
+
+                                    <div class="orderhistry2price promo-price" *ngIf="list['promotion'] == 2 || list['promotion'] == 3">${{list['single_price']}}</div>
+
+                                    <div class="orderhistry2price" *ngIf="list['promotion'] == 2 || list['promotion'] == 3">${{list['discounted_price']}}</div>
+                                 </td>
+                                 <td class="desk-show cart-delete">
+                                    <a href="javascript:void(0)" class="checkoutmiddletabledeleteimg" (click)="deleteCart(list['id'], list['gift_wrapperid'], list['promo']);">
+                                       <mat-icon>delete</mat-icon>
+                                    </a>
+                                 </td>
+                                 </tr>
+                                 <tr *ngIf="list['gift_wrapperid']" class="check-sub-gift">
+                                    <div *ngFor="let wrapper of list['product']" class="gift-wrapper">
+                                       <a routerLink="/products/{{wrapper['product_slug']}}">
+                                         <img [src]="wrapper['product_image']">
+                                         <span>X 1</span>
+                                       </a>
+                                    </div>
+                                 </tr>
+                              </div>
+                           </tbody>
+
+                           <!-- Mobile Cart -->
+                           <tbody  *ngIf="deviceInfo == 'phone'">
+                              <div *ngFor="let list of cartList" class="checkout-cart">
+                                 <tr>
+                                 <td class="desk-show cart-delete">
+                                    <a href="javascript:void(0)" class="checkoutmiddletabledeleteimg" (click)="deleteCart(list['id'], list['gift_wrapperid']);">
+                                       <mat-icon>delete</mat-icon>
+                                    </a>
+                                    <div class="orhistry2_td2procdtcvr">
+                                       <span class="cursor-pointer">
+                                       <a routerLink="/products/{{list['slug']}}"><img [src]="list['image']" *ngIf="list['image'] != '' && list['image'] != null"></a>
+                                       </span>
+                                       <div class="checkouter-td-right-text">
+                                          <div class="orhistry2_td2proctext1 ng-binding to-name" *ngIf="list['recipient_email']"> To: {{list['recipient_name']}}</div>
+                                          <div class="orhistry2_td2proctext1 ng-binding to-name" *ngIf="list['recipient_email']"> Message: {{list['message']}}</div>
+                                          <div class="orhistry2_td2proctext1 ng-binding">{{list['products_name']}}</div>
+                                          <div class="orhistry2_td2proctext1 ng-binding" *ngIf="list['promotion'] != 2 && list['promotion'] != 3">${{list['single_price']}}</div>
+                                          <div class="orhistry2_td2proctext2" *ngIf="list['promotion'] != 2 && list['promotion'] != 3">unit Price</div>
+                                          <div class="orhistry2_td2proctext2" *ngIf="list['promotion'] == 2">(Your Great Deal)</div>
+                                          <div class="orhistry2_td2proctext2" *ngIf="list['promotion'] == 3">(Your Amazing Deal!)</div>
+                                       </div>
+                                    </div>
+                                 </td>
+                                 <td class="check-quantity">
+                                    <div class="checkoutmiddlevlauediv">
+                                       <div class="input-group">
+                                          <input type="text" class="form-control addmore" readonly [(ngModel)]="list['quantity']" [ngModelOptions]="{standalone: true}" *ngIf="!list['gift_wrapperid'] && list['promotion'] != 2 && list['promotion'] != 3">
+                                          <span class="input-group-addon" *ngIf="!list['gift_wrapperid'] && list['promotion'] != 2 && list['promotion'] != 3">
+                                          <button (click)="onIncrement(list)">+</button>
+                                          <button (click)="onDecrement(list);">-</button>
+                                          </span>
+                                       </div>
+                                    </div>
+                                 </td>
+                                 <td class="check-price">
+                                    <div class="orderhistry2price" [ngClass]="{'promo-price': list['promotion'] == 2 || list['promotion'] == 3}">${{list['price']}}</div>
+                                    <div class="orderhistry2price" *ngIf="list['promotion'] == 2 || list['promotion'] == 3">${{list['discounted_price']}}</div>
+                                 </td>
+                                 </tr>
+                                 <tr *ngIf="list['gift_wrapperid']" class="check-sub-gift">
+                                    <div *ngFor="let wrapper of list['product']" class="gift-wrapper">
+                                       <a routerLink="/products/{{wrapper['product_slug']}}">
+                                         <img [src]="wrapper['product_image']">
+                                         <span>X 1</span>
+                                       </a>
+                                    </div>
+                                 </tr>
+                              </div>
+                           </tbody>
+                        </table>
+                     </div>
+                     <div class="checkboxtotaldiv-top">
+                        <div class="col-md-6 couponcode">
+                           <div *ngIf="couponSection">
+                              <mat-form-field appearance="outline" class="nopadtext">
+                                    <input type="text" matInput  name="coupon" placeholder="Coupon Code" [(ngModel)]="checkout.coupon_code" [ngModelOptions]="{standalone: true}">
+                              </mat-form-field>
+                              <button mat-flat-button color="primary" class="btn" (click)="couponCode();">Apply</button>
+                              <p *ngIf="errorMessage">{{errorMessageShow}}</p>
+                              <!-- <p *ngIf="alreadyUsedMessage">Couponcode already used</p> -->
+                           </div>
+                           <div *ngIf="afterCoupon">
+                              <p>"{{checkout.coupon_code}}" Coupon Applied</p>
+                              <button mat-flat-button color="primary" class="btn btn-remove" (click)="removeCouponCode();">Remove</button>
+                           </div>
+                        </div>
+                        <div class="col-md-6 subtotal">
+                           <div class="checkboxtotaldiv-middle-first" *ngIf="customDiscount">
+                              <div class="checkboxtotaldiv-title">{{customDiscountText}}
+                                 <span matTooltip="{{customDiscountText}}" matTooltipPosition="above" #tooltip22="matTooltip" (click)="tooltip22.toggle()"><img src="/assets/img/questionimg.png"></span>
+                              </div>
+                              <div class="checkboxtotaldiv-text">{{customDiscountPrice  | currency:"$"}}</div>
+                           </div>
+                           <div class="checkboxtotaldiv-title text-right">
+                              Subtotal &nbsp; {{totalCart  | currency:"$"}}
+                           </div>
+                        </div>
+                     </div>
+                     <div class="checkboxtotaldiv-middle">
+                        <!-- <div class="col-md-6">
+                           <button class="checkoutergitpackage" (click)="showGiftPopup();">Gift Packaging</button>
+                        </div> -->
+                        <div class="col-md-6 service-prices" style="float: right;">
+                           <div class="checkboxtotaldiv-middle-first">
+                              <div class="checkboxtotaldiv-title">Delivery Charge 
+                                 <span matTooltip="Order above $100.00 for free delivery!" matTooltipPosition="above" #tooltip="matTooltip" (click)="tooltip.toggle()"><img src="/assets/img/questionimg.png"></span>
+                              </div>
+                              <div class="checkboxtotaldiv-text" *ngIf="totalCart < 100.00">{{deliveryCharge | currency:"$"}}</div>
+                              <div class="checkboxtotaldiv-text" *ngIf="totalCart >= 100.00">Free</div>
+                           </div>
+                           <!-- <div class="checkboxtotaldiv-middle-first">
+                              <div class="checkboxtotaldiv-title">Specific Time Charge 
+                                 <span matTooltip="Order above $100.00 for free delivery!" matTooltipPosition="above"><img src="/assets/img/questionimg.png"></span>
+                              </div>
+                              <div class="checkboxtotaldiv-text" *ngIf="totalCart < 100.00">${{deliveryCharge}}</div>
+                              <div class="checkboxtotaldiv-text" *ngIf="totalCart > 100.00">Free</div>
+                           </div> -->
+                           <div class="checkboxtotaldiv-middle-first" *ngIf="cardCharges > 0">
+                              <div class="checkboxtotaldiv-title">Card Charge
+                                 <span matTooltip="4% Additional fees of your cart for card payment" matTooltipPosition="above" #tooltip1="matTooltip" (click)="tooltip1.toggle()"><img src="/assets/img/questionimg.png"></span>
+                              </div>
+                              <div class="checkboxtotaldiv-text">{{cardCharges  | currency:"$"}}</div>
+                           </div>
+                           <div class="checkboxtotaldiv-middle-first" *ngIf="couponDiscount">
+                              <div class="checkboxtotaldiv-title">Coupon Discount
+                                 <span matTooltip="Discount applied by using coupon" matTooltipPosition="above" #tooltip2="matTooltip" (click)="tooltip2.toggle()"><img src="/assets/img/questionimg.png"></span>
+                              </div>
+                              <div class="checkboxtotaldiv-text">-${{discountAmount}}</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="checkboxtotaldiv-buttom">
+                        <div class="checkboxtotaldiv-title">Total</div>
+                        <div class="checkboxtotaldiv-text" *ngIf="totalCartAmount > 0">{{totalCartAmount  | currency:"$"}}</div>
+                        <div class="checkboxtotaldiv-text" *ngIf="totalCartAmount < 0">$0.00</div>
+                     </div>
+                     <div class="checkoutcongratulationouter">
+                        <div class="checkout-congratulation-title" *ngIf="hurryMessage && !greatAlready">Hurry! only ${{remainingPromoPrice}} more to qualify for this promotion.</div>
+                        <div class="checkout-congratulation-title" *ngIf="allowPromoProducts">
+                           <b>CONGRATULATIONS! YOU HAVE BEEN QUALIFIED FOR SPECIAL $60.00 PROMOTION.</b>
+                        </div>
+                        <p class="checkout-p" *ngIf="allowPromoProducts">Please select one of the following products.</p>
+                     </div>
+                     <div class="product-slider">
+                        <ngx-slick class="alcohaul-slider carousel" #slickModal="slick-modal" [config]="ProductConfig">
+                        <div *ngFor="let product of greatDeal">
+                        <div ngxSlickItem class="slide" *ngIf="product['product_detail'][0]['product_price'] != '0.00'">
+                           <div class="image">
+                              <div class="card ">
+                                 <div class="card-content">
+                                    <div class="hovereffect">
+                                       <img class="card-img-top" [src]="product['product_detail'][0]['product_image']">
+                                       <div class="overlay">
+                                          <button class="wishlist" (click)="addWishlist(product['product_id']);">
+                                             <mat-icon>favorite_border </mat-icon>
+                                          </button>
+                                       </div>
+                                    </div>
+                                    <div class="card-body">
+                                       <a routerLink="/products/{{product['slug']}}"><h5 class="card-title">{{product['product_detail'][0]['product_name']}}</h5></a>
+                                       <p class="price price-stripe">${{product['product_detail'][0]['product_price']}}</p>
+                                       <span class="lowprice">${{product['discounted_price']}}</span>
+                                       <button class="checkoutproductbutton" [ngClass]="{'disabled': greatAlready || alreadyAddedGreat}" mat-button (click)="addToCartPromo(product['product_id'], 2 , product['discounted_price'], 'single');" [disabled]="alreadyAddedGreat"><span class="add-promo" *ngIf="!greatAlready">Add promo</span><span class="already-cart" *ngIf="greatAlready">Already Added</span></button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        </div>
+                        </ngx-slick>
+                     </div>
+                     <!-- Another discount -->
+                     <div class="another-discount" *ngIf="anotherDiscount">
+                        <div class="checkoutcongratulationouter">
+                           <div class="checkout-congratulation-title" *ngIf="nextHurryMessage">Hurry! only ${{nextRemainingPromoPrice}} more to qualify for this promotion.</div>
+                           <div class="checkout-congratulation-title" *ngIf="nextAllowPromoProducts">
+                              <b>CONGRATULATIONS! YOU HAVE BEEN QUALIFIED FOR SPECIAL $125.00 PROMOTION.</b>
+                           </div>
+                           <p class="checkout-p" *ngIf="nextAllowPromoProducts">Please select one of the following products.</p>
+                        </div>
+                        <div class="product-slider">
+                           <ngx-slick class="alcohaul-slider carousel" #slickModal="slick-modal" [config]="nextProductConfig">
+                           <div *ngFor="let product of amazing">
+                           <div ngxSlickItem class="slide" *ngIf="product['product_detail'][0]['product_price'] != '0.00'">
+                              <div class="image">
+                                 <div class="card ">
+                                    <div class="card-content">
+                                    <div class="hovereffect">
+                                       <img class="card-img-top" [src]="product['product_detail'][0]['product_image']">
+                                       <div class="overlay">
+                                          <button class="wishlist" (click)="addWishlist(product['product_id']);">
+                                             <mat-icon>favorite_border </mat-icon>
+                                          </button>
+                                       </div>
+                                    </div>
+                                    <div class="card-body">
+                                       <a routerLink="/products/{{product['slug']}}"><h5 class="card-title">{{product['product_detail'][0]['product_name']}}</h5></a>
+                                       <p class="price price-stripe">${{product['product_detail'][0]['product_price']}}</p>
+                                       <span class="lowprice">${{product['discounted_price']}}</span>
+                                       <button class="checkoutproductbutton" [ngClass]="{'disabled': amazingAlready || alreadyAddedAmazing}" mat-button (click)="addToCartPromo(product['product_id'], 3, product['discounted_price'], 'single');" [disabled]="alreadyAddedAmazing"><span *ngIf="!amazingAlready">Add promo</span><span *ngIf="amazingAlready">Already Added</span></button>
+                                    </div>
+                                 </div>
+                                 </div>
+                              </div>
+                           </div>
+                           </div>
+                           </ngx-slick>
+                        </div>
+                     </div>
+                     <div class="checkouterlastdiv">
+                        <div class="checkouterbackouter">
+                           <a routerLink="/" class="checkouterback">
+                              <mat-icon>keyboard_arrow_left</mat-icon>
+                              back to shopping
+                           </a>
+                           <button class="checkoutcheckoutnowbutton" (click)="showPopup()">Checkout Now</button>
+                        </div>
+                     </div>
+                     <div>
+                     </div>
+                  </div>
+                  <!-- STEP 1 END -->
+
+                  <!-- STEP 2 START-->
+                  <div *ngIf="currentStep == 2">
+                     <div class="choose-delivery-option">
+                        <h2>How would you like to recieve your order?</h2>
+                        <div [ngClass]="{'col-md-6 p-l-0': 1 === 1, 'selected-delivery': activeDelivery == '1'}" (click)="chooseDelivery(1)">
+                           <div class="delivery-option">
+                              <div class="delivery-icon col-md-1 pad-0">
+                                 <mat-icon>home</mat-icon>
+                              </div>
+                              <div class="delivery-text col-md-11 pad-r-0">
+                                 <strong>Home Delivery</strong>
+                                 <p class="p-text">Get your order delivered to a location of your choice with our various delivery options</p>
+                                 <ul>
+                                    <li>NEXT day delivery</li>
+                                    <li>SAME day delivery</li>
+                                    <li>2 HOUR Delivery</li>
+                                 </ul>
+                                 <p>You will be able to choose the options and date/time preferred in the next step of the checkout process.</p>
+                              </div>
+                           </div>
+                           <div class="arrow-icon">
+                              <mat-icon>keyboard_arrow_down</mat-icon>
+                           </div>
+                        </div>
+                        <!-- Mobile Delivery Details -->
+                        <div class="addressbook-btmpannelcover" *ngIf="activeDelivery == '1' && deviceInfo == 'phone'">
+                           <h2>Delivery Details</h2>
+                           <div *ngIf="userAddress">
+                              <div *ngFor="let detail of details , let i = index;" class="single-address">
+                                 <div class="addressbokk-trvaichacovr" [ngClass]="{'active': activeAddress == i}" (click)="chooseAddress(i)">
+                                    <div class="address-inner">
+                                       <div class="left">
+                                          <mat-icon>map</mat-icon>
+                                       </div>
+                                       <div class="right">
+                                          <div class="addressbok-travis">
+                                             <div class="addrestravis-text">{{detail['firstname']}}</div>
+                                             <div class="addresseditdltpic">
+                                                <a (click)="EditAddressPopup(i)">
+                                                   <mat-icon>edit</mat-icon>
+                                                </a>
+                                                <a (click)="deleteAddress(i);">
+                                                   <mat-icon>delete</mat-icon>
+                                                </a>
+                                             </div>
+                                          </div>
+                                          <p>{{detail['street']}}</p>
+                                          <p>#{{detail['floor']}} - {{detail['unit']}}</p>
+                                          <p>Singapore - {{detail['postal_code']}}</p>
+                                          <div class="ship-address">Ship to this address</div>
+                                          <div class="selectAddress" *ngIf="detail['default'] == true">
+                                             <div id="address-default-tag">Default</div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="addressbokk-addnewadresscovr" (click)="showAddressPopup()">
+                              <!-- <img src="/assets/img/addnewadrrspic2.png"> -->
+                              <mat-icon>add_location</mat-icon>
+                              <div class="addnewadresstext">Add new address</div>
+                           </div>
+                        </div>
+                        <div [ngClass]="{'col-md-6 p-r-0': 1 === 1, 'selected-delivery': activeDelivery == '2'}" (click)="chooseDelivery(2)">
+                           <div class="delivery-option">
+                              <div class="delivery-icon col-md-1 pad-0">
+                                 <mat-icon>mouse</mat-icon>
+                              </div>
+                              <div class="delivery-text col-md-11 pad-r-0">
+                                 <strong>Click & Collect</strong>
+                                 <p class="p-text">Absolutely FREE! No minimum order and no delivery charges. Swing by any time to pick up your favourite booze!</p>
+                              </div>
+                           </div>
+                           <div class="arrow-icon">
+                              <mat-icon>keyboard_arrow_down</mat-icon>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- Delivery Details -->
+                     <div class="addressbook-btmpannelcover" *ngIf="activeDelivery == '1' && deviceInfo != 'phone'">
+                        <h2>Delivery Details</h2>
+                        <div *ngIf="userAddress">
+                           <div *ngFor="let detail of details , let i = index;" class="single-address">
+                              <div class="addressbokk-trvaichacovr" [ngClass]="{'active': activeAddress == i}" (click)="chooseAddress(i)">
+                                 <div class="address-inner">
+                                    <div class="left">
+                                       <mat-icon>map</mat-icon>
+                                    </div>
+                                    <div class="right">
+                                       <div class="addressbok-travis">
+                                          <div class="addrestravis-text">{{detail['firstname']}}</div>
+                                          <div class="addresseditdltpic">
+                                             <a (click)="EditAddressPopup(i)">
+                                                <mat-icon>edit</mat-icon>
+                                             </a>
+                                             <a (click)="deleteAddress(i);">
+                                                <mat-icon>delete</mat-icon>
+                                             </a>
+                                          </div>
+                                       </div>
+                                       <p>{{detail['street']}}</p>
+                                       <p>#{{detail['floor']}} - {{detail['unit']}}</p>
+                                       <p>Singapore - {{detail['postal_code']}}</p>
+                                       <div class="ship-address">Ship to this address</div>
+                                       <div class="selectAddress" *ngIf="detail['default'] == true">
+                                          <div id="address-default-tag">Default</div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="addressbokk-addnewadresscovr" (click)="showAddressPopup()">
+                           <!-- <img src="/assets/img/addnewadrrspic2.png"> -->
+                           <mat-icon>add_location</mat-icon>
+                           <div class="addnewadresstext">Add new address</div>
+                        </div>
+                     </div>
+                     <!-- Collection Details -->
+                     <div class="collection-detail" *ngIf="activeDelivery == '2'">
+                        <h2>Collection Details</h2>
+                        <div class="find-store">
+                           <h5>Please proceed to our collection address below after completing the checkout process.</h5>
+                           <div class="collection-address">
+                              <p>1 Sims Lane</p>
+                              <p>Unit #01-06</p>
+                              <p>Singapore 387355</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="specil_intertion_div" *ngIf="activeDelivery == '1' || activeDelivery == '2'">
+                        <div class="div_specil_intertion_title">Special Instructions</div>
+                        <div class="cover_secilinform">
+                           <div class="alcohlinputextarea12">
+                              <label>Any Special Instructions (optional)</label>
+                              <mat-form-field appearance="outline">
+                                 <textarea class="alcohlinputextareaa2" maxlength="160" matInput [(ngModel)]="checkout.instructions" [ngModelOptions]="{standalone: true}"></textarea>
+                              </mat-form-field>
+                           </div>
+                           <div class="alcohlchekboxdiv12" *ngIf="activeDelivery == '1'">
+                              <mat-checkbox [(ngModel)]="checkout.leaveatdoor" [ngModelOptions]="{standalone: true}">Leave this order at my doorstep.</mat-checkbox>
+                              <div class="gry_itlic_text">We’ll leave your items at your doorstep without contacting you. To be eligible, we must have unrestricted access to your doorstep.</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="checkouterbackouter2">
+                        <button mat-button class="checkouterback2" (click)="activeStep(1)">
+                           <mat-icon>keyboard_arrow_left</mat-icon>
+                           Back
+                        </button>
+                        <button mat-button class="checkoutcheckoutnowbutton2" (click)="skipStep3();">Next</button>
+                     </div>
+                  </div>
+                   <!-- STEP 2 END-->
+
+                  <!-- STEP 3 START -->
+                  <div *ngIf="currentStep == 3">
+                     <div class="checkoutmiddleouter">
+                        <div *ngIf="snackbar" [ngClass]="{'snakbar': 1 === 1, 'red': totalCart < 100, 'green': totalCart > 100}">
+                           <div class="snakbar-section">
+                              <div class="close-snack" (click)="closeSnackBar();">
+                                 <mat-icon *ngIf="totalCart < 100">cancel</mat-icon>
+                                 <mat-icon *ngIf="totalCart > 100">check_circle</mat-icon>
+                              </div>
+                              <div class="snack-right"  *ngIf="totalCart < 100">
+                                 <span>$10 fee will be added as your total cart value is less then $100.</span>
+                                 <span>You are {{remainingShopping  | currency:"$"}} away from $100 <a routerLink="/home">SHOP NOW!</a></span>
+                              </div>
+                              <div class="snack-right"  *ngIf="totalCart > 100">
+                                 <span>Yay! You saved $10 as your total cart value is more than $100!</span>
+                              </div>
+                           </div>
+                        </div>
+                         <div class="checkoutstep3full">
+                         <div class="checkoutstepthreehead">Select your preferred delivery method</div>
+                            <div [ngClass]="{'col-sm-4 box': 1 === 1, 'selected': activeTime == '1'}" (click)="chooseTimeSlot(1)">
+                              <div (click)="nextDayDelivery();">
+                                 <div class="checkoutstep3inner">
+                                     <div class="checkoutstep5top">
+                                        <img src="/assets/img/next.png">
+                                        <span class="top-tilte">NEXT Day Delivery</span>
+                                     </div>
+                                     <div class="checkoutstep5middle">
+                                        <p>Get Your order delivered the next day if orders are placed before 12 am!</p>
+                                     </div>
+                                     <div class="checkoutstep5bottom">FREE</div>
+                                 </div>
+                              </div>
+                            </div>
+
+                            <div [ngClass]="{'col-sm-4 box': 1 === 1, 'selected': activeTime == '2'}" (click)="chooseTimeSlot(2)">
+                               <div (click)="sameDayDelivery();">
+                                  <div class="checkoutstep3inner">
+                                     <div class="checkoutstep5top">
+                                        <img src="/assets/img/delivery-truck.png">
+                                        <span class="top-tilte">SAME Day Delivery</span>
+                                     </div>
+                                     <div class="checkoutstep5middle">
+                                        <p>Get Your order delivered with in the day if you placed your orders  before 2 am!</p>
+                                     </div>
+                                     <div class="checkoutstep5bottom">+$5.00</div>
+                                  </div>
+                               </div>
+                            </div>
+
+                            <div [ngClass]="{'col-sm-4 box': 1 === 1, 'selected': activeTime == '3'}" (click)="chooseTimeSlot(3)">
+                                <div (click)="twohoursDayDelivery();">
+                                  <div class="checkoutstep3inner">
+                                     <div class="checkoutstep5top">
+                                        <img src="/assets/img/startup.png">
+                                        <span class="top-tilte">2 hour Delivery</span>
+                                     </div>
+                                     <div class="checkoutstep5middle">
+                                        <p>Get Your order within 2 hours from the time you place the order! this service is avialable if orders are placed within these hours .</p>
+                                     </div>
+                                     <div class="checkoutstep5bottom">+$19.90</div>
+                                  </div>
+                                </div>
+                            </div>
+                         </div>
+                        <div class="checkoutdeliverysteps" *ngIf="nextdaydelivery">
+                        <div class="checkoutstepthree_dayfordelivery ng-scope">Please pick a day for delivery</div>
+                        <div class="checkout-date-cover">
+                           <div class="checkoutstepthree_showdate">
+                              <mat-form-field>
+                                 <span class="align-set-calendar" (click)="picker.open()">{{ checkout.date | date : 'fullDate'}}</span> 
+                                 <input matInput [min]="minDate" [matDatepicker]="picker" value="" (click)="picker.open()" readonly [(ngModel)]="checkout.date" [ngModelOptions]="{standalone: true}">
+                                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                 <mat-datepicker #picker></mat-datepicker>
+                              </mat-form-field>
+                           </div>
+                        </div>
+                        <!-- Manual time selection -->
+                        <div class="manual-time-section" *ngIf="manualTime">
+                           <div class="manual-section">
+                              <p>You have selected a specific timing between</p>
+                              <div class="hours">
+                                 <strong>{{manualStartTime}}</strong><span class="b-hours">hours</span><span class="time-to">to</span><strong>{{manualEndTime}}</strong><span class="b-hours">hours</span>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- Not manual section -->
+                        <div class="checkoutstepthree_dayfordelivery" *ngIf="notManual">Please choose a timeslot from below</div>
+                        <div id="timeslots" class="pos-realtive" *ngIf="notManual">
+                           <div *ngFor="let week of currentWeek, let i = index;">
+                              <div [ngClass]="{'slots-bunch': 1 === 1, 'active': activeDay == i}">
+                                 <div class="slots-bunch-title {{i}}">
+                                 <div class="week-stamp">{{week | date : 'EEE'}}</div>
+                                 <div class="date-stamp">{{week | date : 'dd'}}{{week | date : 'MMM'}}</div>
+                                 </div>
+                                 <div [ngClass]="{'single-slot': 1 === 1, 'active-slot': activeSlot == '12:30pm - 4:00pm' && activeDay == i}" (click)="chooseSlot('12:30pm - 4:00pm', i)">12:30pm - 4pm</div>
+                                 <div [ngClass]="{'single-slot': 1 === 1, 'active-slot': activeSlot == '4:00pm - 8:00pm' && activeDay == i}" (click)="chooseSlot('4:00pm - 8:00pm', i)">4pm - 8pm</div>
+
+                                 <div [ngClass]="{'single-slot': 1 === 1, 'active-slot': activeSlot == '6:00pm - 10:30pm' && activeDay == i}" (click)="chooseSlot('6:00pm - 10:30pm', i)">6pm - 10:30pm</div>
+                                 
+                              </div>
+                           </div>
+                        </div>
+                        <div class="orderbtn">
+                           <button class="btn" (click)="SetDeliveryTimePopup();" *ngIf="needSpecificTime"><img src="/assets/img/stop-watch.png"> <span>Need your order <br> to arrive <br> at a specific time?</span><i class="fa fa-chevron-right"></i></button>
+                           <button class="btn cancel-selection" (click)="cancelSpecificTime();" *ngIf="cancelSpecificTimeSection">
+                               <img src="/assets/img/stop-watch-white.png"><span>Cancel specific <br>timing selection</span><i class="fa fa-times"></i>
+                           </button>
+                        </div>
+                        </div>
+                        <div class="checkoutdeliverysteps" *ngIf="samedaydelivery">
+                           <div class="checkoutstepthree_dayfordelivery ng-scope">Please pick a day for delivery</div>
+                           <div class="checkout-date-cover">
+                              <!-- <div class="checkoutstepthree_showdate" *ngIf="singleDateDisabled">
+                                 <mat-form-field>
+                                    <span class="align-set-calendar" (click)="warningPopup();">{{ checkout.singledate | date : 'fullDate'}}</span> 
+                                    <input matInput [matDatepicker]="picker" value="" readonly [(ngModel)]="checkout.singledate" [ngModelOptions]="{standalone: true}">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                 </mat-form-field>
+                              </div> -->
+                              <div class="checkoutstepthree_showdate">
+                                 <span class="align-set-calendar" (click)="warningPopup();" *ngIf="timeZone > '14:00:00'">{{ checkout.singledate | date : 'fullDate'}}</span>
+                                 <span class="align-set-calendar" (click)="warningPopup();" *ngIf="timeZone < '14:00:00'">{{ checkout.singledate | date : 'fullDate'}}</span>
+                              </div>
+                           </div>
+                           <div class="checkoutstepthree_dayfordelivery">Please choose a timeslot from below</div>
+                           <div id="timeslots" class="pos-realtive samedaydelivery">
+                              <div class="slots-bunch center active">
+                                 <div class="slots-bunch-title">
+                                    <div class="week-stamp">{{checkout.singledate | date : 'EEE'}}</div>
+                                    <div class="date-stamp">{{checkout.singledate | date : 'dd'}}{{checkout.singledate | date : 'MMM'}}</div>
+                                 </div>
+                                <div *ngIf="timeZone < '14:00:00'" class="less-2">
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'selected': activeSameDaySlot == '2:00pm - 7:00pm', 'disabletime': timeZone > '14:00:00'}" (click)="chooseSameDaySlot('2:00pm - 7:00pm')">2pm - 7pm</div>
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'selected': activeSameDaySlot == '6:00pm - 10:30pm', 'disabletime': timeZone > '14:00:00'}" (click)="chooseSameDaySlot('6:00pm - 10:30pm')" *ngIf="!weekend">6pm - 10:30pm</div>
+                                </div>
+                                 <!-- Time greater than 2 -->
+                                 <div class="greater-2" *ngIf="timeZone > '14:00:00'">
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'disabletime': timeZone > '14:00:00'}">2pm - 7pm</div>
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'disabletime': timeZone > '14:00:00'}">6pm - 10:30pm</div>
+                                 </div>
+                                 
+                              </div>
+                           </div>
+                           <div class="same-day-notice" *ngIf="timeZone > '14:00:00'">
+                              <div class="notice-container">
+                                 <mat-icon>warning</mat-icon>
+                                 <span>Cut off timing for SAME DAY DELIVERY is at 2pm daily. Please select other delivery method.</span>
+                              </div>
+                           </div>
+                        </div>
+
+                        <div class="checkoutdeliverysteps" *ngIf="twohoursdelivery">
+                        <div class="checkoutstepthree_dayfordelivery ng-scope">Please pick a day for delivery</div>
+                        <div class="checkout-date-cover">
+                           <div class="checkoutstepthree_showdate">
+                              <mat-form-field>
+                                 <span class="align-set-calendar" (click)="picker.open()">{{ checkout.singlehour | date : 'fullDate'}}</span> 
+                                 <input matInput [min]="minDateNext" [matDatepicker]="picker" value="" (click)="picker.open()" readonly [(ngModel)]="checkout.singlehour" (dateChange)="nextDayNoDisable()" [ngModelOptions]="{standalone: true}">
+                                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                 <mat-datepicker #picker></mat-datepicker>
+                              </mat-form-field>
+                           </div>
+                          <!--  <div class="checkoutstepthree_showdate" *ngIf="weekend">
+                               <span class="align-set-calendar">{{ checkout.singlehour | date : 'fullDate'}}</span> 
+                           </div> -->
+                        </div>
+                        <div class="checkoutstepthree_dayfordelivery">Please choose a timeslot from below</div>
+                        <div id="timeslots" class="pos-realtive twohourdelivery">
+                           <div class="slots-bunch center active">
+                              <div class="slots-bunch-title">
+                                 <div class="week-stamp">{{checkout.singlehour | date : 'EEE'}}</div>
+                                 <div class="date-stamp">{{checkout.singlehour | date : 'dd'}}{{checkout.singlehour | date : 'MMM'}}</div>
+                              </div>
+
+                              <!-- Weekend slot -->
+                              <div *ngIf="weekend">
+                                 <!-- After 3 -->
+                                 <div [ngClass]="{'weekend-timeslot': 1 === 1, 'disabletime-twohour': timeZone > '15:00:00'}" *ngIf="timeZone > '15:00:00'">
+
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'selected': activeHourSlot == 'Next 2 hours'}">Within next 2 HOURS</div>
+
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'selected': activeHourSlot == '12:00pm - 2:00pm'}">12pm - 2pm</div>
+
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'selected': activeHourSlot == '2:00pm - 4:00pm'}">2pm - 4pm</div>
+
+                                    <div class="same-day-notice">
+                                       <div class="notice-container">
+                                          <mat-icon>warning</mat-icon>
+                                          <span>Cut off timing for 2 HOUR DELIVERY are:</span><br>
+                                          <span class="p-l-30">Monday to Friday at 7pm LAST ORDER.</span><br>   
+                                          <span class="p-l-30">Saturday & Sunday at 3pm LAST ORDER.</span><br>
+                                          <span class="p-l-30">Please select other delivery methods!</span>
+                                       </div>
+                                    </div>
+                                 </div>
+
+                                 <!-- Before 3 -->
+                                 <div [ngClass]="{'weekend-timeslot': 1 === 1, 'activetime-twohour': timeZone < '15:00:00'}" *ngIf="timeZone < '15:00:00'">
+
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'selected': activeHourSlot == 'Next 2 hours'}" (click)="chooseHourSlot('Next 2 hours')">Within next 2 HOURS</div>
+                                    
+                                    <!-- 12 - 2 -->
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'selected': activeHourSlot == '12:00pm - 2:00pm'}" (click)="chooseHourSlot('12:00pm - 2:00pm')" *ngIf="timeZone < '12:00:00'">12pm - 2pm</div>
+
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'disabletime': timeZone > '12:00:00'}" *ngIf="timeZone > '12:00:00' && !removeDisable">12pm - 2pm</div>
+
+                                    <!-- Next day date -->
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'selected': activeHourSlot == '12:00pm - 2:00pm'}" (click)="chooseHourSlot('12:00pm - 2:00pm')" *ngIf="timeZone > '12:00:00' && removeDisable">12pm - 2pm</div>
+
+                                    <!-- 2 - 4 -->
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'selected': activeHourSlot == '2:00pm - 4:00pm'}" (click)="chooseHourSlot('2:00pm - 4:00pm')" *ngIf="timeZone < '14:00:00'">2pm - 4pm</div>
+
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'disabletime': timeZone}" *ngIf="timeZone > '14:00:00' && !removeDisable">2pm - 4pm</div>
+
+                                    <!-- Next day date -->
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'selected': activeHourSlot == '2:00pm - 4:00pm'}" (click)="chooseHourSlot('2:00pm - 4:00pm')" *ngIf="timeZone > '14:00:00' && removeDisable">2pm - 4pm</div>
+
+                                 </div>
+
+                              </div>
+
+                              <!-- Not Weekend slot -->
+                              <div *ngIf="!weekend" class="no-weekend-timeslot">
+                                 <!-- After 7 -->
+                                 <div [ngClass]="{'weekend-timeslot': 1 === 1, 'disabletime-twohour': timeZone > '19:00:00'}" *ngIf="timeZone > '19:00:00'">
+
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'selected': activeHourSlot == 'Next 2 hours'}">Within next 2 HOURS</div>
+
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'selected': activeHourSlot == '12:00pm - 2:00pm'}" >12pm - 2pm</div>
+
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'selected': activeHourSlot == '2:00pm - 4:00pm'}">2pm - 4pm</div>
+
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'selected': activeHourSlot == '4:00pm - 6:00pm'}">4pm - 6pm</div>
+
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'selected': activeHourSlot == '6:00pm - 8:00pm'}">6pm - 8pm</div>
+
+                                    <div class="same-day-notice">
+                                       <div class="notice-container">
+                                          <mat-icon>warning</mat-icon>
+                                          <span>Cut off timing for 2 HOUR DELIVERY are:</span><br>
+                                          <span class="p-l-30">Monday to Friday at 7pm LAST ORDER.</span><br>   
+                                          <span class="p-l-30">Saturday & Sunday at 3pm LAST ORDER.</span><br>
+                                          <span class="p-l-30">Please select other delivery methods!</span>
+                                       </div>
+                                    </div>
+                                 </div>
+
+                                 <!-- Before 7 -->
+                                 <div [ngClass]="{'weekend-timeslot': 1 === 1, 'activetime-twohour': timeZone < '19:00:00'}" *ngIf="timeZone < '19:00:00'">
+                                 
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'selected': activeHourSlot == 'Next 2 hours'}" (click)="chooseHourSlot('Next 2 hours')">Within next 2 HOURS</div>
+                                    <!-- 12 - 2  -->
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'selected': activeHourSlot == '12:00pm - 2:00pm'}" (click)="chooseHourSlot('12:00pm - 2:00pm')" *ngIf="timeZone < '12:00:00'">12pm - 2pm</div>
+
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'disabletime': timeZone > '12:00:00'}" *ngIf="timeZone > '12:00:00' && !removeDisable">12pm - 2pm</div>
+                                    <!-- Next day date -->
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'selected': activeHourSlot == '12:00pm - 2:00pm'}" (click)="chooseHourSlot('12:00pm - 2:00pm')" *ngIf="timeZone > '12:00:00' && removeDisable">12pm - 2pm</div>
+                                    
+                                    <!-- 2 - 4 -->
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'selected': activeHourSlot == '2:00pm - 4:00pm'}" (click)="chooseHourSlot('2:00pm - 4:00pm')" *ngIf="timeZone < '14:00:00'">2pm - 4pm</div>
+
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'disabletime': timeZone}" *ngIf="timeZone > '14:00:00' && !removeDisable">2pm - 4pm</div>
+                                    <!-- Next day date -->
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'selected': activeHourSlot == '2:00pm - 4:00pm'}" (click)="chooseHourSlot('2:00pm - 4:00pm')" *ngIf="timeZone > '14:00:00' && removeDisable">2pm - 4pm</div>
+                                    
+                                    <!-- 4 - 6 -->
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'selected': activeHourSlot == '4:00pm - 6:00pm'}" (click)="chooseHourSlot('4:00pm - 6:00pm')" *ngIf="timeZone < '16:00:00'">4pm - 6pm</div>
+
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'disabletime': timeZone}" *ngIf="timeZone > '16:00:00' && !removeDisable">4pm - 6pm</div>
+                                    
+                                    <!-- Next day date -->
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'selected': activeHourSlot == '4:00pm - 6:00pm'}" (click)="chooseHourSlot('4:00pm - 6:00pm')" *ngIf="timeZone > '16:00:00' && removeDisable">4pm - 6pm</div>
+                                    
+                                    <!-- 6 - 8 -->
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'selected': activeHourSlot == '6:00pm - 8:00pm'}" (click)="chooseHourSlot('6:00pm - 8:00pm')" *ngIf="timeZone < '18:00:00'">6pm - 8pm</div>
+
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'disabletime': timeZone}" *ngIf="timeZone > '18:00:00' && !removeDisable">6pm - 8pm</div>
+                                    
+                                    <!-- Next day date -->
+                                    <div [ngClass]="{'single-slot': 1 === 1, 'selected': activeHourSlot == '6:00pm - 8:00pm'}" (click)="chooseHourSlot('6:00pm - 8:00pm')" *ngIf="timeZone > '18:00:00' && removeDisable">6pm - 8pm</div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        </div>
+                     </div>
+                     <div class="checkouterbackouter2">
+                        <button mat-button class="checkouterback2" (click)="activeStep(2)">
+                           <mat-icon>keyboard_arrow_left</mat-icon>
+                           Back
+                        </button>
+                        <button mat-button class="checkoutcheckoutnowbutton2" (click)="timeSlot();">
+                           Next
+                           <mat-icon>keyboard_arrow_right</mat-icon>
+                        </button>
+                     </div>
+                  </div>
+                  <!-- STEP 3 END -->
+
+                  <!-- STEP 4 START -->
+                  <div *ngIf="currentStep == 4">
+                     <div class="div_pleas_chose_time_text">Please choose a payment method from below</div>
+                     <div class="cover_creadetcard_cashdiv ng-scope">
+                        <div [ngClass]="{'cover_cashdiv_left paymenttype': 1 === 1, 'active': activePayment == 1}" (click)="choosePayment(1)">
+                           <div class="pic_divcash">
+                              <div class="verticetnter2">
+                                 <img src="/assets/img/cashondelivery.png">           
+                              </div>
+                           </div>
+                           <div class="divcash_text">Cash on Delivery</div>
+                           <img src="/assets/img/activepaytype.png" class="hidethumb">
+                        </div>
+                        <div [ngClass]="{'cover_cashdiv_left paymenttype': 1 === 1, 'active': activePayment == 2}" (click)="choosePayment(2)">
+                           <div class="pic_creadetcard">
+                              <div class="verticetnter">
+                                 <img src="/assets/img/creaditcardpay.png">
+                              </div>
+                           </div>
+                           <div class="creadetcard_text">Credit Card</div>
+                           <img src="/assets/img/activepaytype.png" class="hidethumb">
+                        </div>
+                     </div>
+                     <div class="checkoutmiddletable" *ngIf="creditCardOption">
+                        <mat-radio-group aria-label="Select an option">
+                           <div class="saved-card-section" *ngFor="let card of creditcardList, let i = index;">
+                              <div class="saved-left">
+                                 <mat-radio-button value="{{i}}" name="saved_card" [(ngModel)]='card.creditSavedRadio' (ngModelChange)="saveCreditCard(card);" ngDefaultControl [checked]="card.activeRadio">
+                                    <div class="card-image {{card['type']}}"></div>
+                                    <div class="card-type">
+                                       <strong>XXXX XXXX XXXX {{cardNumber[i]}}</strong>
+                                       <span>{{card['type']}} card</span>
+                                    </div>
+                                 </mat-radio-button>
+                                 <div class="cvv-option" *ngIf="card.card_no == cvvSection">
+                                    <div class="cvv-group">
+                                       <label>Enter CCV/CVV:</label>
+                                       <mat-form-field appearance="outline">
+                                          <input type="text" name="cvvnew{{i}}" matInput [(ngModel)]="creditcardList[i].cvvnew" [ngModelOptions]="{standalone: true}" #cvvnew="ngModel" pattern="[0-9]*">
+                                       </mat-form-field>
+                                    </div>
+                                    <img src="/assets/img/security.png" class="security">
+                                 </div>
+                              </div>
+                              <div class="saved-delete {{card['card_no']}}" (click)="deleteSaveCard(card['card_no']);">
+                                 <mat-icon>delete</mat-icon>
+                              </div>
+                           </div>
+                           <div class="new-card-section">
+                              <mat-radio-button value="2" name="card" [(ngModel)]='checkout.creditCardRadio' (ngModelChange)="newCreditCard();" ngDefaultControl>NEW CARD</mat-radio-button>
+                           </div>
+                        </mat-radio-group>
+                     </div>
+                     <div class="addcardform" *ngIf="creditCard">
+                        <form>
+                           <div class="row">
+                              <div class="col-sm-7">
+                                 <div class="form-group">
+                                    <label>Card Number</label>
+                                    <mat-form-field appearance="outline">
+                                       <input type="text" name="card_no" (input)="checkCardType();" required matInput [(ngModel)]="checkout.cardno" [ngModelOptions]="{standalone: true}">
+                                    </mat-form-field>
+                                 </div>
+                              </div>
+                              <div class="col-sm-3">
+                                 <div class="form-group">
+                                    <label>CCV/CVV</label>
+                                       <mat-form-field appearance="outline">
+                                          <input type="text" name="cvv" required matInput [(ngModel)]="checkout.cvv" [ngModelOptions]="{standalone: true}" (input)="checkCardType();" #cvv="ngModel">
+                                       </mat-form-field>
+                                 </div>
+                              </div>
+                              <div class="col-sm-2">
+                                  <span class="paycard"><img src="/assets/img/security.png"></span>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-sm-6">
+                                 <div class="form-group">
+                                    <label>Name on card</label>
+                                    <mat-form-field appearance="outline">
+                                       <input type="text" name="cardHolder" matInput [(ngModel)]="checkout.cardHolder" [ngModelOptions]="{standalone: true}">
+                                    </mat-form-field>
+                                 </div>
+                              </div>
+                              <div class="col-sm-3">
+                                 <div class="form-group">
+                                    <label>Exp. Month</label>
+                                    <mat-form-field appearance="outline">
+                                       <mat-select [(ngModel)]="checkout.expMonth" [ngModelOptions]="{standalone: true}">
+                                          <mat-option value="01">01</mat-option>
+                                          <mat-option value="02">02</mat-option>
+                                          <mat-option value="03">03</mat-option>
+                                          <mat-option value="04">04</mat-option>
+                                          <mat-option value="05">05</mat-option>
+                                          <mat-option value="06">06</mat-option>
+                                          <mat-option value="07">07</mat-option>
+                                          <mat-option value="08">08</mat-option>
+                                          <mat-option value="09">09</mat-option>
+                                          <mat-option value="10">10</mat-option>
+                                          <mat-option value="11">11</mat-option>
+                                          <mat-option value="12">12</mat-option>
+                                       </mat-select>
+                                    </mat-form-field>
+                                 </div>
+                              </div>
+                              <div class="col-sm-3">
+                                 <div class="form-group">
+                                     <label>Exp. Year</label>
+                                    <mat-form-field appearance="outline">
+                                       <mat-select [(ngModel)]="checkout.expYear" [ngModelOptions]="{standalone: true}">
+                                          <mat-option value="2019">2019</mat-option>
+                                          <mat-option value="2020">2020</mat-option>
+                                          <mat-option value="2021">2021</mat-option>
+                                          <mat-option value="2022">2022</mat-option>
+                                          <mat-option value="2023">2023</mat-option>
+                                          <mat-option value="2024">2024</mat-option>
+                                          <mat-option value="2025">2025</mat-option>
+                                          <mat-option value="2026">2026</mat-option>
+                                          <mat-option value="2027">2027</mat-option>
+                                          <mat-option value="2028">2028</mat-option>
+                                          <mat-option value="2029">2029</mat-option>
+                                       </mat-select>
+                                    </mat-form-field>
+                                 </div>
+                              </div>
+                              <div class="col-sm-12">
+                                 <mat-checkbox [(ngModel)]="checkout.saveFuture" [ngModelOptions]="{standalone: true}" (ngModelChange)="checkSaveFuture();">Save for future payments</mat-checkbox>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                     <div class="checkouterbackouter2">
+                        <p *ngIf="invalidCard" class="invalid-error">Invalid card no.</p>
+                        <p *ngIf="cardNumberRequired" class="invalid-error">Card number required</p>
+                        <p *ngIf="cvvRequired" class="invalid-error">CVV/CCV Number required.</p>
+                        <p *ngIf="digitError" class="invalid-error">Please use 16 digits card number.</p>
+                        <p *ngIf="digitAmexError" class="invalid-error">Please use 15 digits card number.</p>
+                        <p *ngIf="cardHolderRequired" class="invalid-error">Card holder name required.</p>
+                        <p *ngIf="ExpMonthRequired" class="invalid-error">Expire month is required.</p>
+                        <p *ngIf="ExpYearRequired" class="invalid-error">Expire Year is required.</p>
+                        <button mat-button class="checkouterback2" (click)="backFromFour()">
+                           <mat-icon>keyboard_arrow_left</mat-icon>
+                           Back
+                        </button>
+                        <button mat-button class="checkoutcheckoutnowbutton2" (click)="nextFiveStep();">Next</button>
+                     </div>
+                  </div>
+                  <!-- STEP 4 END -->
+
+                  <!-- STEP 5 START -->
+                  <div *ngIf="currentStep == 5">
+                     <div class="checkoutmiddleouter p0">
+                        <div class="checkoutstep5-mid-top">
+                           <div class="row">
+                              <div class="col-sm-7 checkoutstep5-mid-left">
+                                 <div class="checkoutstep5-left-first">
+                                    <div class="checkoutstep5-left-first-left">
+                                       <div class="checkoutstep5-left-first-lefttext">Delivery Address</div>
+                                       <div class="checkoutstep5-left-first-lefttitle" *ngIf="laststepAddress">
+                                          <span class="delivery-add"> {{deliveryAddress['street']}}</span> 
+                                          <span class="delivery-add"> #{{deliveryAddress['floor']}} - {{deliveryAddress['unit']}}</span>
+                                          <span class="delivery-add">Singapore - {{deliveryAddress['postal_code']}}</span>                   
+                                       </div>
+                                       <div class="checkoutstep5-left-first-lefttitle" *ngIf="!laststepAddress">
+                                          <span class="delivery-add">1 Sims Lane</span> 
+                                          <span class="delivery-add"> Unit #01-06</span>
+                                          <span class="delivery-add">Singapore - 387355</span>
+                                       </div>
+                                    </div>
+                                    <a class="checkoutstep5-left-edit" (click)="activeStep(2)"><img src="/assets/img/checkoutstep5-editimg.png"></a>
+                                 </div>
+                                 <div class="checkoutstep5-left-first">
+                                    <div class="checkoutstep5-left-first-left">
+                                       <div class="checkoutstep5-left-first-lefttext">PAYMENT METHOD</div>
+                                       <div class="checkoutstep5-left-first-lefttitle">    <span *ngIf="paymentType">{{paymentType}}</span>
+                                       </div>
+                                    </div>
+                                    <a class="checkoutstep5-left-edit" (click)="activeStep(4)"><img src="/assets/img/checkoutstep5-editimg.png"></a>
+                                 </div>
+                                 <div class="checkoutstep5-left-first" *ngIf="selectedTimeSlot">
+                                    <div class="checkoutstep5-left-first-left">
+                                       <div class="checkoutstep5-left-first-lefttext">DELIVERY TIME</div>
+                                       <div class="checkoutstep5-left-first-lefttitle">
+                                          <span>{{selectedTimeSlot | date : 'EEE'}} {{selectedTimeSlot | date : 'dd'}} {{selectedTimeSlot | date : 'MMM'}}, {{selectedTimeSlot | date : 'y'}} {{between}} {{activeSlot}}</span>  
+                                       </div>
+                                    </div>
+                                    <a class="checkoutstep5-left-edit" (click)="activeStep(3)" *ngIf="activeDelivery == '1'"><img src="/assets/img/checkoutstep5-editimg.png"></a>
+                                 </div>
+                                 <div class="checkoutstep5-left-first">
+                                    <div class="checkoutstep5-left-first-left">
+                                       <div class="checkoutstep5-left-first-lefttext">DELIVERY MODE</div>
+                                       <div class="checkoutstep5-left-first-lefttitle">
+                                          <span>{{scheduledDelivery}}</span>
+                                          <span matTooltip="{{tooltipMode}}" matTooltipPosition="above" #tooltip3="matTooltip" (click)="tooltip3.toggle()">
+                                              <img src="/assets/img/questionimg.png">  
+                                          </span>                  
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-sm-5 checkoutstep5-mid-right">
+                                 <div class="checkboxtotaldiv">
+                                    <button class="checkoutstep5-mid-button" mat-button (click)="checkOut();" [disabled]="paymentDone">
+                                       Confirm Order 
+                                       <mat-icon>keyboard_arrow_right</mat-icon>
+                                    </button>
+                                       <!-- Custom discount -->
+                                       <div class="checkboxtotaldiv-middle-first" *ngIf="customDiscount">
+                                          <div class="checkboxtotaldiv-title">
+                                             {{customDiscountText}}
+                                             <span matTooltip="{{customDiscountText}}" matTooltipPosition="above" #tooltip8="matTooltip" (click)="tooltip8.toggle()"><img src="/assets/img/questionimg.png"></span>
+                                          </div>
+                                          <div class="checkboxtotaldiv-text">-{{customDiscountPrice | currency:"$"}}</div>
+                                       </div>
+                                       <!-- Sub total -->
+                                       <div class="checkboxtotaldiv-middle-first testing-dd">
+                                          <div class="checkboxtotaldiv-title">Subtotal
+                                             <span matTooltip="Sub total" matTooltipPosition="above" #tooltip14="matTooltip" (click)="tooltip14.toggle()"><img src="/assets/img/questionimg.png"></span>
+                                          </div>
+                                          <div class="checkboxtotaldiv-text" *ngIf="totalCart">{{totalCart  | currency:"$"}}</div>
+                                       </div>
+                                       <!-- Delivery charge -->
+                                       <div class="checkboxtotaldiv-middle-first testing-dd">
+                                          <div class="checkboxtotaldiv-title">Delivery Charge
+                                             <span matTooltip="Order above $100.00 for free delivery!" matTooltipPosition="above" #tooltip4="matTooltip" (click)="tooltip4.toggle()"><img src="/assets/img/questionimg.png"></span>
+                                          </div>
+                                          <div class="checkboxtotaldiv-text" *ngIf="totalCart < 100.00">{{deliveryCharge | currency:"$"}}</div>
+                                          <div class="checkboxtotaldiv-text" *ngIf="totalCart >= 100.00">
+                                          <span *ngIf="deliveryCharge != '0.00'">{{deliveryCharge | currency:"$"}}</span>
+                                          <span *ngIf="deliveryCharge == '0.00'">Free</span>
+                                          </div>
+                                       </div>
+                                       <!-- Specific time charge -->
+                                       <div class="checkboxtotaldiv-middle-first" *ngIf="activeDelivery == 1">
+                                          <div class="checkboxtotaldiv-title">
+                                             <span>{{specificTimeText}}</span>
+                                             <span matTooltip="{{tooltipMode}}" matTooltipPosition="above" #tooltip5="matTooltip" (click)="tooltip5.toggle()"><img src="/assets/img/questionimg.png"></span>
+                                          </div>
+                                          <div class="checkboxtotaldiv-text"><span *ngIf="!specificTimeCharge == '0.00'">{{specificTimeCharge | currency:"$"}}</span><span *ngIf="specificTimeCharge == '0.00'">Free</span></div>
+                                       </div>
+                                       <!-- Card charge -->
+                                       <div class="checkboxtotaldiv-middle-first" *ngIf="cardCharges > 0">
+                                          <div class="checkboxtotaldiv-title">Card Charge
+                                             <span matTooltip="4% Additional fees of your cart for card payment" matTooltipPosition="above" #tooltip6="matTooltip" (click)="tooltip6.toggle()"><img src="/assets/img/questionimg.png"></span>
+                                          </div>
+                                          <div class="checkboxtotaldiv-text">{{cardCharges  | currency:"$"}}</div>
+                                       </div>
+                                       <!-- Coupon discount -->
+                                       <div class="checkboxtotaldiv-middle-first" *ngIf="couponDiscount">
+                                          <div class="checkboxtotaldiv-title">Coupon Discount
+                                             <span matTooltip="Discount applied by using coupon" matTooltipPosition="above" #tooltip7="matTooltip" (click)="tooltip7.toggle()"><img src="/assets/img/questionimg.png"></span>
+                                          </div>
+                                          <div class="checkboxtotaldiv-text">-{{discountAmount | currency:"$"}}</div>
+                                       </div>
+                                       <!-- Custom shipping -->
+                                       <div class="checkboxtotaldiv-middle-first" *ngIf="customShipping">
+                                          <div class="checkboxtotaldiv-title">
+                                             {{customShippingText}}
+                                             <span matTooltip="{{customShippingText}}" matTooltipPosition="above" #tooltip8="matTooltip" (click)="tooltip8.toggle()"><img src="/assets/img/questionimg.png"></span>
+                                          </div>
+                                          <div class="checkboxtotaldiv-text">{{customShippingPrice | currency:"$"}}</div>
+                                       </div>
+                                    </div>
+                                    <div class="checkoutstep5right-buttom">
+                                       <div class="checkoutstep5right-bottom-title">Total</div>
+                                       <div class="checkboxtotaldiv-text-botm-text">{{totalCartAmount  | currency:"$"}}</div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     <div class="checkoutmiddletable">
+                        <div class="chekoutstep5-table-title">Items to be Delivered</div>
+                        <table class="table cart-table">
+                           <tbody>
+                              <div *ngFor="let list of cartList" class="checkout-cart">
+                                 <tr>
+                                 <td class="checkout-product">
+                                    <div class="orhistry2_td2procdtcvr">
+                                       <span class="cursor-pointer">
+                                       <a routerLink="/products/{{list['slug']}}"><img [src]="list['image']" *ngIf="list['image'] != '' && list['image'] != null"></a>
+                                       </span>
+                                       <div class="checkouter-td-right-text">
+                                          <div class="orhistry2_td2proctext1 ng-binding to-name" *ngIf="list['recipient_email']"> To: {{list['recipient_name']}}</div>
+                                          <div class="orhistry2_td2proctext1 ng-binding to-name" *ngIf="list['recipient_email']"> Message: {{list['message']}}</div>
+                                          <div class="orhistry2_td2proctext1 ng-binding">{{list['products_name']}}</div>
+
+                                          <div class="orhistry2_td2proctext1 ng-binding" *ngIf="list['promotion'] != 2 && list['promotion'] != 3">${{list['single_price']}}</div>
+                                          <div class="orhistry2_td2proctext2" *ngIf="list['promotion'] != 2 && list['promotion'] != 3">unit Price</div>
+
+                                          <div class="orhistry2_td2proctext2" *ngIf="list['promotion'] == 2">(Your Great Deal)</div>
+                                          <div class="orhistry2_td2proctext2" *ngIf="list['promotion'] == 3">(Your Amazing Deal!)</div>
+                                       </div>
+                                    </div>
+                                 </td>
+                                 <td class="check-quantity">
+                                    <div class="checkoutmiddlevlauediv">
+                                       <div class="input-group">
+                                          <input type="text" class="form-control addmore" readonly [(ngModel)]="list['quantity']" [ngModelOptions]="{standalone: true}" *ngIf="!list['gift_wrapperid'] && list['promotion'] != 2 && list['promotion'] != 3">
+                                       </div>
+                                    </div>
+                                 </td>
+                                 <td class="check-price">
+                                    <div class="orderhistry2price" *ngIf="list['promotion'] != 2 && list['promotion'] != 3">${{list['price']}}</div>
+
+                                    <div class="orderhistry2price promo-price" *ngIf="list['promotion'] == 2 || list['promotion'] == 3">${{list['single_price']}}</div>
+
+                                    <div class="orderhistry2price" *ngIf="list['promotion'] == 2 || list['promotion'] == 3">${{list['discounted_price']}}</div>
+                                 </td>
+                                 <td class="desk-show">
+                                    <a href="javascript:void(0)" class="checkoutmiddletabledeleteimg" (click)="deleteCart(list['id'], list['gift_wrapperid'], list['promo']);">
+                                       <mat-icon>delete</mat-icon>
+                                    </a>
+                                 </td>
+                                 </tr>
+                                 <tr *ngIf="list['gift_wrapperid']" class="check-sub-gift">
+                                    <div *ngFor="let wrapper of list['product']" class="gift-wrapper">
+                                       <a routerLink="/products/{{wrapper['product_slug']}}">
+                                         <img [src]="wrapper['product_image']">
+                                         <span>X 1</span>
+                                       </a>
+                                    </div>
+                                 </tr>
+                              </div>
+                           </tbody>
+                        </table>
+                     </div>
+                     <div class="checkouterbackouter2">
+                        <button mat-button class="checkouterback2" (click)="activeStep(4)">
+                           <mat-icon>keyboard_arrow_left</mat-icon>
+                           Back
+                        </button>
+                        <a mat-button class="checkoutcheckoutnowbutton2" (click)="checkOut();" [disabled]="paymentDone">
+                           Confirm Order 
+                           <mat-icon>keyboard_arrow_right</mat-icon>
+                        </a>
+                     </div>
+                  </div>
+                  <!-- STEP 5 END -->
+            </div>
+            </div>
+         </div>
+      </div>
+      <app-footer></app-footer>
+   </div>
+</div>

@@ -1,0 +1,104 @@
+<div class="container-fluid">
+   <div class="row">
+      <app-sidebar></app-sidebar>
+      <app-header></app-header>
+      <div class="main-content">
+         <!-- HEAD SECTION -->
+         <div class="head-section">
+            <div class="col-sm-12 product-banner">
+               <div class="row">
+                  <div class="col-sm-8 heading">
+                     <h1 class="singlep-head">Your Cart</h1>
+                     <ul class="breadcrumb">
+                        <li><a routerLink="/">Home</a></li>
+                        <li><a>your shopping cart</a></li>
+                     </ul>
+                  </div>
+                  <div class="col-sm-4"></div>
+               </div>
+            </div>
+         </div>
+         <p *ngIf="errorMessage" class="empty">Your Cart is empty!!</p>
+         <!-- End HEAD SECTION -->
+         <div class="cart-section" *ngIf="hideCart">
+         	<!-- <div class="col-sm-12 shipping-cart-msg">
+         		<h4>You Saved $55.80 By Buying Bulk</h4>
+         	</div> -->
+
+         	<div class="col-sm-12 cart-tbl">
+               <div class="loader" *ngIf="loader">
+                     <div class="loader-spinner">
+                        <mat-spinner [diameter]="40"></mat-spinner>
+                     </div>
+               </div>
+               <table class="table" *ngIf="cartListing">
+                  <tr>
+                     <th width="15%"></th>
+                     <th width="46%">PRODUCT</th>
+                     <th width="9%">QTY</th>
+                     <th>PRICE</th>
+                     <th></th>
+                  </tr>
+               </table>
+         		<table class="table cart-table" *ngIf="cartListing">
+         			<div *ngFor="let list of cartList" class="checkout-cart">
+                        <tr [ngClass]="{'fb-wrapper': list['gift_wrapperid']}" *ngFor="let list of cartList" class="checkout-cart">
+                           <td class="product-img"><a routerLink="/products/{{list['slug']}}"><img [src]="list['image']" *ngIf="list['image'] != '' && list['image'] != null"></a></td>
+                           <td class="cart-name">
+                              <h4>{{list['products_name']}}</h4>
+                              <div *ngIf="!list['gift_wrapperid'] && list['promotion'] != 2 && list['promotion'] != 3">${{list['single_price']}}</div>
+                              <div *ngIf="!list['gift_wrapperid'] && list['promotion'] != 2 && list['promotion'] != 3">Unit price</div>
+                              <div class="orhistry2_td2proctext2" *ngIf="list['promotion'] == 2">(Your Great Deal)</div>
+                              <div class="orhistry2_td2proctext2" *ngIf="list['promotion'] == 3">(Your Amazing Deal!)</div>
+                           </td>
+                           <td></td>
+                           <td class="qty">
+                              <button (click)="onIncrement(list)" *ngIf="!list['gift_wrapperid'] && list['promotion'] != 2 && list['promotion'] != 3"><mat-icon>keyboard_arrow_up</mat-icon></button>
+                              <input type="number" name="" readonly [(ngModel)]="list['quantity']" *ngIf="!list['gift_wrapperid'] && list['promotion'] != 2 && list['promotion'] != 3">
+                              <button (click)="onDecrement(list);" *ngIf="!list['gift_wrapperid'] && list['promotion'] != 2 && list['promotion'] != 3"><mat-icon>keyboard_arrow_down</mat-icon></button>
+                           </td>
+                           <td class="cart-price">
+
+                           <p class="prize" *ngIf="list['promotion'] != 2 && list['promotion'] != 3">{{list['price']  | currency:"$"}}</p>
+
+                           <p class="prize promo-price" *ngIf="list['promotion'] == 2 || list['promotion'] == 3">{{list['single_price']  | currency:"$"}}</p>
+
+                           <p class="prize" *ngIf="list['promotion'] == 2 || list['promotion'] == 3">{{list['discounted_price']  | currency:"$"}}</p>
+
+                           </td>
+                           <td class="delete"><a (click)="deleteCart(list['id'], list['gift_wrapperid'], list['promo']);"><mat-icon>cancel</mat-icon></a></td>
+                     </tr> 
+                     <tr *ngIf="list['gift_wrapperid']" class="check-sub-gift">
+                        <div class="parent-wrapper">
+                           <div *ngFor="let wrapper of list['product']" class="gift-wrapper">
+                              <a routerLink="/products/{{wrapper['product_slug']}}">
+                                <img [src]="wrapper['product_image']">
+                                <span>X 1</span>
+                              </a>
+                           </div>
+                        </div>
+                     </tr>     
+                  </div>
+         			<tfoot *ngIf="deviceInfo != 'phone'">
+         				<tr class="total-prize">
+         					<td colspan="3"> <h4>Total price :</h4></td>
+         					<td colspan="2"> <h4>{{totalCart  | currency:"$"}}</h4></td>
+         				</tr>
+         			</tfoot>
+         		</table>
+               <table class="table" *ngIf="deviceInfo == 'phone'">
+                    <tr class="total-prize">
+                        <td colspan="3"> <h4>Total price :</h4></td>
+                        <td colspan="2" style="text-align: center;"> <h4>{{totalCart  | currency:"$"}}</h4></td>
+                     </tr>
+               </table>
+         	</div>
+         	<div class="cart-btn col-sm-12 text-center">
+         		<a class="btn" routerLink="/checkout">Checkout</a>
+         		<!-- <button class="btn" (click)="updateCart();">Update Cart</button> -->
+         	</div>
+         </div>
+         <app-footer></app-footer>
+      </div>
+   </div>
+</div>

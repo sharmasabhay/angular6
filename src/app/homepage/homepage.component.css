@@ -1,0 +1,485 @@
+.header-top {
+    background: #ffd801;
+    margin: 0px;
+    padding: 5px 0px;
+    text-align: center;
+    z-index: 9999;
+    position: relative;
+}
+.header-top h4{
+	font-size: 16px;
+    line-height: 20px;
+    font-family: 'Bangers', cursive;
+    letter-spacing: 0.2px;
+}
+.error-message {
+    text-align: right;
+    color: #f00;
+}
+.alcohal_orderhistory2fotter{
+    cursor: pointer;
+}
+.card-body{
+    width: 100%;
+}
+.head-section{
+	float: left;
+	width:100%;
+	position: relative;
+}
+.home-slider{
+	float: left;
+	padding-left: 0px;
+}
+.home-slider img{
+	width:100%;
+	height:auto;
+}
+.more-pages{
+	float: left;
+	position: relative;
+	padding-left: 0px;
+}
+.more-pages img
+{
+	width: 100%;
+	margin-bottom: 7px;
+}
+.col-sm-3.card {
+    width: 25%;
+    padding: 0px 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.recentorder {
+    width: 100%;
+    float: left;
+    background: #fff;
+    border: 1px solid #c8cbcc;
+    border-radius: 5px;
+    padding: 15px 0;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 25px;
+}
+.recentorder_title {
+    width: 100%;
+    float: left;
+    color: #010101;
+    padding: 0 14px;
+    margin-bottom: 7px;
+}
+.modifyscroll {
+    height: auto;
+    max-height: 333px;
+    overflow: hidden;
+}
+.fullwidth {
+    width: 100%;
+    float: left;
+}
+.mCustomScrollBox {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    max-width: 100%;
+    outline: 0;
+    direction: ltr;
+}
+.pl0{
+	padding-left: 0px!important;
+}
+.ro_items {
+    width: 100%;
+    float: left;
+    margin: 12px 0;
+    padding: 5px 10px;
+    position: relative;
+}
+.chk_unchk {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 100%;
+    height: 100%;
+    background: hsla(0,0%,100%,.6);
+    display: none;
+    padding-top: 20px;
+}
+.ro_pic {
+    width: 40px;
+    float: left;
+}
+.ro_desc {
+    width: 67%;
+    padding: 0 7px;
+    float: right;
+    font-size: 11px;
+    color: #000;
+    text-align: left;
+}
+.ro_pic .img-responsive-h {
+    max-height: 46px!important;
+}
+.ro_items:hover .chk_unchk {
+    display: block;
+}
+.checkall.full {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 0;
+    position: relative;
+    float: left;
+}
+.recentorder_buttons {
+    width: 100%;
+    float: left;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.addbtn {
+    float: left;
+    cursor: pointer;
+    width: 100%;
+}
+button:disabled {
+    cursor: not-allowed;
+    opacity: .5;
+}
+.alcohalfooter_repeatorderbtn-add.active {
+    background: #a0f;
+    color: #fff;
+}
+.alcohalfooter_repeatorderbtn-add {
+    background: #cdcdcd;
+    color: #8f8f8f;
+    padding: 5px 15px;
+}
+.alcohalfooter_repeatorderbtn-add, .alcohalfooter_repeatorderbtn-rep {
+    border: medium none;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 500;
+    margin: 0;
+    text-transform: uppercase;
+    width: 100%;
+}
+.recentorder_title {
+    width: 100%;
+    float: left;
+    color: #010101;
+    padding: 0 14px;
+    margin-bottom: 7px;
+}
+.orderhistorytext {
+    width: 100%;
+    float: left;
+    color: #888;
+    font-size: 12px;
+    padding: 5px 15px;
+}
+.alcohal_orderhistorybodytxt {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 14px;
+    line-height: 23px;
+    color: #666;
+    width: 80%;
+}
+.alcohal_addadress_header {
+    background: #ffc412 none repeat scroll 0 0;
+    float: left;
+    padding: 12px 15px;
+    width: 100%;
+}
+.alcohal_addadress_headertitle {
+    color: #564111;
+    display: inline-block;
+    font-size: 28px;
+    text-align: center;
+    vertical-align: middle;
+}
+.recentordermodelbody{
+    padding: 25px;
+    float: left;
+    width: 100%;
+}
+.alcohal_hisryorderboxcvr {
+    float: left;
+    width: 100%;
+    margin-top: 41px;
+    max-height: 200px;
+    overflow: auto;
+    margin-bottom: 20px;
+}
+.alcohal_hisryorderboxcvr1 {
+    display: inline-block;
+    border: 1px solid #d7d7d7;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 18px;
+    width: 47%;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.alcohal_hisryorderitemtext, .alcohal_hisryorderordertxt {
+    float: left;
+    width: 100%;
+    font-size: 16px;
+    color: #37474f;
+    font-weight: 600;
+}
+.alcohal_hisryorderdelitext {
+    float: left;
+    width: 100%;
+    font-size: 11px;
+    color: #888;
+}
+.alcohalfooter_shopordershopbtn {
+    font-size: 12px;
+    color: #fff;
+    background: #000;
+    border: none;
+    padding: 11px 13px 11px 13px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    float: right;
+    font-weight: 500;
+}
+.alcohal_orderhistoryfotter {
+    float: left;
+    width: 100%;
+    background: #efefef;
+    padding-top: 15px;
+    padding-right: 18px;
+    border-top: 1px solid #ccc;
+    padding-bottom: 15px;
+}
+.alcohal_orderhistory2bodytext1 {
+    float: left;
+    width: 100%;
+    color: #37474f;
+    font-size: 16px;
+}
+.alcohal_orderhistory2bodytext2 {
+    float: left;
+    width: 100%;
+    padding: 2px 0;
+    color: #888;
+    font-size: 11px;
+}
+.alcohal_ordehisty2selctboxcvr {
+    float: left;
+    width: 100%;
+    margin: 15px 0 3px;
+    padding-left: 8px;
+}
+.checkoutmiddletable {
+    width: 100%;
+    float: left;
+    margin-top: 20px;
+    padding: 20px 0px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px!important;
+}
+.orhistry2_td2procdtcvr {
+    float: left;
+    width: 100%;
+}
+.checkouter-td-right-text {
+    width: 68%;
+    float: left;
+}
+.alcohalpopuptext {
+    border: 1px solid #d7d7d7;
+    border-radius: 5px;
+    float: left;
+    padding: 9px 10px;
+    font-size: 13px;
+    color: #424242;
+    width: 100%;
+}
+.orhistry2_td2procdtcvr>span {
+    float: left;
+    margin-right: 10px;
+    width: 60px;
+    height: 60px;
+}
+.checkoutmiddlevlauediv .input-group-addon {
+    padding: 0;
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 1;
+    color: #555;
+    width: 25px!important;
+}
+.checkoutmiddlevlauediv .input-group-addon button {
+    text-align: center;
+    border-right: 0px;
+    display: block;
+    float: none;
+    margin-left: -1px;
+    max-width: 100%;
+    padding: 2.8px 10px;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+.checkboxtotaldiv-top {
+    width: 100%;
+    float: left;
+    border-top: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+    padding: 15px 20px 15px 0;
+}
+.alcohal_orderhistory2fotter {
+    color: #666;
+    float: left;
+    font-size: 14px;
+    line-height: 24px;
+    margin-top: 12px;
+    text-transform: uppercase;
+    width: 72%;
+    text-align: right;
+}
+.orhistry2_td2proctext1 {
+    font-size: 13px;
+    color: #222;
+    font-weight: 500;
+    white-space: normal;
+}
+.card-title {
+    font-size: 15px;
+    line-height: 20px;
+    /*width: 150px;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /*white-space: nowrap;*/
+}
+.tabheader {
+    padding-bottom: 30px;
+    text-align: center;
+}
+.tabheader button {
+    border: 0px;
+    background: #fff;
+    padding: 1px 15px;
+    font-size: 16px;
+    outline: none;
+}
+.btn{
+    border-right: 1px solid #444!important;
+    border-radius: 0px!important;
+}
+
+@media screen and (max-width: 479px){
+    .home-slider{
+        width: 100%;
+        padding-left: 15px;
+    }
+    .main-content{
+        width: 100%;
+    }
+    .more-pages{
+        padding-right: 0;
+    }
+    .product-section{
+        float: left;
+        width: 100%;
+    }
+    .col-sm-3.card{
+        float: left;
+        width: 50%;
+        padding: 0 15px;
+    }
+    .product-section .col-sm-12{
+        float: left;
+        width: 100%;
+        padding: 0;
+    }
+    .card-content, .card-body{
+        width: 100%;
+    }
+    .card-content{
+        position: relative;
+    }
+    .card-title{
+        width: 137px;
+    }
+    .recentorder{
+        width: 40%;
+        margin-left: 16px;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px){
+    .home-slider{
+        width: 100%;
+        padding-left: 15px;
+    }
+    .main-content{
+        width: 100%;
+    }
+    .more-pages{
+        padding-right: 0;
+    }
+    .product-section{
+        float: left;
+        width: 100%;
+    }
+    .col-sm-3.card{
+        float: left;
+        width: 50%;
+        padding: 0 15px;
+    }
+    .product-section .col-sm-12{
+        float: left;
+        width: 100%;
+        padding: 0;
+    }
+    .card-content, .card-body{
+        width: 100%;
+    }
+    .card-content{
+        position: relative;
+    }
+    .card-title{
+        width: 283px;
+    }
+    .more-pages a {
+        float: left;
+        width: 33.33%;
+        padding: 10px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    .product-section .col-sm-12{
+        width: 100%;
+    }
+    .card-body{
+        width: 100%;
+    }
+    .product-section .col-sm-2{
+        width: 25%;
+    }
+    .col-sm-3.card{
+        width: 50%;
+    }
+    .ro_pic{
+        width: 34px;
+    }
+    .alcohal_orderhistoryfotter{
+        padding-bottom: 20px;
+    }
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1024px) {
+    .col-sm-3.card{
+        width: 33.33%;
+    }
+    .ro_pic{
+        width: 29px;
+    }
+}

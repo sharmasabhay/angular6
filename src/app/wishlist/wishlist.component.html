@@ -1,0 +1,25 @@
+<div class="fullwidth">
+    <div class="titlecreidt">Wish List</div>        
+     <!-- End HEAD SECTION -->
+     <div class="cart-section">
+        <div class="col-sm-12 wishlist-tbl">
+           <table class="table">
+              <tr>
+                 <th>IMAGE</th>
+                 <th>PRODUCT NAME</th>
+                 <th>UNIT PRICE</th>
+                 <th>REMOVE</th>
+                 <th>ADD TO CART</th>
+              </tr>
+              <p *ngIf="errorMessage" class="empty">Wishlist is empty!!</p>
+              <tr *ngFor="let list of wishlist">
+                 <td class="product-img"><img [src]="list['product_detail'][0]['image']" *ngIf="list['product_detail'][0]['image'] != '' && list['product_detail'][0]['image'] != null"></td>
+                 <td class="pname"><p>{{list['product_detail'][0]['name']}}</p></td>
+                 <td><p class="prize">${{list['product_detail'][0]['price']}}</p></td>
+                 <td><button class="btn red" (click)="deleteWishlist(list['product_id'])"><mat-icon>close</mat-icon></button></td>
+                 <td><a class="btn" routerLink="/products/{{list['product_detail'][0]['slug']}}"><mat-icon>check</mat-icon></a></td>
+              </tr>
+           </table>
+        </div>
+     </div>
+</div>

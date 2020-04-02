@@ -1,0 +1,48 @@
+<div class="model-dialog">
+   <div class="alcohal_addadress_header">
+      <div class="alcohal_addadress_headercurmain">
+         <div class="alcohal_addadress_headertitle">Don't Miss out on These!</div>
+         <button mat-dialog-close class="close-btn"><mat-icon>close</mat-icon></button>
+      </div>
+   </div>
+   <div class="loader-image">
+      <div class="loader-spinner" *ngIf="loader">
+         <mat-spinner [diameter]="40"></mat-spinner>
+      </div>
+   </div>
+   <div class="alcohalosavebntcvr pb-0" *ngIf="deviceInfo == 'phone'">
+   <button mat-stroked-button class="adresssvaebtn" (click)="continueCheckout();">Continue to checkout </button>
+   </div>
+   <div *ngIf="checkoutDialog">
+      <div class="relproduct-slider checkoutpopup">
+         <ngx-slick class="alcohaul-slider carousel" #slickModal="slick-modal" [config]="RelatedproductConfig">
+         <div *ngFor="let product of dontMiss">
+         <div ngxSlickItem class="slide" *ngIf="product['product_detail'][0]['product_price'] != '0.00'">
+            <div class="image">
+               <div class="card ">
+                  <div class="card-content">
+                     <div class="hovereffect">
+                        <img class="card-img-top" [src]="product['product_detail'][0]['product_image']">
+                        <div class="overlay">
+                           <button class="wishlist" (click)="addWishlist(product['product_id']);">
+                              <mat-icon>favorite_border </mat-icon>
+                           </button>
+                        </div>
+                     </div>
+                     <div class="card-body">
+                        <h5 class="card-title">{{product['product_detail'][0]['product_name']}}</h5>
+                        <p class="price">${{product['product_detail'][0]['product_price']}}</p>
+                        <button class="checkoutproductbutton" (click)="addToCart(product['product_id'], 'single');">Add to cart</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         </div>
+         </ngx-slick>
+      </div>
+      <div class="alcohalosavebntcvr">
+      <button mat-stroked-button class="adresssvaebtn" (click)="continueCheckout();">Continue to checkout </button>
+      </div>
+   </div>
+</div>

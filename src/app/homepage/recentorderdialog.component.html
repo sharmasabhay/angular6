@@ -1,0 +1,87 @@
+<div class="model-dialog">
+   <div class="alcohal_addadress_header">
+      <div class="alcohal_addadress_headercurmain">
+         <div class="alcohal_addadress_headertitle">Shop from your previous order</div>
+         <button mat-dialog-close class="close-btn"><mat-icon>close</mat-icon></button>
+      </div>
+   </div>
+
+   <div class="orderstep1" *ngIf="orderstep1">
+   <div class="recentordermodelbody">
+   <div class="alcohal_orderhistorybodytxt">Shopping from a past order provides a convenient way to quickly shop for the same products again.</div>
+   <div class="alcohal_orderhistorybodytxt">Click on a given order and add the desired products to the basket.</div>
+   <div class="alcohal_hisryorderboxcvr">
+      <div class="alcohal_hisryorderboxcvr1" *ngFor="let order of history">
+         <div (click)="showorderdetail(order['order_id']);">
+            <div class="alcohal_hisryorderordertxt">Order: {{order['order_id']}}</div>
+            <div class="alcohal_hisryorderdelitext">Ordered on: {{order['delivery_date'] | date : 'EEEE'}}, {{order['delivery_date'] | date : 'dd'}} {{order['delivery_date'] | date : 'MMMM'}}, {{order['delivery_date'] | date : 'y'}}</div>
+            <div class="alcohal_hisryorderitemtext">{{order['items']}} Items</div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <div class="alcohal_orderhistoryfotter">
+   <button class="alcohalfooter_shopordershopbtn" mat-dialog-close>Nah, I'll place a new order </button>
+   </div>
+   </div>
+   <div class="orderstep2" *ngIf="orderstep2">
+      <div class="recentordermodelbody">
+         <div class="alcohal_orderhistory2bodytext1"> Order: {{orderDetail['order_id']}} ({{orderDetail['items']}} items) </div>
+         <div class="alcohal_orderhistory2bodytext2"> Delivered on: {{orderDetail['delivery_date'] | date : 'EEEE'}}, {{orderDetail['delivery_date'] | date : 'dd'}} {{orderDetail['delivery_date'] | date : 'MMMM'}}, {{orderDetail['delivery_date'] | date : 'y'}} between {{orderDetail['delivery_time_range']}}</div>
+         <div class="alcohal_ordehisty2selctboxcvr">
+         <mat-checkbox [(ngModel)]="selectAllProducts" (click)="selectAllRecentOrders()">Select all</mat-checkbox>
+         </div>
+         <div class="alcohal_ordehisty2selctboxcvr">
+              <table class="table cart-table">
+                  <tbody>
+                     <tr *ngFor="let item of orderItems, let i = index;">
+                        <td><mat-checkbox [checked]="item['checked']" (click)="selectedProduct(item, item['product_id'])" [(ngModel)]="orderItems[i].check"></mat-checkbox></td>
+                        <td width="52%">
+                           <div class="orhistry2_td2procdtcvr">
+                              <span class="cursor-pointer">
+                              <a><img [src]="item['product_image']"></a>
+                              </span>
+                              <div class="checkouter-td-right-text">
+                                 <div class="orhistry2_td2proctext1 ng-binding">{{item['product_name']}}</div>
+                                 <div class="orhistry2_td2proctext2 ng-binding">{{item['shortDescription']}}</div>
+                                 <div class="orhistry2_td2proctext1 ng-binding">${{item['unit_price']}}</div>
+                                 <div class="orhistry2_td2proctext2">unit Price</div>
+                              </div>
+                           </div>
+                        </td>
+                        <td width="80px" class="desk-show">
+                           <div class="prod_chilled" *ngIf="orderDetail['non_chilled'] == true">
+                              <span>Chilled</span>
+                              <div class="prod_chilled_icon"></div>
+                           </div>
+                           <div class="prod_chilled remove-chilled" *ngIf="orderDetail['non_chilled'] == false">
+                              <div class="prod_chilled_icon"></div>
+                           </div>
+                        </td>
+                        <td width="100px">
+                           <div class="checkoutmiddlevlauediv">
+                              <div class="input-group">
+                                 <input type="text" class="form-control addmore" readonly [(ngModel)]="item['quantity']">
+                                 <span class="input-group-addon">
+                                 <button (click)="onIncrement(item, i)">+</button>
+                                 <button (click)="onDecrement(item, i);">-</button>
+                                 </span>
+                              </div>
+                           </div>
+                        </td>
+                        <td width="100px">
+                           <div class="orderhistry2price">${{item['price']}}</div>
+                        </td>
+                     </tr>
+                  </tbody>
+            </table>
+      </div>
+
+      </div>
+      <div class="alcohal_orderhistoryfotter">
+      <p *ngIf="messageShow" class="error-message">Please select atleast one product.</p>
+      <a class="alcohal_orderhistory2fotter" (click)="backToHistory();">back to order history</a>
+   <button class="alcohalfooter_shopordershopbtn" (click)="addToCart('single');">ADD TO CART</button>
+   </div>
+   </div>
+</div>

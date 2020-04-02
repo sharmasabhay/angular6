@@ -1,0 +1,50 @@
+<div class="fullwidth myaccount-container">
+<app-sidebar></app-sidebar>
+<app-header></app-header>
+   <div class="container">
+      <div class="row">
+         <div class="col-sm-10 rgrhtdiv">
+         <div class="head-section">
+            <div class="col-sm-12 product-banner">
+               <div class="row">
+                  <div class="col-sm-8 heading">
+                     <ul class="breadcrumb">
+                        <li><a routerLink="/">Home</a></li>
+                        <li><a class="active">Account</a></li>
+                     </ul>
+                  </div>
+                  <div class="col-sm-4"></div>
+               </div>
+            </div>    
+         </div>
+			<!-- <form class="profile_form">
+			  <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Name" name="name" [(ngModel)]="profile.name">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" name="email" [(ngModel)]="profile.email">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="phone">
+              <mat-label>Phone</mat-label>
+			        <span matPrefix>+65 &nbsp;</span>
+			        <input type="tel" matInput placeholder="2345678987" name="phone" [(ngModel)]="profile.phone">
+			  </mat-form-field>
+
+				<div class="fullwidth">
+					<button class="alcohalfootersign" (click)="editProfileSetting();">save changes</button>
+				</div>
+			</form> -->
+      <div class="user-address">
+          <app-orderhistory></app-orderhistory>
+          <app-useraddress></app-useraddress>
+          <app-wishlist></app-wishlist>
+      </div>
+         </div>
+      </div>
+   </div>
+    <app-footer></app-footer>
+</div>

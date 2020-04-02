@@ -1,0 +1,105 @@
+.leftdivmain {
+    width: 20%;
+    float: left;
+}
+.phone {
+    float: left;
+    width: 100%;
+    text-align: right;
+    padding: 0px 14px;
+}
+.phone img {
+    width: 12%;
+    margin-right: 8px;
+}
+.leftdivmain_title {
+    width: 100%;
+    float: left;
+    font-size: 18px;
+    color: #69696a;
+    font-family: Work Sans;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    margin-top: 15px;
+}
+.pic_divinnertitle, .rgrhtdiv {
+    width: 100%;
+    margin-bottom: 16px;
+}
+.pic_divinnertag {
+    width: 14px;
+    height: 13px;
+    float: left;
+}
+.pic_divinnertag {
+    width: 14px;
+    height: 13px;
+    float: left;
+}
+.pic_divinnertextbold, .pic_divinnertextnormal {
+    width: 100%;
+    float: left;
+    font-size: 14px;
+    color: #363535;
+    font-family: Work Sans;
+}
+.pic_divinnertextbold {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.pic_divinnertextbold, .pic_divinnertextnormal {
+    width: 100%;
+    float: left;
+    font-size: 14px;
+    color: #363535;
+    font-family: Work Sans;
+}
+.pic_divinnertextnormal a {
+    width: 100%;
+    float: left;
+    font-size: 14px;
+    color: #363535;
+    font-family: Work Sans;
+    font-weight: 500;
+    margin: 0;
+}
+.pic_divinnertext {
+    float: left;
+    padding-left: 20px;
+    text-align: left;
+    width: 91%;
+}
+.pic_divinnertextnormal {
+    font-weight: 500;
+    margin: 8px 0 0;
+}
+.pic_divinnertitle {
+    float: left;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+}
+.bordernoebtm {
+    border-bottom: none;
+}
+
+@media screen and (max-width: 479px){
+    .inactive-sidenav{
+        height: auto;
+    }
+    .active-sidenav{
+        height: 300px;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px){
+  
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1024px) {
+
+}

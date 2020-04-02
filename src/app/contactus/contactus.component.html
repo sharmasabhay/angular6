@@ -1,0 +1,83 @@
+<div class="container-fluid">
+   <div class="row">
+      <app-sidebar></app-sidebar>
+      <app-header></app-header>
+      <div class="main-content">
+         <!-- HEAD SECTION -->
+         <div class="head-section">
+            <div class="col-sm-12 product-banner">
+               <div class="row">
+                  <div class="col-sm-8 heading">
+                     <h1 class="singlep-head">CONTACT US</h1>
+                     <ul class="breadcrumb">
+                        <li><a routerLink="/">Home</a></li>
+                        <li><a>contact us</a></li>
+                     </ul>
+                  </div>
+                  <div class="col-sm-4"></div>
+               </div>
+            </div>
+         </div>
+         <!-- End HEAD SECTION -->
+         <div class="content-section">
+            <div class="col-sm-6 text-center contactinfo b-r">
+               <i class="fa fa-mobile"></i>
+               <h4>PHONE</h4>
+               <p>Phone (+65) 6240 6822</p>
+            </div>
+            <div class="col-sm-6 text-center contactinfo">
+               <i class="fa fa-envelope-o"></i>
+               <h4>EMAIL</h4>
+               <p>hello@alcohaul.sg</p>
+            </div>
+         </div>
+         <div class="page-title">
+            <h4>IF YOU GOT ANY QUESTIONS <br> PLEASE DO NOT HESITATE TO SEND US A MESSAGE.</h4>
+         </div>
+
+         <!-- login From Section -->
+         <div class="login-form">
+            <form class="col-sm-12">
+               <div class="form-group">
+                  <label for="firstname">Your Name </label>
+                  <mat-form-field appearance="outline">
+                     <input type="text" matInput [(ngModel)]="contact.name" [ngModelOptions]="{standalone: true}" name="name">
+                  </mat-form-field>
+               </div>
+
+               <div class="form-group">
+                  <label for="phone">Your Phone </label>
+                  <mat-form-field appearance="outline">
+                     <input type="text" matInput [(ngModel)]="contact.phone" [ngModelOptions]="{standalone: true}" name="phone">
+                  </mat-form-field>
+               </div>
+
+               <div class="form-group">
+                  <label for="email">Your Email *</label>
+                  <mat-form-field appearance="outline">
+                     <input type="text" matInput [(ngModel)]="contact.email" name="email" [ngModelOptions]="{standalone: true}">
+                  </mat-form-field>
+               </div>
+
+               <div class="form-group">
+                  <label for="pwd">Message</label>
+                  <mat-form-field appearance="outline">
+                     <textarea rows="5" matInput [(ngModel)]="contact.message" [ngModelOptions]="{standalone: true}" class="msgbox"></textarea>
+                  </mat-form-field>
+               </div>
+               <div class="row1">
+               <p *ngIf="errorContact" class="error-required">Email is required.</p>
+               <button type="submit" class="btn" (click)="contactUs();" [disabled]="loading"><span *ngIf="!loading">Send message</span><span *ngIf="loading">LOADING...</span></button>
+               </div>
+            </form>
+         </div>
+         <!--  -->
+
+         <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7511449250464!2d103.89462404973885!3d1.3252220620199278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da181e0ee02a8d%3A0xd858871f0f14c45a!2s53+Ubi+Ave+1%2C+Singapore+408934!5e0!3m2!1sen!2sin!4v1553690867197" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+         </div>
+
+         <app-footer></app-footer>
+      </div>
+   </div>
+</div>

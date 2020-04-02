@@ -1,0 +1,142 @@
+.order-history {
+    border: 1px solid #ccc;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: .8em;
+    margin-bottom: 10px;
+    margin-left: 25px;
+    margin-right: 25px;
+    width: 94.5%;
+}
+.order-history .order .order-key {
+    font-size: 1.3em;
+    font-weight: 600;
+    cursor: pointer;
+}
+.breadcrumb a.active{
+    color: #000;
+}
+.order-error{
+    float: left;
+    width: 100%;
+    padding: 0 25px;
+}
+.rgrhtdiv{
+    padding: 0;
+}
+.titlecreidt{
+    padding-left: 25px;
+    padding-top: 10px;
+}
+.product-banner .row{
+    padding-top: 40px;
+}
+.order-history .order .order-timeslot {
+    font-size: 1.1em;
+    color: #a99b9b;
+}
+.thankyou-message{
+    text-align: center;
+}
+.order-history .order .order-items {
+    font-size: 1.5em;
+}
+.order-history .order-status {
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    padding: 8px 15px;
+    min-height: 60px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.order-history .order-status p{
+	margin: 0px;
+}
+.order-history .order-rating {
+    padding: 8px 0;
+}
+.rating-status{
+	text-transform: uppercase;
+    text-align: center;
+}
+.order-listing-section{
+    float: left;
+    width: 100%;
+    height: 500px;
+    overflow: auto;
+}
+
+@media screen and (max-width: 479px){
+    .mobile-menus{
+        float: left;
+        width: 100%;
+    }
+    .rgrhtdiv{
+        width: 100% !important;
+    }
+    .order-history{
+        float: left;
+        width: 85.5%;
+    }
+    .order-history .order-status{
+        border-left: none;
+        min-height: auto;
+    }
+    .row.order .col-sm-6{
+        text-align: center;
+    }
+    .row.order .col-sm-3 {
+        float: left;
+        width: 50%;
+    }
+    .orderstatus{
+        padding-right: 0;
+    }
+    .order-history bar-rating {
+        width: 100%;
+        margin-left: 13%;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px){
+    .mobile-menus{
+        float: left;
+        width: 100%;
+    }
+    .rgrhtdiv{
+        width: 100% !important;
+    }
+    .order-history{
+        float: left;
+        width: 43%;
+        margin-right: 10px;
+    }
+    .order-history .order-status{
+        border-left: none;
+        min-height: auto;
+    }
+    .row.order .col-sm-6{
+        text-align: center;
+    }
+    .row.order .col-sm-3 {
+        float: left;
+        width: 50%;
+    }
+    .orderstatus{
+        padding-right: 0;
+    }
+    .order-history bar-rating {
+        width: 100%;
+        margin-left: 13%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    .order-history{
+        width: 91.5%;
+    }
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1024px) {
+
+}

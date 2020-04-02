@@ -1,0 +1,43 @@
+<div class="fullwidth">
+   <!-- <app-header></app-header> -->
+   <div class="container">
+      <div class="row">
+         <div class="col-sm-12 rgrhtdiv">
+            <div class="titlecreidt">Manage Addresses</div>
+            <div class="addressbook-btmpannelcover">
+               <div *ngIf="userAddress">
+                  <div class="addressbokk-trvaichacovr" *ngFor="let detail of details , let i = index; ">
+                     <div class="address-inner">
+                        <div class="left"><mat-icon>map</mat-icon></div>
+                        <div class="right">
+                           <div class="addressbok-travis">
+                              <div class="addrestravis-text">{{detail['firstname']}} {{detail['lastname']}}</div>
+                              <div class="addresseditdltpic">
+                                 <a (click)="EditAddressPopup(i);">
+                                    <mat-icon>edit</mat-icon>
+                                 </a>
+                                 <a (click)="deleteAddress(i);">
+                                    <mat-icon>delete</mat-icon>
+                                 </a>
+                              </div>
+                           </div>
+                           <p>{{detail['street']}}</p>
+                           <p>#{{detail['floor']}} - {{detail['unit']}}</p>
+                           <p>Singapore - {{detail['postal_code']}}</p>
+                           <div class="selectAddress" *ngIf="detail['default'] == true">
+                              <div id="address-default-tag">Default</div>
+                           </div>
+                        </div>
+                     </div>
+               </div>
+               </div>
+               <div class="addressbokk-addnewadresscovr" (click)="showAddressPopup();">
+                  <!-- <img src="/assets/img/addnewadrrspic2.png"> -->
+                  <mat-icon>add_location</mat-icon>
+                  <div class="addnewadresstext">Add new address</div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

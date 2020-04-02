@@ -1,0 +1,109 @@
+.head-section{
+	float: left;
+	width:100%;
+	position: relative;
+}
+.disabledCart{
+    opacity: 0.5;
+    border: none;
+    cursor: not-allowed;
+}
+.card-content {
+    padding: 10px 0px;
+    float: left;
+    height: 100%;
+    position: relative;
+}
+.card-body.col-sm-9{
+    width: 75%;
+}
+.action-button button{
+    visibility: visible;
+    background: #000;
+    color: #fff;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+.action-button {
+    margin-top: 20px;
+}
+.card-content{
+    width: 100%;
+}
+.card img{
+    min-height: 151px;
+}
+
+@media screen and (max-width: 479px){
+    .mobile-add{
+        right: 16px;
+    }
+    .paginator{
+        padding: 0 10px;
+    }
+    .card-content-image{
+        text-align: center;
+    }
+    .card-body, .card-title{
+        width: 100%;
+    }
+    .cart-detail a, .price, .stock, .cart-detail small{
+        float: left;
+        width: 100%;
+        text-align: center;
+    }
+    .action-button{
+        float: left;
+        width: 100%;
+        text-align: center;
+    }
+    .mode-2 .card {
+        float: left;
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px){
+    .mobile-add{
+        right: 16px;
+    }
+    .paginator{
+        padding: 0 10px;
+    }
+    .card-content-image{
+        text-align: center;
+    }
+    .card-body, .card-title{
+        width: 100%;
+    }
+    .cart-detail a, .price, .stock, .cart-detail small{
+        float: left;
+        width: 100%;
+        text-align: center;
+    }
+    .action-button{
+        float: left;
+        width: 100%;
+        text-align: center;
+    }
+    .mode-2 .card {
+        float: left;
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    .col-sm-3.card{
+        width: 33.33%;
+    }
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1024px) {
+    .col-sm-3.card{
+        width: 25%;
+    }
+}

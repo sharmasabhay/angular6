@@ -1,0 +1,239 @@
+<div class="container-fluid">
+   <div class="row">
+      <app-sidebar></app-sidebar>
+      <app-header></app-header>
+      <div class="main-content">
+         <!-- HEAD SECTION -->
+         <div class="head-section">
+            <div class="col-sm-12 product-banner">
+               <div class="row">
+                  <div class="col-sm-8 heading">
+                     <h1 class="singlep-head">EVENTS & SERVICES</h1>
+                     <ul class="breadcrumb">
+                        <li><a routerLink="/">Home</a></li>
+                        <li><a>events & services</a></li>
+                     </ul>
+                  </div>
+                  <div class="col-sm-4"></div>
+               </div>
+            </div>		
+         </div>
+         <!-- End HEAD SECTION -->
+         <!-- login From Section -->
+          <div class="col-sm-12 events">
+            <p>No matter you require additional services for your events, a personal birthday event, or even you are running a bar/club/restaurant, we are here for you! Contact us for unbeatable prices when purchasing in bulk!</p>
+
+            <p>Not only do we cater for events, we can even deliver your alcohol in chiller boxes (Styrofoam boxes) in ice if you need your alcohol delivered ICE COLD!</p>
+
+            <p>Got an event in mind? Talk to us!</p>
+
+            <p>You can even request drinks that are not listed in our menu! Be it chalets, birthday parties, yacht parties, staycations, weddings or even for corporate events, we can customise our services to cater to your needs!</p>
+
+            <p>Give us a ring in advance or contact us via email, we can be your one stop solution, to food and drinks catering, bartending and DJ services!</p>
+            <p><strong>Some examples of various events that we can cater to:</strong></p>
+            <ul>
+            	<li>Wedding receptions</li>
+            	<li>Corporate Events</li>
+            	<li>Product Launches and Store Openings</li>
+            	<li>Exhibitions</li>
+            	<li>Chalet</li>
+            	<li>Staycation</li>
+            	<li>Beach parties</li>
+            	<li>Barbeques</li>
+            	<li>Boat parties</li>
+            </ul>
+            <p><strong>Our event services include:</strong></p>
+            <ul>
+            	<li>Approximation of required amount of alcohol for events</li>
+            	<li>A larger variety and exclusive products to choose from</li>
+            	<li>Bulk discounts on advance orders</li>
+            	<li>Drinks can be returned if not consumed, enabling our clients to reduce wastage of financial resources</li>
+            	<li>Cocktail/drink ideas and themes to pair with your events</li>
+            	<li>Provision of ice and ice boxes</li>
+            	<li>Venue recommendations</li>
+            </ul>
+          </div>
+          <div class="contact-form">
+            <form class="col-sm-12">
+               <h4 class="text-center">SIMPLY FILL UP THE FORM BELOW AND WE WILL GET BACK TO YOU IN 24 HOURS!</h4>
+               <div class="form-group">
+                  <label for="name">Your Name *</label>
+                  <mat-form-field appearance="outline">
+                     <input type="text" name="name" matInput [(ngModel)]="event.name" [ngModelOptions]="{standalone: true}">
+                  </mat-form-field>
+               </div>
+
+               <div class="form-group">
+                  <label for="company">Your Company Name (if any)</label>
+                  <mat-form-field appearance="outline">
+                     <input type="text" name="company" matInput [(ngModel)]="event.company" [ngModelOptions]="{standalone: true}">
+                  </mat-form-field>
+               </div>
+               
+               <div class="form-group">
+                  <label for="email">Your Email *</label>
+                  <mat-form-field appearance="outline">
+                     <input type="text" name="email" matInput [(ngModel)]="event.email" [ngModelOptions]="{standalone: true}">
+                  </mat-form-field>
+               </div>
+
+               <div class="form-group">
+                  <label for="phone">Contact number *</label>
+                  <mat-form-field appearance="outline">
+                     <input type="text" matInput name="phone" [(ngModel)]="event.phone" [ngModelOptions]="{standalone: true}" pattern="[0-9]*" minlength="8" maxlength="8" >
+                  </mat-form-field>
+               </div>
+
+               <div class="form-group">
+                  <label for="business">Event Date *</label>
+                  <mat-form-field appearance="outline">
+                       <input matInput [matDatepicker]="picker" [(ngModel)]="event.date" [ngModelOptions]="{standalone: true}" name="date">
+                       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                       <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+               </div>
+
+               <div class="form-group">
+                  <label for="business">Event Time *</label>
+                  <div class="col-md-12 p-0 event-section">
+                     <label class="from-to-label">From</label>
+                     <div class="col-md-3 p-l-0">
+                        <mat-form-field appearance="outline">
+                           <mat-select placeholder="HH" name="from_hour" [(ngModel)]="event.from_hour" [ngModelOptions]="{standalone: true}">
+                              <mat-option value="01">01</mat-option>
+                              <mat-option value="02">02</mat-option>
+                              <mat-option value="03">03</mat-option>
+                              <mat-option value="04">04</mat-option>
+                              <mat-option value="05">05</mat-option>
+                              <mat-option value="06">06</mat-option>
+                              <mat-option value="07">07</mat-option>
+                              <mat-option value="08">08</mat-option>
+                              <mat-option value="09">09</mat-option>
+                              <mat-option value="10">10</mat-option>
+                              <mat-option value="11">11</mat-option>
+                              <mat-option value="12">12</mat-option>
+                              <mat-option value="13">13</mat-option>
+                              <mat-option value="14">14</mat-option>
+                              <mat-option value="15">15</mat-option>
+                              <mat-option value="16">16</mat-option>
+                              <mat-option value="17">17</mat-option>
+                              <mat-option value="18">18</mat-option>
+                              <mat-option value="19">19</mat-option>
+                              <mat-option value="20">20</mat-option>
+                              <mat-option value="21">21</mat-option>
+                              <mat-option value="22">22</mat-option>
+                              <mat-option value="23">23</mat-option>
+                              <mat-option value="24">24</mat-option>
+                           </mat-select>
+                        </mat-form-field>
+                        <span class="hour-dash">:</span>
+                     </div>
+                     <div class="col-md-3 p-l-0">
+                        <mat-form-field appearance="outline">
+                           <mat-select placeholder="MM" name="from_min" [(ngModel)]="event.from_min" [ngModelOptions]="{standalone: true}">
+                              <mat-option value="00">00</mat-option>
+                              <mat-option value="05">05</mat-option>
+                              <mat-option value="10">10</mat-option>
+                              <mat-option value="15">15</mat-option>
+                              <mat-option value="20">20</mat-option>
+                              <mat-option value="25">25</mat-option>
+                              <mat-option value="30">30</mat-option>
+                              <mat-option value="35">35</mat-option>
+                              <mat-option value="40">40</mat-option>
+                              <mat-option value="45">45</mat-option>
+                              <mat-option value="50">50</mat-option>
+                              <mat-option value="55">55</mat-option>
+                           </mat-select>
+                        </mat-form-field>
+                     </div>
+                     <label class="from-to-label">To</label>
+                     <div class="col-md-3 p-l-0">
+                        <mat-form-field appearance="outline">
+                           <mat-select placeholder="HH" name="to_hour" [(ngModel)]="event.to_hour" [ngModelOptions]="{standalone: true}">
+                              <mat-option value="01">01</mat-option>
+                              <mat-option value="02">02</mat-option>
+                              <mat-option value="03">03</mat-option>
+                              <mat-option value="04">04</mat-option>
+                              <mat-option value="05">05</mat-option>
+                              <mat-option value="06">06</mat-option>
+                              <mat-option value="07">07</mat-option>
+                              <mat-option value="08">08</mat-option>
+                              <mat-option value="09">09</mat-option>
+                              <mat-option value="10">10</mat-option>
+                              <mat-option value="11">11</mat-option>
+                              <mat-option value="12">12</mat-option>
+                              <mat-option value="13">13</mat-option>
+                              <mat-option value="14">14</mat-option>
+                              <mat-option value="15">15</mat-option>
+                              <mat-option value="16">16</mat-option>
+                              <mat-option value="17">17</mat-option>
+                              <mat-option value="18">18</mat-option>
+                              <mat-option value="19">19</mat-option>
+                              <mat-option value="20">20</mat-option>
+                              <mat-option value="21">21</mat-option>
+                              <mat-option value="22">22</mat-option>
+                              <mat-option value="23">23</mat-option>
+                              <mat-option value="24">24</mat-option>
+                           </mat-select>
+                        </mat-form-field>
+                        <span class="hour-dash">:</span>
+                     </div>
+                     <div class="col-md-3 p-l-0">
+                        <mat-form-field appearance="outline">
+                           <mat-select placeholder="MM" name="to_min" [(ngModel)]="event.to_min" [ngModelOptions]="{standalone: true}">
+                              <mat-option value="00">00</mat-option>
+                              <mat-option value="05">05</mat-option>
+                              <mat-option value="10">10</mat-option>
+                              <mat-option value="15">15</mat-option>
+                              <mat-option value="20">20</mat-option>
+                              <mat-option value="25">25</mat-option>
+                              <mat-option value="30">30</mat-option>
+                              <mat-option value="35">35</mat-option>
+                              <mat-option value="40">40</mat-option>
+                              <mat-option value="45">45</mat-option>
+                              <mat-option value="50">50</mat-option>
+                              <mat-option value="55">55</mat-option>
+                           </mat-select>
+                        </mat-form-field>
+                     </div>
+                  </div>
+               </div>
+
+                <div class="form-group">
+                  <label for="business">Event Location *</label>
+                  <mat-form-field appearance="outline">
+                     <input type="text" name="location" matInput [(ngModel)]="event.location" [ngModelOptions]="{standalone: true}">
+                  </mat-form-field>
+               </div>
+
+               <div class="form-group">
+                  <label for="business">No. of Pax</label>
+                  <mat-form-field appearance="outline">
+                     <input type="text" name="pax" matInput [(ngModel)]="event.pax" [ngModelOptions]="{standalone: true}">
+                  </mat-form-field>
+               </div>
+
+               <div class="form-group">
+                  <label for="email">Tell us what you need! *</label>
+                  <mat-form-field appearance="outline">
+                      <textarea rows="8" matInput class="commentbox" matInput [(ngModel)]="event.comment" [ngModelOptions]="{standalone: true}" name="comment"></textarea>
+                  </mat-form-field>
+               </div>
+
+               <div class="row1">
+               <p *ngIf="errorName" class="error-required">Name is required</p>
+               <p *ngIf="errorEmail" class="error-required">Email is required</p>
+               <p *ngIf="errorDate" class="error-required">Date is required</p>
+               <p *ngIf="errorTime" class="error-required">Time is required</p>
+               <p *ngIf="errorPhone" class="error-required">Phone is required</p>
+               <p *ngIf="errorLocation" class="error-required">Location is required</p>
+               <p *ngIf="errorComment" class="error-required">Comment is required</p>
+               <button type="submit" class="btn" (click)="eventForm();" [disabled]="loading"><span *ngIf="!loading">Send message</span><span *ngIf="loading">LOADING...</span></button>
+               </div>
+            </form>
+         </div>
+         <!--  -->
+         <app-footer></app-footer>
+      </div>
+   </div>
+</div>

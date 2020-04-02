@@ -1,0 +1,82 @@
+.profile_form {
+    width: 50%;
+    float: left;
+}
+.profile_form .registeremailcvr .alcohalrestertextbox {
+    min-height: 35px;
+    font-size: 14px;
+}
+.alcohalrestertextbox {
+    border: 1px solid #d7d7d7;
+    border-radius: 5px;
+    min-height: 50px;
+    padding: 10px;
+    color: #2c2011;
+    font-family: Work Sans,sans-serif;
+    width: 100%;
+    float: left;
+    margin-bottom: 15px;
+}
+.profile_form .fullwidth .alcohalfootersign {
+    font-size: 16px;
+    padding: 10px 25px;
+    color: #fff;
+    background: #000;
+    border: none;
+    padding: 10px 49px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+.rgrhtdiv{
+    padding: 0;
+}
+.breadcrumb a.active{
+    color: #000;
+}
+.titlecreidt{
+    padding-left: 25px;
+    padding-top: 10px;
+}
+.profile_form{
+    padding-left: 25px;
+    padding-bottom: 30px;
+}
+.product-banner .row{
+    padding-top: 40px;
+}
+
+@media screen and (max-width: 479px){
+    .mobile-menus{
+        float: left;
+        width: 100%;
+    }
+    .rgrhtdiv{
+        width: 100% !important;
+    }
+    .profile_form{
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px){
+    .mobile-menus{
+        float: left;
+        width: 100%;
+    }
+    .rgrhtdiv{
+        width: 100% !important;
+    }
+    .profile_form{
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1024px) {
+
+}

@@ -1,0 +1,21 @@
+<div class="sidebar z-depth-3">
+ <div class="site-logo">
+ 	<a routerLink="/"><img src="/assets/img/logo.png"></a>
+ </div>
+ <div class="phone">
+ <a href="tel: +65 6240 6822">
+ 	<img src="/assets/img/hotline_number_icon.png">
+ 	<span>+65 6240 6822</span>
+ </a>
+ </div>
+ <div class="side-menu" id="divMenu">
+  <ul>
+    <li *ngFor="let category of categories, let i = index" [ngClass]="{'cat-link': 1 === 1, 'dropdown': category['subcategory_name'] != '', 'subcategory': category['subcategory']}"><a routerLink="/collection/{{category['slug']}}" routerLinkActive="active-link" class="beforeroute">{{category['category_name']}}<i *ngIf="category['subcategory']" class="fa fa-chevron-right icon"></i></a>
+        <ul class="dropdown-content1" *ngIf="category['subcategory']">
+          <li *ngFor="let subcat of category.subcategory"><a routerLink="/collection/{{category['slug']}}/{{subcat['slug']}}">{{ subcat['subcategory_name'] }}</a></li>
+        </ul>
+    </li>
+  </ul>
+ </div>
+
+</div>

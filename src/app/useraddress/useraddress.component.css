@@ -1,0 +1,287 @@
+.your-address{
+    width:50%;
+    float: left;
+    padding:10px;
+}
+.rgrhtdiv{
+    padding: 0;
+}
+.breadcrumb a.active{
+    color: #000;
+}
+.titlecreidt{
+    padding-left: 25px;
+    padding-top: 10px;
+}
+.profile_form{
+    padding-left: 25px;
+    padding-bottom: 30px;
+}
+.product-banner .row{
+    padding-top: 40px;
+}
+.addressbook-btmpannelcover{
+    padding: 0 25px;
+}
+.addressbokk-trvaichacovr {
+    border: 1px solid #d7d7d7;
+    float: left;
+    padding: 15px 20px;
+    margin: 10px 10px 10px 0;
+    min-height: 140px;
+    max-height: 165px;
+    border-radius: 5px;
+}
+.addressbokk-addnewadresscovr .mat-icon{
+    height: 50px;
+    width: 50px;
+    font-size: 50px;
+}
+.address-inner .mat-icon {
+    font-size: 20px;
+    margin-top: 6px;
+    height: 20px;
+    width: 20px;
+}
+.alcohalosavebntcvr{
+    padding-right: 20px;
+}
+.alcohal_adress2fotter{
+    margin-left: 20px; 
+}
+.address-inner p {
+    margin: 0px;
+    font-size: 12px;
+    text-align: left;
+    color: #757373;
+    line-height: 20px;
+}
+.cant-find{
+    cursor: pointer;
+    position: relative;
+    top: -15px;
+}
+.addressbokk-trvaichacovr:nth-child(4){
+    clear: both;
+}
+.left{
+    width:6%;
+    float: left;
+    margin-right:5px;
+}
+.right{
+    width:90%;
+    float: left;
+}
+.addressbokk-addnewadresscovr img{
+    width: auto;
+}
+.addressbokk-addnewadresscovr {
+    padding: 10px 20px;
+    border: 2px dashed #d7d7d7;
+    border-radius: 5px;
+    float: left;
+    margin: 10px 0;
+    text-align: center;
+}
+.addressbokk-addnewadresscovr, .addressbokk-trvaichacovr {
+    width: 32.2%;
+}
+.addnewadresstext {
+    color: #646567;
+    float: left;
+    font-size: 14px;
+    font-weight: 600;
+    min-height: 39px;
+    padding-top: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+}
+.addressbokk-trvaichacovr.active, .addressbokk-trvaichacovr:hover, .adressmiddlepartcvr2:hover {
+    border: 1px solid #ffc412;
+    box-shadow: -1px 1px 7px 6px #fff7cf;
+}
+.selectAddress {
+    position: relative;
+    width: 100%;
+    float: left;
+    margin: 5px 0 0;
+}
+#address-default-tag {
+    text-align: right;
+    color: #ada6a6;
+    font-style: italic;
+}
+.addressbook-btmpannelcover {
+    float: left;
+    width: 100%;
+    margin-bottom: 75px;
+}
+.addrestravis-text {
+    color: #222;
+    float: left;
+    font-size: 14px;
+    font-weight: 600;
+    padding-left: 0px;
+    width: 75%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.addressbok-travis {
+    float: left;
+    width: 100%;
+    position: relative;
+    padding: 5px 0px;
+}
+.addresseditdltpic {
+    float: right;
+    display: none;
+    cursor: pointer;
+}
+.addressbokk-trvaichacovr:hover .addresseditdltpic, .adressmiddlepartcvr2:hover .addresseditdltpic {
+    display: block;
+}
+.addressbok-travis .mat-icon {
+    height: 10px!important;
+    width: 10px!important;
+    font-size: 18px!important;
+    padding: 0px 13px!important;
+    color: #c0c0c1!important;
+}
+.specil_intertion_div {
+    width: 100%;
+    float: left;
+}
+.div_specil_intertion_title {
+    width: 100%;
+    float: left;
+    font-size: 20px;
+    font-family: Work Sans;
+    color: #222;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+.alcohalpopuptext {
+    font-size: 13px;
+    color: #424242;
+    width: 100%;
+}
+p {
+    margin:0px!important;
+}
+.alcohaladdadrebody .no-pad {
+    padding: 0 1px 0 0!important;
+}
+.adresssvaebtn {
+    background: #000 none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 0;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    min-width: 120px;
+    text-align: left;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.alcohalosavebntcvr{
+    float: right;
+}
+.alcohal_addadressfooter {
+    background: #fff none repeat scroll 0 0;
+    float: left;
+    width: 100%;
+    border-top: 1px solid #e5e5e5;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+.alcohal_addadress_headercurcle {
+    background: #564111 none repeat scroll 0 0;
+    border-radius: 50%;
+    color: #ffc412;
+    float: left;
+    font-size: 14px;
+    font-weight: 500;
+    height: 27px;
+    line-height: 26px;
+    margin-top: 0;
+    position: relative;
+    text-align: center;
+    top: 0;
+    vertical-align: middle;
+    width: 27px;
+}
+.alcohaladdadrebody {
+    float: left;
+    width: 100%;
+    padding: 11px 22px 5px;
+}
+.alcohlinputextareaa {
+    height: 90px;
+    resize: none;
+    font-size: 13px;
+}
+.alcohal_adress2fotter {
+    color: #666;
+    float: left;
+    font-size: 14px;
+    line-height: 23px;
+    margin-top: 9px;
+    margin-right: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+}
+.alcohal_addadress_header {
+    background: #ffc412 none repeat scroll 0 0;
+    float: left;
+    padding: 12px 15px;
+    width: 100%;
+}
+.alcohal_addadress_headertitle {
+    color: #564111;
+    display: inline-block;
+    font-size: 28px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 479px){
+    .addressbokk-addnewadresscovr, .addressbokk-trvaichacovr{
+        width: 100%;
+    }
+    .titlecreidt{
+        font-size: 23px;
+        margin-bottom: 0;
+    }
+    .alcohal_addadress_headertitle{
+        font-size: 17px;
+        margin-left: 10px;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px){
+   .addressbokk-addnewadresscovr, .addressbokk-trvaichacovr{
+        width: 100%;
+    }
+    .titlecreidt{
+        font-size: 23px;
+        margin-bottom: 0;
+    }
+    .alcohal_addadress_headertitle{
+        font-size: 17px;
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1024px) {
+
+}

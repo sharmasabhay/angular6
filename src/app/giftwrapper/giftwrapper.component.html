@@ -1,0 +1,87 @@
+<div class="container-fluid">
+   <div class="row">
+      <app-sidebar></app-sidebar>
+      <app-header></app-header>
+      <div class="main-content">
+         <div class="head-section">
+            <div class="col-sm-12 product-banner">
+               <div class="row">
+                  <div class="col-sm-8 heading">
+                     <h1 class="singlep-head">Gift wrapper</h1>
+                     <ul class="breadcrumb">
+                        <li><a routerLink="/">home</a></li>
+                        <li><a>Gift Packaging </a></li>
+                        <li><a>Packaging</a></li>
+                     </ul>
+                  </div>
+                  <div class="col-sm-4"></div>
+               </div>
+            </div>
+         </div>
+         <div class="giftcontent">
+            <div class="col-sm-5">
+               <div class="giftimage">
+                  <img [src]="products['image']">
+               </div>
+            </div>
+            <div class="col-sm-7">
+               <h3>{{products['title']}}</h3>
+               <div class="enter-gift-detail">{{products['title']}}</div>
+               <p class="smalltitle">Price</p>
+               <div class="amntrupee-clsdetail">${{products['costprice']}}</div>
+               <div class="gift-card-innerform">
+                  <div class="touser">To*</div>
+                  <mat-form-field appearance="outline" class="nopadtext">
+                     <input matInput placeholder="Recipient's name" name="recipientname" [(ngModel)]="wrapper.recipient_name" required #recipientname="ngModel">
+                  </mat-form-field>
+                  <div [hidden]="recipientname.valid || recipientname.pristine"
+                        class="alert alert-danger">
+                        <div [hidden]="!recipientname.hasError('required')">Recipient name is required</div>
+                  </div>
+                  <mat-form-field appearance="outline" class="nopadtext">
+                     <textarea matInput class="message" placeholder="Message (Max. characters : 200)" [(ngModel)]="wrapper.message" required #message="ngModel"></textarea>
+                  </mat-form-field>
+                  <div [hidden]="message.valid || message.pristine"
+                        class="alert alert-danger">
+                        <div [hidden]="!message.hasError('required')">Message is required</div>
+                  </div>
+               </div>
+                <div class="addaction">
+                <button mat-raised-button class="addtocart" (click)="addToCart('wrapper');">Add To Cart</button>
+                </div>
+                <p *ngIf="productRequired" class="note">Please select atleast 1 product.</p>
+               <p class="note">Note: This item is non-returnable.</p>
+            </div>
+         </div>
+         <div class="giftproduct">
+            <h4>Select product(s) to be packaged (Maximum 4 bottles)</h4>
+            <div class="giftpackage-slider">
+               <div class="gift-slider carousel">
+               <div class="slide" *ngFor="let list of cartList">
+                  <div class="image">
+                     <div class="card">
+                        <div class="card-content">
+                              <img class="card-img-top" [src]="list['image']">
+                           <div class="card-body">
+                               <a routerLink=""><p>{{list['products_name']}}</p></a>
+                               <div class="checkoutmiddlevlauediv">
+                                 <div class="input-group">
+                                    <input type="text" class="form-control addmore" readonly [(ngModel)]="list['quantity']">
+                                    <span class="input-group-addon">
+                                    <button (click)="onIncrement(list);">+</button>
+                                    <button (click)="onDecrement(list);">-</button>
+                                    </span>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               </div>
+            </div>
+         </div>
+         <app-footer></app-footer>
+      </div>
+   </div>
+</div>

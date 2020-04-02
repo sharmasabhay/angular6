@@ -1,0 +1,86 @@
+<div class="container-fluid">
+   <div class="row">
+      <app-sidebar></app-sidebar>
+      <app-header></app-header>
+      <div class="main-content">
+         <div class="head-section">
+            <div class="col-sm-12 product-banner">
+               <div class="row">
+                  <div class="col-sm-8 heading">
+                     <h1 class="singlep-head">Gift Certificates</h1>
+                     <ul class="breadcrumb">
+                        <li><a routerLink="/">Gift Packaging </a></li>
+                        <li><a>Gift Certificates</a></li>
+                     </ul>
+                  </div>
+                  <div class="col-sm-4"></div>
+               </div>
+            </div>
+         </div>
+         <p *ngIf="notFound" class="error-notfound">No Data found.</p>
+         <div class="giftcontent" *ngIf="giftContent">
+            <div class="col-sm-5">
+               <div class="giftimage">
+                  <img [src]="products['image']">
+               </div>
+            </div>
+            <div class="col-sm-7">
+               <div class="enter-gift-detail">Enter your gift card details</div>
+               <p class="amt-title">Select an amount</p>
+               <div class="amtbtn">
+                  <button mat-stroked-button [ngClass]="{'active-gift': activeLink == '1'}" (click)="chooseSection(1)">$50.00</button>
+                  <button mat-stroked-button [ngClass]="{'active-gift': activeLink == '2'}" (click)="chooseSection(2)">$100.00</button>
+                  <button mat-stroked-button [ngClass]="{'active-gift': activeLink == '3'}" (click)="chooseSection(3)">$200.00</button>
+               </div>
+               <div class="gift-card-innerform">
+                  <div class="touser">To *</div>
+                  <mat-form-field appearance="outline" class="nopadtext">
+                     <input matInput placeholder="Recipient's name" name="recipientname" [(ngModel)]="gift.recipient_name" required #recipientname="ngModel">
+                  </mat-form-field>
+                  <div [hidden]="recipientname.valid || recipientname.pristine"
+                        class="alert alert-danger">
+                        <div [hidden]="!recipientname.hasError('required')">Recipient name is required</div>
+                  </div>
+                  <mat-form-field appearance="outline" class="nopadtext">
+                     <input matInput placeholder="Recipient's email" name="recipientemail" [(ngModel)]="gift.recipient_email" required #recipientemail="ngModel">
+                  </mat-form-field>
+                  <div [hidden]="recipientemail.valid || recipientemail.pristine"
+                        class="alert alert-danger">
+                        <div [hidden]="!recipientemail.hasError('required')">Recipient email is required</div>
+                  </div>
+                  <div class="touser">Message *</div>
+                  <mat-form-field appearance="outline" class="nopadtext">
+                     <textarea matInput class="message" placeholder="Message (Max. characters : 200)" [(ngModel)]="gift.message" required #message="ngModel"></textarea>
+                  </mat-form-field>
+                  <div [hidden]="message.valid || message.pristine"
+                        class="alert alert-danger">
+                        <div [hidden]="!message.hasError('required')">Message is required</div>
+                  </div>
+                   <mat-checkbox [(ngModel)]="gift.selectMobile">Mobile SMS</mat-checkbox>
+                   <mat-form-field appearance="outline" class="nopadtext" *ngIf="gift.selectMobile == true">
+                    <span matPrefix>+65 &nbsp;</span>
+                    <input type="tel" matInput placeholder="Telephone" [(ngModel)]="gift.mobile">
+                  </mat-form-field>
+               </div>
+               <p class="smalltitle">Price</p>
+               <div class="amntrupee-clsdetail">${{totalPrice}}</div>
+                <p class="smalltitle">Quantity</p>
+               <div class="checkoutmiddlevlauediv">
+                   <div class="input-group">
+                      <input type="text" class="form-control addmore" readonly [(ngModel)]="quantity">
+                      <span class="input-group-addon">
+                      <button (click)="onIncrement();">+</button>
+                      <button (click)="onDecrement();">-</button>
+                      </span>
+                   </div>
+                </div>
+                <div class="addaction">
+                <button mat-raised-button class="addtocart" (click)="addToCart(products['id'], 'single', 'true');">Add To Cart</button>
+                </div>
+               <p class="note">Note : Recipient will receive email/SMS immediately after checkout is completed.</p>
+            </div>
+         </div>
+         <app-footer></app-footer>
+      </div>
+   </div>
+</div>

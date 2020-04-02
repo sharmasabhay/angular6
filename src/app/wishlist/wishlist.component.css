@@ -1,0 +1,61 @@
+.product-img {
+    width: 70px;
+}
+.rgrhtdiv{
+    padding: 0;
+}
+.breadcrumb a.active{
+    color: #000;
+}
+.titlecreidt{
+    padding-left: 25px;
+    padding-top: 10px;
+}
+.profile_form{
+    padding-left: 25px;
+    padding-bottom: 30px;
+}
+.product-banner .row{
+    padding-top: 40px;
+}
+.wishlist-tbl tr th, .wishlist-tbl tr td{
+	padding: 10px 20px;
+	border-bottom:1px solid #ccc;
+	vertical-align: middle;
+}
+.wishlist-tbl{
+	margin-top: 20px;
+    padding: 0 25px;
+}
+.wishlist-tbl tr th{
+	background-color: #fff;
+    font-size: 16px;
+    color: #6b6969;
+}
+.prize{
+	font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+}
+.table {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.pname{
+width: 45%;
+}
+.btn{
+    border: 1px solid #000;
+    border-radius: 4px;
+    background: #fff;
+    padding: 5px 10px;
+}
+.red{
+	color:red!important;
+	border-color:red!important;
+}
+p.empty {
+    margin-bottom: 0;
+    margin-top: 16px;
+    font-weight: normal;
+}

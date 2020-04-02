@@ -1,0 +1,148 @@
+<div class="container-fluid">
+   <div class="row">
+      <app-sidebar></app-sidebar>
+      <app-header></app-header>
+      <div class="main-content">
+         <div class="head-section">
+            <div class="col-sm-12 collection-banner">
+                <img src="/assets/img/VODKA.jpg">
+            </div>
+         </div>
+         <div class="product-section">
+            <ul class="breadcrumb">
+              <li><a routerLink="/">Home</a></li>
+              <li><a>{{categoryName}}</a></li>
+              <li *ngIf="subCategoryName"><a>{{subCategoryName}}</a></li>
+            </ul>
+            <div class="col-sm-12 filter-bar">
+               <div class="row">
+                 <div class="col-sm-6">
+                   <h4 class="show-data">SHOWING: {{pageStart}}-{{pageEnd}} OF {{totalRecords}}</h4>
+                 </div>
+                 <div class="col-sm-3 filter-products">
+                     <mat-form-field appearance="outline">
+                        <mat-select [(value)]="selected" [(ngModel)]="filters" (ngModelChange)="chooseFilter();">
+                           <mat-option value="featured">Featured</mat-option>
+                           <mat-option value="low-high">Price: Low to High</mat-option>
+                           <mat-option value="high-low">Price: High to Low</mat-option>
+                           <mat-option value="a-z" selected>A-Z</mat-option>
+                           <mat-option value="z-a">Z-A</mat-option>
+                           <mat-option value="oldest-newest">Oldest to Newest</mat-option>
+                           <mat-option value="newest-oldest">Newest to Oldest</mat-option>
+                           <mat-option value="best-selling">Best Selling</mat-option>
+                        </mat-select>
+                     </mat-form-field>
+                 </div>
+                 <div class="col-sm-3">
+                   <div class="btn-group pull-right">
+                  <button class="btn btn-white" type="button"(click)="onDisplayModeChange(1)"
+                  [ngClass]="{'btn-primary active': displayMode === 1}" >
+                  <i class="fa fa-th"></i>
+                  </button>
+                  <button class="btn btn-white" type="button"  (click)="onDisplayModeChange(2)"
+                  [ngClass]="{'btn-primary active': displayMode === 2}" >
+                  <i class="fa fa-list"></i>
+                  </button>
+               </div>
+                 </div>
+               </div>
+            </div>
+            <!-- grid -->
+            <div class="col-sm-12">
+            <div class="row" *ngIf="displayMode === 1">
+               <div class="col-sm-3 card" *ngFor="let product of products">
+               <div class="card-content collection-card">
+                     <div class="product-label" *ngIf="product['outOfStockType'] == 2">
+                        <label class="out-stock">sold out</label>
+                     </div>
+                     <div class="hovereffect">
+                        <a routerLink="/products/{{product['slug']}}"><img class="card-img-top" [src]="product['imageFiles']" *ngIf="product['imageFiles'] != '' && product['imageFiles'] != null"></a>
+                        <div class="overlay">
+                           <button class="wishlist" (click)="addWishlist(product['product_id']);">
+                              <mat-icon>favorite_border </mat-icon>
+                           </button>
+                           <button class="addtocart disabledCart" [disabled]="true" (click)="addToCart(product['product_id'], 'single');" *ngIf="product['outOfStockType'] == 2">
+                              <mat-icon>shopping_cart</mat-icon>
+                              Unavailable
+                           </button>
+                           <button class="addtocart" [disabled]="false" (click)="addToCart(product['product_id'], 'single');" *ngIf="product['outOfStockType'] == 1">
+                              <mat-icon>shopping_cart</mat-icon>
+                              Add to cart
+                           </button>
+                        </div>
+                     </div>
+                     <div class="card-body">
+                        <a class="addtocart mobile-add" (click)="addToCart(product['product_id'], 'single');" *ngIf="deviceInfo == 'phone'"></a>
+                        <a routerLink="/products/{{product['slug']}}"><h5 class="card-title">{{product['name']}}</h5></a>
+                        <p class="price">${{product['price']}}</p>
+                        <small>As a low <span class="lowprice" *ngIf="!product['bult_price']">${{product['price']}}</span><span class="lowprice" *ngIf="product['bult_price']">${{product['bult_price'][1]['smartPrice']}}</span></small>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- List -->
+            <div class="row mode-2" *ngIf="displayMode === 2">
+               <div class="col-sm-12 card" *ngFor="let gridProduct of products">
+                  <div class="card-content">
+                  <div class="product-label" *ngIf="gridProduct['outOfStockType'] == 2">
+                     <label class="out-stock">sold out</label>
+                  </div>
+                  <a routerLink="/products/{{gridProduct['slug']}}">
+                     <div class="col-sm-3 card-content-image">
+                        <img class="card-img-top" [src]="gridProduct['imageFiles']">
+                     </div>
+                  </a>
+                     <div class="card-body col-sm-9">
+                        <div class="row">
+                           <div class="col-sm-8 cart-detail">
+                              <a routerLink="/products/{{gridProduct['slug']}}"><h5 class="card-title">{{gridProduct['name']}}</h5></a>
+                              <p class="price">${{gridProduct['price']}}</p>
+                              <small>As a low <span class="lowprice" *ngIf="!gridProduct['bult_price']">${{gridProduct['price']}}</span><span class="lowprice" *ngIf="gridProduct['bult_price']">${{gridProduct['bult_price'][1]['smartPrice']}}</span></small>
+                              <p class="stock">Available : <span class="yes" *ngIf="gridProduct['outOfStockType'] != 1">In Stock</span><span class="no" *ngIf="gridProduct['outOfStockType'] == 1">Out of Stock</span></p>
+                           </div>
+                           <div class="col-sm-4 action-button">
+                              <button class="wishlist" (click)="addWishlist(gridProduct['product_id']);">
+                                 <mat-icon>favorite_border </mat-icon>
+                                 Add to wishlist 
+                              </button>
+                              <button class="addtocart" (click)="addToCart(gridProduct['product_id']);" *ngIf="gridProduct['outOfStockType'] == 1">
+                                 <mat-icon>shopping_cart</mat-icon>
+                                 Add to cart
+                              </button>
+                              <button class="addtocart disabledCart" *ngIf="gridProduct['outOfStockType'] == 2">
+                                 <mat-icon>shopping_cart</mat-icon>
+                                 Unavailable
+                              </button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            </div>
+            <div class="paginator" *ngIf="totalRecords > 0">
+               <div class="page-pagination">
+                  <nav class="pagination">
+                     <ul>
+                        <li class="double" *ngIf="currentPage > 1" >
+                           <a (click)="loadPage(1);"><i class="fa fa-angle-double-left fa-left"></i></a>
+                        </li>
+                        <li class="double" *ngIf="currentPage > 1">
+                           <a (click)="loadPage(currentPage - 1);"><i class="fa fa-angle-left fa-left"></i></a>
+                        </li>
+                        <li *ngFor="let page of pageNumbers" [ngClass]="{'page-item': 1 === 1, 'active': page == currentPage}"><a href="javascript:;" class="page-link" (click)="loadPage(page);" *ngIf="page != '...'">{{page}}</a><span *ngIf="page == '...'">...</span></li>
+                        <li class="double-right angle-left" *ngIf="pageTotalPages > currentPage">
+                           <a (click)="loadPage(currentPage + 1);"><i class="fa fa-angle-right fa-right"></i></a>
+                        </li>
+                        <li class="double-right" *ngIf="pageTotalPages > currentPage">
+                           <a (click)="loadPage(pageLast);"><i class="fa fa-angle-double-right fa-right"></i></a>
+                        </li>
+                     </ul>
+                  </nav>
+               </div>
+            </div>
+         </div>
+         <app-footer></app-footer>
+      </div>
+   </div>
+</div>

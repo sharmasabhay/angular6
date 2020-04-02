@@ -1,0 +1,16 @@
+.terms ul {
+  list-style: none;
+}
+.terms ul li{
+	margin-bottom: 0.25em;
+	letter-spacing: 0.5px;
+    line-height: 2em;
+}
+.terms p{
+	color:#000;
+	font-weight:600;
+}
+.terms h4 {
+    color: #000;
+    font-weight: 800;
+}

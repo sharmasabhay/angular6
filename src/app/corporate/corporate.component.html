@@ -1,0 +1,89 @@
+<div class="container-fluid">
+   <div class="row">
+      <app-sidebar></app-sidebar>
+      <app-header></app-header>
+      <div class="main-content">
+         <!-- HEAD SECTION -->
+         <div class="head-section">
+            <div class="col-sm-12 product-banner">
+               <div class="row">
+                  <div class="col-sm-8 heading">
+                     <h1 class="singlep-head">CORPORATE ACCOUNT</h1>
+                     <ul class="breadcrumb">
+                        <li><a routerLink="/">Home</a></li>
+                        <li><a>corporate account</a></li>
+                     </ul>
+                  </div>
+                  <div class="col-sm-4"></div>
+               </div>
+            </div>		
+         </div>
+         <!-- End HEAD SECTION -->
+         <!-- login From Section -->
+          <div class="col-sm-12 corporateinfo">
+            <p>Whether you require supplies to your bar, restaurant or even just to keep your office fridge & liquor cabinet stocked up, we will haul whatever you need to you!</p>
+
+            <p>After work drinks, corporate functions or simply sending a thank you gift to your clients, Alcohaul will get the job done for you.</p>
+
+            <p>Leave your recurring orders to us, be it stocking up the pantry or recurring cyclical events, we’ve got you covered too!</p>
+          </div>
+          <div class="contact-form">
+            <form class="col-sm-12">
+               <h4 class="text-center">CONTACT US NOW TO GET STARTED!</h4>
+               <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <mat-form-field appearance="outline">
+                     <input type="text" [(ngModel)]="corporate.name" [ngModelOptions]="{standalone: true}" matInput>
+                  </mat-form-field>
+               </div>
+
+               <div class="form-group">
+                  <label for="company">Your Company Name (if any)</label>
+                  <mat-form-field appearance="outline">
+                     <input type="text" [(ngModel)]="corporate.company" [ngModelOptions]="{standalone: true}" matInput>
+                  </mat-form-field>
+               </div>
+
+               <div class="form-group">
+                  <label for="business">Your Nature of Business (Bar, Club, Restaurant, Retail or Individual Consumption)</label>
+                  <mat-form-field appearance="outline">
+                     <input type="text" [(ngModel)]="corporate.business" [ngModelOptions]="{standalone: true}" matInput>
+                  </mat-form-field>
+               </div>
+
+               <div class="form-group">
+                  <label for="phone">Phone</label>
+                  <mat-form-field appearance="outline">
+                     <input type="text" [(ngModel)]="corporate.phone" [ngModelOptions]="{standalone: true}" matInput name="phone" pattern="[0-9]*" #phone="ngModel">
+                  </mat-form-field>
+                  <div [hidden]="phone.valid || phone.pristine"
+                     class="alert alert-danger">
+                     <div [hidden]="!phone.hasError('pattern')">Mobile number should be only numbers</div>
+                  </div>
+               </div>
+               
+               <div class="form-group">
+                  <label for="email">Your Email*</label>
+                  <mat-form-field appearance="outline">
+                     <input type="text" name="email" [(ngModel)]="corporate.email" [ngModelOptions]="{standalone: true}" matInput>
+                  </mat-form-field>
+               </div>
+
+               <div class="form-group">
+                  <label for="email">Your Comment</label>
+                  <mat-form-field appearance="outline">
+                     <textarea rows="8" matInput [(ngModel)]="corporate.message" [ngModelOptions]="{standalone: true}" class="commentbox"></textarea>
+                  </mat-form-field>
+               </div>
+
+               <div class="row1">
+               <p *ngIf="errorContact" class="error-required">Email is required</p>
+               <button type="submit" class="btn" (click)="corporateAccount();" [disabled]="loading"><span *ngIf="!loading">Send message</span><span *ngIf="loading">LOADING...</span></button>
+               </div>
+            </form>
+         </div>
+         <!--  -->
+         <app-footer></app-footer>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,75 @@
+<div class="col-sm-12 selectdeliverytime">
+<button mat-dialog-close class="delivery-close-btn"><mat-icon>close</mat-icon></button>
+    <div class="specific-header">
+    	<img src="/assets/img/stop-watch-big.png">
+    	<strong>Specific Time Selection</strong>
+    	<p>Select upto a maximum of 1 HOUR time range for an additional $19.90</p>
+    </div>
+    <div class="delivery-section">
+		<strong>My Delivery Should Arrive</strong>
+		<div class="timeform">
+		 	<div class="col-sm-6">
+		 	<div class="form-group">
+		 	    <label>between</label>
+		 		<mat-form-field appearance="outline">
+		 			<!-- <input type="text" name="start" matInput [(ngModel)]="delivery.startTime" placeholder="hh:mm"> -->
+		 			<!-- <input placeholder="hh:mm" matInput (click)="open();" value="{{delivery.startTime}}" name="start"> -->
+		 			<input placeholder="hh:mm" matInput name="start" [(ngModel)]="delivery.startTime" (click)="selectTimeSection();">
+		 		</mat-form-field>
+		 		<div class="custom-timepicker" *ngIf="timeSection">
+		 			<div class="timepicker-input">
+			 			<mat-form-field appearance="outline">
+			 			    <input placeholder="hh:mm" matInput name="start" [(ngModel)]="delivery.startTime">
+			 		    </mat-form-field>
+		 			</div>
+		 			<div class="time-section">
+		 			    <span class="arrow-up"></span>
+		 			    <label class="select-label select-hh">SELECT HOUR (HH)</label>
+		 				<div class="select-time">
+		 					<button (click)="selectTime(12);" matButton [ngClass]="{'active-time': activeLink == '12'}">12</button>
+		 					<button (click)="selectTime(13);" matButton [ngClass]="{'active-time': activeLink == '13'}">13</button>
+		 					<button (click)="selectTime(14);" matButton [ngClass]="{'active-time': activeLink == '14'}">14</button>
+		 					<button (click)="selectTime(15);" matButton [ngClass]="{'active-time': activeLink == '15'}">15</button>
+		 					<button (click)="selectTime(16);" matButton [ngClass]="{'active-time': activeLink == '16'}">16</button>
+		 					<button (click)="selectTime(17);" matButton [ngClass]="{'active-time': activeLink == '17'}">17</button>
+		 					<button (click)="selectTime(18);" matButton [ngClass]="{'active-time': activeLink == '18'}">18</button>
+		 					<button (click)="selectTime(19);" matButton [ngClass]="{'active-time': activeLink == '19'}">19</button>
+		 					<button (click)="selectTime(20);" matButton [ngClass]="{'active-time': activeLink == '20'}">20</button>
+		 					<button (click)="selectTime(21);" matButton [ngClass]="{'active-time': activeLink == '21'}">21</button>
+		 					<button (click)="selectTime(22);" matButton [ngClass]="{'active-time': activeLink == '22'}">22</button>
+		 				</div>
+		 				<div [ngClass]="{'timepicker-footer': 1 == 1, 'time-disable': delivery.timeDisable == true}">
+		 				    <label class="select-label select-mm">SELECT MINUTE (MM)</label>
+			 				<div class="col-md-6 {{delivery.timeDisable}}">
+			 					<mat-form-field appearance="outline">
+			 						<input type="text" name="time" matInput value="00" readonly (click)="minuteBeforeH();" [(ngModel)]="delivery.minuteB" disabled="{{delivery.timeDisable}}">
+			 					</mat-form-field>
+			 				</div>
+			 				<div class="col-md-6">
+			 					<mat-form-field appearance="outline">
+			 						<input type="text" name="time" matInput value="30" readonly (click)="minuteafterH();" [(ngModel)]="delivery.minuteA" disabled="{{delivery.timeDisable}}">
+			 					</mat-form-field>
+			 				</div>
+		 				</div>
+		 			</div>
+		 		</div>
+		 	</div>
+	 	</div>
+	 	<div class="col-sm-6 end-time">
+	 		<div class="form-group">
+	 	<label>and</label>
+	 		<mat-form-field appearance="outline">
+	 			<input type="text" name="end" matInput [(ngModel)]="delivery.endTime" placeholder="hh:mm" readonly>
+	 		</mat-form-field>
+	 		</div>
+	 	</div>
+	</div>
+	</div>
+	<div class="text-center">
+		<button class="checkoutcheckoutnowbutton" (click)="timeSet();">DONE</button>
+	</div>
+	<div class="warning">
+		<mat-icon>warning</mat-icon>
+		<div class="warning-message">This option will add $19.90 to your bill</div>
+	</div>
+</div>
